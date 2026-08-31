@@ -75,9 +75,9 @@ const NUDT_SIGNATURES = (() => {
   return map;
 })();
 
-// ---------- 1. nudtbus.online ----------
+// ---------- 1. site A (campus-perspective query site) ----------
 function parseNudtbus() {
-  const md = unescapeFirecrawlMd(read(path.join(SRC, "nudtbus", "nudtbus-appjs.md")));
+  const md = unescapeFirecrawlMd(read(path.join(SRC, "site-a", "site-a-appjs.md")));
   const servicesBlock = extractBetween(md, "const SERVICES = [", "\n];\n\nconst elements");
   const chunks = servicesBlock.split("createService(").slice(1);
   const lines = [];
@@ -101,7 +101,7 @@ function parseNudtbus() {
       dest,
       departures: times,
       note: known.notes[origin] || note,
-      sources: ["nudtbus-v29"],
+      sources: ["siteA"],
     });
   }
   const holidayM = md.match(/HOLIDAY_NOTICE_START_DATE = "([^"]+)"/);
@@ -117,9 +117,9 @@ function parseNudtbus() {
   };
 }
 
-// ---------- 2. bus2.qiutao20.online ----------
+// ---------- 2. site B ----------
 function parseBus2() {
-  const md = unescapeFirecrawlMd(read(path.join(SRC, "bus2", "bus2-appjs.md")));
+  const md = unescapeFirecrawlMd(read(path.join(SRC, "site-b", "site-b-appjs.md")));
   const out = { stops: {}, schedules: {}, sightseeing: [], crowdRules: null, holidays2026: [], version: "v20260725-v8-dev3" };
 
   // stops
@@ -146,7 +146,7 @@ function parseBus2() {
           offsets[om[1]] = om[2] === "COLLEGE_OFFSET_SPECIAL_MINUTES" ? 7 : parseInt(om[2], 10);
         }
       }
-      out.schedules[dayKey].push({ line, origin, dest, departures: times, offsets, sources: ["bus2-v8dev3"] });
+      out.schedules[dayKey].push({ line, origin, dest, departures: times, offsets, sources: ["siteB"] });
     }
   }
 
@@ -166,7 +166,7 @@ function parseBus2() {
       if (offM) {
         for (const om of offM[1].matchAll(/(\w+):\s*(\d+)/g)) offsets[om[1]] = parseInt(om[2], 10);
       }
-      out.sightseeing.push({ line, origin, dest, dayType: tag, departures: times, offsets, sources: ["bus2-v8dev3"] });
+      out.sightseeing.push({ line, origin, dest, dayType: tag, departures: times, offsets, sources: ["siteB"] });
     }
   }
 
@@ -241,7 +241,7 @@ function normalize(nudt, bus2, official) {
       express: !isL8,
       note: l.note || "",
       extraNote: isL8 ? "全程约35分钟（院际专线口径）" : "",
-      trips: l.departures.map((t) => ({ depart: t, days: DAYS[l.dayProfile], sources: ["nudtbus-v29"] })),
+      trips: l.departures.map((t) => ({ depart: t, days: DAYS[l.dayProfile], sources: ["siteA"] })),
     });
   }
 
@@ -267,7 +267,7 @@ function normalize(nudt, bus2, official) {
       orderedStops: ordered, circular: isLoop, express: false,
       note: isLoop ? "环线：按顺序沿线停靠" : "就餐专线：系统楼→二食堂（研究生宿舍方向）",
       extraNote: "",
-      trips: s.departures.map((t) => ({ depart: t, days: DAYS.all7, sources: ["bus2-v8dev3"] })),
+      trips: s.departures.map((t) => ({ depart: t, days: DAYS.all7, sources: ["siteB"] })),
     });
   }
 
@@ -355,7 +355,7 @@ function normalize(nudt, bus2, official) {
       note: "新增观光环线",
       extraNote: s.dayType === "weekend" ? "周末/节假日运行表" : "工作日运行表",
       holidayOk: s.dayType === "weekend",
-      trips: s.departures.map((t) => ({ depart: t, days: s.dayType === "weekend" ? DAYS.weekend : DAYS.weekday, sources: ["bus2-v8dev3"] })),
+      trips: s.departures.map((t) => ({ depart: t, days: s.dayType === "weekend" ? DAYS.weekend : DAYS.weekday, sources: ["siteB"] })),
     });
   }
 
@@ -383,15 +383,15 @@ function main() {
       generatedAt: new Date().toISOString(),
       snapshotNote: "班车时刻随学期调整，以学校最新通知为准",
       sources: {
-        nudtbus: { url: "https://nudtbus.online", version: nudt.version, method: "Firecrawl self-hosted /v2/scrape" },
-        bus2: { url: "https://bus2.qiutao20.online", version: bus2.version, method: "Firecrawl self-hosted /v2/scrape" },
+        siteA: { version: nudt.version, method: "Firecrawl self-hosted /v2/scrape" },
+        siteB: { version: bus2.version, method: "Firecrawl self-hosted /v2/scrape" },
         officialCampus: { effective: "2026-03-09", method: "image transcription (redacted)" },
         officialInstitute: { effective: "2025-05-19", method: "image transcription (PII redacted)" },
         handSummary: { method: "image transcription, cross-check only" },
       },
     },
     stops: { ...bus2.stops, one: { id: "one", label: "一号院" }, three: { id: "three", label: "三号院（系统楼）" } },
-    lines: { nudtbus: nudt.lines, bus2Schedules: bus2.schedules, sightseeing: bus2.sightseeing, officialCampus: official },
+    lines: { siteA: nudt.lines, siteB: bus2.schedules, sightseeing: bus2.sightseeing, officialCampus: official },
     extras: {
       holidayNotice: nudt.holidayNotice,
       holidays2026: bus2.holidays2026,

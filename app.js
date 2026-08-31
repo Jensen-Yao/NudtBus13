@@ -1,4 +1,4 @@
-/* NudtBus13 · 整合版班车查询
+/* 班车助手 · Apple-inspired
  * Data: data/merged/schedule.json (5-source merged) + data/merged/poi.json (WGS-84)
  */
 "use strict";
@@ -12,10 +12,17 @@ const STOP_LABELS = {
 };
 const KIND_BADGE = { intercampus: "校际", college: "学院专线", loop: "环线", dining: "就餐", family: "家属区", sightseeing: "观光" };
 const DAY_NAMES = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
-const DAY_LABELS = { monThu: "周一至周四运行表", friday: "周五运行表", saturday: "周六运行表", sunday: "周日运行表" };
+const PROFILE_DAYS = {
+  monThu: ["mon", "tue", "wed", "thu"],
+  friday: ["fri"],
+  saturday: ["sat"],
+  sunday: ["sun"],
+};
+const PROFILE_LABELS = { monThu: "周一至周四运行表", friday: "周五运行表", saturday: "周六运行表", sunday: "周日运行表" };
 
 let DATA = null, POI = null, map = null, markerLayer = null, lineLayer = null;
 let queryMode = "now";
+let ttProfile = "monThu";
 
 function $(id) { return document.getElementById(id); }
 function pad(n) { return String(n).padStart(2, "0"); }
@@ -71,21 +78,19 @@ function dayContext(date) {
   else if (day === "sun") profile = "sunday";
   else if (day === "fri") profile = "friday";
   else profile = "monThu";
-  return { day, iso, isHoliday, suspended, profile, profileLabel: DAY_LABELS[profile] };
+  return { day, iso, isHoliday, suspended, profile };
 }
 
-function tripRunsToday(trip, ctx) {
-  if (ctx.suspended) return false;              // 假期停运
-  if (ctx.isHoliday) return trip._holidayOk === true; // 法定节假日仅观光车
-  return trip.days.includes(ctx.day);
+function tripRunsOnProfile(trip, profile) {
+  return trip.days.some((d) => PROFILE_DAYS[profile].includes(d));
 }
 
-// ---------- canonical line dedupe ----------
+// ---------- canonical dedupe ----------
 function canonLine(line) {
   return line.replace("（线路8/8号线）", "").replace("8号线（线路8）", "线路8").replace("线路8（8号线）", "线路8");
 }
 
-function collectCandidates(from, to, ctx) {
+function collectCandidates(from, to, ctx, whenMin) {
   const out = [];
   const seen = new Set();
   for (const svc of DATA.services) {
@@ -95,11 +100,14 @@ function collectCandidates(from, to, ctx) {
     if (fi < 0 || ti < 0 || ti <= fi) continue;
     for (const trip of svc.trips) {
       trip._holidayOk = svc.holidayOk === true;
-      if (!tripRunsToday(trip, ctx)) continue;
+      if (ctx.suspended) continue;
+      if (ctx.isHoliday && !trip._holidayOk) continue;
+      if (!tripRunsOnProfile(trip, ctx.profile)) continue;
       const fromTime = addMin(trip.depart, ordered[fi].m);
+      if (toMinutes(fromTime) < whenMin - 1) continue;
       const toTime = ordered[ti].m != null ? addMin(trip.depart, ordered[ti].m) : null;
       const key = `${canonLine(svc.line)}|${from}|${to}|${fromTime}`;
-      if (seen.has(key)) { // merge sources into existing
+      if (seen.has(key)) {
         const ex = out.find((r) => r._key === key);
         if (ex) trip.sources.forEach((s) => { if (!ex.sources.includes(s)) ex.sources.push(s); });
         continue;
@@ -108,7 +116,7 @@ function collectCandidates(from, to, ctx) {
       out.push({
         _key: key, line: svc.line, canon: canonLine(svc.line), kind: svc.kind,
         fromTime, toTime, sources: [...trip.sources], express: svc.express,
-        note: svc.note, extraNote: svc.extraNote, walk: svc.extraNote && svc.extraNote.includes("步行"),
+        extraNote: svc.extraNote, walk: svc.extraNote && svc.extraNote.includes("步行"),
       });
     }
   }
@@ -116,28 +124,29 @@ function collectCandidates(from, to, ctx) {
   return out;
 }
 
-// ---------- rendering ----------
+// ---------- badges ----------
 function sourceBadge(s) {
   if (s.includes("official")) return '<span class="src-badge src-official">官方表</span>';
-  if (s.includes("nudtbus")) return '<span class="src-badge src-web">网站</span>';
-  if (s.includes("bus2")) return '<span class="src-badge src-web">bus2</span>';
+  if (s.includes("siteA")) return '<span class="src-badge src-web">网站A</span>';
+  if (s.includes("siteB")) return '<span class="src-badge src-web">网站B</span>';
   return "";
 }
+
+let currentTo = null;
 
 function renderResults(list, ctx, from, to, whenMin) {
   const box = $("resultList");
   if (ctx.suspended) {
     const hn = DATA.extras.holidayNotice;
-    box.innerHTML = `<div class="empty">⛔ 假期停运中（${hn.start} ~ ${hn.endExclusive}），请勿按班次候车。以学校最新通知为准。</div>`;
+    box.innerHTML = `<div class="empty">⛔ 假期停运中（${hn.start} ~ ${hn.endExclusive}）<br>请勿按班次候车，具体安排以学校最新通知为准。</div>`;
     return;
   }
   if (ctx.isHoliday) {
-    box.innerHTML = `<div class="empty">节假日：常规班车停开，仅观光车运行（周末/节假日运行表）。</div>` +
-      (list.length ? list.map(renderCard).join("") : "");
+    box.innerHTML = `<div class="empty">节假日常规班车停开，仅观光车运行。</div>` + list.map(renderCard).join("");
     return;
   }
   if (!list.length) {
-    box.innerHTML = `<div class="empty">没有找到 ${esc(label(from))} → ${esc(label(to))} 今日后续班次。试试反向查询或其他站点组合。</div>`;
+    box.innerHTML = `<div class="empty">今日 ${esc(label(from))} → ${esc(label(to))} 暂无后续班次。<br>试试 ⇅ 反向查询或其他站点组合。</div>`;
     return;
   }
   const next = list[0];
@@ -148,8 +157,10 @@ function renderResults(list, ctx, from, to, whenMin) {
     <p class="next-wait">${waitMin === 0 ? "即将发车" : `还有 ${waitMin} 分钟`}${next.toTime ? ` · 到达 ${esc(label(to))} 约 ${next.toTime}` : ""}</p>
     ${next.extraNote ? `<p class="note-line">${esc(next.extraNote)}</p>` : ""}
   </div>`;
-  html += `<h3 class="sub-head">后面几班</h3>`;
-  html += list.slice(1, 9).map(renderCard).join("");
+  if (list.length > 1) {
+    html += `<p class="sub-head">后面几班</p>`;
+    html += list.slice(1, 9).map(renderCard).join("");
+  }
   box.innerHTML = html;
 }
 
@@ -164,12 +175,10 @@ function renderCard(r) {
   </div>`;
 }
 
-let currentFrom = null, currentTo = null;
-
 function doQuery() {
   const from = $("fromStop").value, to = $("toStop").value;
   if (from === to) { $("resultList").innerHTML = '<div class="empty">起点和终点不能相同</div>'; return; }
-  currentFrom = from; currentTo = to;
+  currentTo = to;
   const ctx = dayContext(new Date());
   let when = new Date();
   if (queryMode === "manual") {
@@ -177,25 +186,34 @@ function doQuery() {
     if (v) when = new Date(v);
   }
   const whenMin = when.getHours() * 60 + when.getMinutes();
-  const list = collectCandidates(from, to, ctx).filter((r) => toMinutes(r.fromTime) >= whenMin - 1);
-  $("dayLabel").textContent = ctx.isHoliday ? "节假日" : (ctx.suspended ? "假期停运" : ctx.profileLabel);
-  $("queryMeta").textContent = `${isoDate(when)} ${fmtHM(when)} · ${esc(label(from))} → ${esc(label(to))}`;
+  const list = collectCandidates(from, to, ctx, whenMin);
+  $("dayLabel").textContent = ctx.suspended ? "假期停运" : (ctx.isHoliday ? "节假日" : PROFILE_LABELS[ctx.profile].replace("运行表", ""));
+  $("queryMeta").textContent = `${isoDate(when)} ${fmtHM(when)} · ${label(from)} → ${label(to)}`;
   renderResults(list, ctx, from, to, whenMin);
 }
 
-function renderTimetable(ctx) {
+// ---------- timetable detail (expandable) ----------
+function renderTimetable(profile) {
   const box = $("timetableList");
-  $("ttDayLabel").textContent = ctx.isHoliday ? "节假日" : (ctx.suspended ? "假期停运" : ctx.profileLabel);
-  if (ctx.suspended) { box.innerHTML = `<div class="empty">⛔ 假期停运中。</div>`; return; }
+  const hint = $("ttHint");
+  const ctx = dayContext(new Date());
+  if (ctx.suspended) {
+    hint.textContent = "";
+    box.innerHTML = `<div class="empty">⛔ 假期停运中（${DATA.extras.holidayNotice.start} ~ ${DATA.extras.holidayNotice.endExclusive}）。</div>`;
+    return;
+  }
+  hint.textContent = ctx.isHoliday
+    ? "今日为法定节假日：常规班车停开，观光车按周末运行表开行。"
+    : `显示${PROFILE_LABELS[profile]}`;
   const groups = {};
   for (const svc of DATA.services) {
     const ordered = svc.orderedStops;
-    const times = svc.trips.filter((t) => { t._holidayOk = svc.holidayOk === true; return tripRunsToday(t, ctx); })
-      .map((t) => addMin(t.depart, 0)).sort();
+    const times = svc.trips.filter((t) => tripRunsOnProfile(t, profile))
+      .map((t) => t.depart).sort();
     if (!times.length) continue;
-    const routeStr = ordered.map((s) => label(s.stop) + (s.m ? `(+${s.m}分)` : "")).join(" → ");
+    const routeStr = ordered.map((s) => label(s.stop) + (s.m ? ` +${s.m}分` : "")).join(" → ");
     const key = `${svc.line}|${routeStr}`;
-    (groups[key] = groups[key] || { line: svc.line, routeStr, times: new Set(), express: svc.express, extra: svc.extraNote, kind: svc.kind });
+    if (!groups[key]) groups[key] = { line: svc.line, routeStr, times: new Set(), express: svc.express, extra: svc.extraNote, kind: svc.kind };
     times.forEach((t) => groups[key].times.add(t));
   }
   const html = Object.values(groups).map((g) => `
@@ -206,26 +224,24 @@ function renderTimetable(ctx) {
       <div class="tt-times">${[...g.times].sort().map((t) => `<span class="tt-time">${t}</span>`).join("")}</div>
       ${g.extra ? `<div class="note-line">${esc(g.extra)}</div>` : ""}
     </div>`).join("");
-  box.innerHTML = html || '<div class="empty">今日无班次</div>';
+  box.innerHTML = html || '<div class="empty">该运行表暂无班次</div>';
   [...box.querySelectorAll(".tt-card")].forEach((el) => {
     el.addEventListener("click", () => highlightRoute(el.dataset.route));
   });
 }
 
 // ---------- map ----------
-const KIND_COLORS = { intercampus: "#e63946", college: "#457b9d", loop: "#2a9d8f", dining: "#e9c46a", family: "#8a5cf6", sightseeing: "#f4a261" };
-
 function initMap() {
   map = L.map("map", { scrollWheelZoom: true });
   L.tileLayer("https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}", {
-    subdomains: "1234", maxZoom: 18, attribution: "高德地图栅格瓦片",
+    subdomains: "1234", maxZoom: 18, attribution: "高德栅格瓦片",
   }).addTo(map);
   markerLayer = L.layerGroup().addTo(map);
   lineLayer = L.layerGroup().addTo(map);
   const pts = [];
   for (const [key, p] of Object.entries(POI.poi)) {
     const [gLat, gLng] = wgs2gcj(p.lat, p.lng);
-    const color = p.precision === "geocoded" ? "#2a9d8f" : "#e9c46a";
+    const color = p.precision === "geocoded" ? "#34c759" : "#ff9500";
     L.circleMarker([gLat, gLng], { radius: 7, color, fillColor: color, fillOpacity: 0.9, weight: 2 })
       .bindPopup(`<b>${esc(label(key))}</b><br>精度: ${esc(p.precision)}<br>${esc(p.display || "")}`)
       .addTo(markerLayer);
@@ -237,24 +253,25 @@ function initMap() {
 let highlightPolyline = null;
 function highlightRoute(routeStr) {
   if (!map || !routeStr) return;
-  const stops = routeStr.split(" → ").map((s) => s.replace(/\(\+\d+分\)/, ""));
+  const stops = routeStr.split(" → ").map((s) => s.replace(/ \+\d+分/, ""));
   const byLabel = {};
   for (const [key, p] of Object.entries(POI.poi)) byLabel[label(key)] = p;
   const coords = stops.map((s) => byLabel[s]).filter(Boolean).map((p) => { const [a, b] = wgs2gcj(p.lat, p.lng); return [a, b]; });
   if (coords.length < 2) return;
   if (highlightPolyline) lineLayer.removeLayer(highlightPolyline);
-  highlightPolyline = L.polyline(coords, { color: "#e63946", weight: 5, opacity: 0.8, dashArray: "10 6" }).addTo(lineLayer);
+  highlightPolyline = L.polyline(coords, { color: "#0071e3", weight: 5, opacity: 0.85, dashArray: "10 6" }).addTo(lineLayer);
   map.fitBounds(highlightPolyline.getBounds().pad(0.25));
-  document.getElementById("mapPanel").scrollIntoView({ behavior: "smooth" });
+  $("mapPanel").scrollIntoView({ behavior: "smooth" });
 }
 
 // ---------- init ----------
 function fillStops() {
   const stops = Object.keys(STOP_LABELS).filter((k) => POI.poi[k]);
-  const fromSel = $("fromStop"), toSel = $("toStop");
   const opts = stops.map((k) => `<option value="${k}">${esc(label(k))}</option>`).join("");
-  fromSel.innerHTML = opts; toSel.innerHTML = opts;
-  fromSel.value = "one"; toSel.value = "three";
+  $("fromStop").innerHTML = opts;
+  $("toStop").innerHTML = opts;
+  $("fromStop").value = "one";
+  $("toStop").value = "three";
 }
 
 function tickClock() {
@@ -272,11 +289,11 @@ async function main() {
   tickClock(); setInterval(tickClock, 1000);
   initMap();
 
-  // holiday banner
   const ctx = dayContext(new Date());
+  ttProfile = ctx.profile;
   const hn = DATA.extras.holidayNotice;
   if (ctx.suspended && hn) {
-    $("holidayBannerText").textContent = `假期期间班车停运（${hn.start} ~ ${hn.endExclusive}）：${hn.text}`;
+    $("holidayBannerText").textContent = `假期期间班车停运（${hn.start} ~ ${hn.endExclusive}），请勿按班次候车。以学校最新通知为准。`;
     $("holidayBanner").hidden = false;
   } else if (ctx.isHoliday) {
     $("holidayBannerText").textContent = "今日为法定节假日：常规班车停开，观光车按周末运行表开行。";
@@ -284,25 +301,50 @@ async function main() {
   }
 
   $("querySubmit").addEventListener("click", doQuery);
-  document.querySelectorAll(".mode-button").forEach((b) => {
+  $("swapBtn").addEventListener("click", () => {
+    const f = $("fromStop").value, t = $("toStop").value;
+    $("fromStop").value = t;
+    $("toStop").value = f;
+    doQuery();
+  });
+
+  document.querySelectorAll("[data-query-mode]").forEach((b) => {
     b.addEventListener("click", () => {
-      document.querySelectorAll(".mode-button").forEach((x) => x.classList.remove("active"));
+      document.querySelectorAll("[data-query-mode]").forEach((x) => x.classList.remove("active"));
       b.classList.add("active");
       queryMode = b.dataset.queryMode;
       $("manualField").classList.toggle("is-hidden", queryMode !== "manual");
       if (queryMode === "manual" && !$("queryDateTime").value) {
-        const d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset() * 0);
+        const d = new Date();
         $("queryDateTime").value = `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${fmtHM(d)}`;
       }
     });
   });
 
-  // default timetable for today
-  renderTimetable(dayContext(new Date()));
+  // 班车表明细 toggle
+  $("ttToggle").addEventListener("click", () => {
+    const card = $("timetableCard");
+    const open = card.classList.toggle("open");
+    $("timetableBody").hidden = !open;
+    $("ttToggle").setAttribute("aria-expanded", String(open));
+    if (open) renderTimetable(ttProfile);
+  });
+  document.querySelectorAll("#ttTabs .seg").forEach((b) => {
+    b.addEventListener("click", () => {
+      document.querySelectorAll("#ttTabs .seg").forEach((x) => x.classList.remove("active"));
+      b.classList.add("active");
+      ttProfile = b.dataset.profile;
+      renderTimetable(ttProfile);
+    });
+  });
+  document.querySelectorAll("#ttTabs .seg").forEach((b) => {
+    b.classList.toggle("active", b.dataset.profile === ttProfile);
+  });
+
   doQuery();
 }
 
 main().catch((e) => {
-  document.body.insertAdjacentHTML("afterbegin", `<div class="holiday-banner">数据加载失败: ${esc(e.message)}</div>`);
+  document.body.insertAdjacentHTML("afterbegin", `<div class="banner">数据加载失败: ${esc(e.message)}</div>`);
   console.error(e);
 });

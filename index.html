@@ -2,89 +2,93 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#173f35">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f5f7">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="NudtBus13">
-  <title>NudtBus13 · 班车整合查询</title>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="班车助手">
+  <title>班车助手</title>
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <main class="app-shell">
+  <header class="nav">
+    <div class="nav-inner">
+      <span class="nav-title">🚌 班车助手</span>
+      <span class="nav-clock" id="currentTime">--:--</span>
+    </div>
+  </header>
+
+  <main class="shell">
     <section class="hero">
-      <div class="hero-head">
-        <div>
-          <h1>NudtBus13</h1>
-          <p class="hero-copy">一号院 · 三号院 · 家属区 班车整合查询（双向）。数据来自 nudtbus.online / bus2 / 官方时刻表 / 院际专线表 / 真实地图五源合并。</p>
-        </div>
-        <div class="clock-card">
-          <div class="clock-time" id="currentTime">--:--</div>
-          <p class="clock-date" id="currentDate">--</p>
-        </div>
-      </div>
-
-      <div id="holidayBanner" class="holiday-banner" hidden>
-        ⚠️ <span id="holidayBannerText"></span>
-      </div>
-
-      <div class="query-bar">
-        <label class="field">
-          <span class="field-label">从哪上车</span>
-          <select id="fromStop" class="stop-select"></select>
-        </label>
-        <label class="field">
-          <span class="field-label">要去哪</span>
-          <select id="toStop" class="stop-select"></select>
-        </label>
-        <div class="field">
-          <span class="field-label">出发时间</span>
-          <div class="query-mode">
-            <button class="mode-button active" data-query-mode="now" type="button">现在出发</button>
-            <button class="mode-button" data-query-mode="manual" type="button">手动时间</button>
-          </div>
-        </div>
-        <label class="field manual-field is-hidden" id="manualField">
-          <span class="field-label">查询时间</span>
-          <input class="time-input" id="queryDateTime" type="datetime-local">
-        </label>
-        <button class="query-submit-button" id="querySubmit" type="button">查询</button>
-      </div>
+      <h1 class="large-title">班车助手</h1>
+      <p class="sub-title" id="currentDate">--</p>
     </section>
 
-    <section class="panel" id="resultPanel">
-      <div class="panel-head">
-        <h2>查询结果</h2>
-        <span class="schedule-badge" id="dayLabel">--</span>
+    <div id="holidayBanner" class="banner" hidden>⚠️ <span id="holidayBannerText"></span></div>
+
+    <section class="card">
+      <div class="seg-row">
+        <div class="field">
+          <span class="label">从</span>
+          <select id="fromStop" class="select"></select>
+        </div>
+        <button id="swapBtn" class="swap" title="交换起终点">⇅</button>
+        <div class="field">
+          <span class="label">到</span>
+          <select id="toStop" class="select"></select>
+        </div>
       </div>
-      <p class="query-meta"><span id="queryMeta">选择起点终点后点击查询</span></p>
+      <div class="seg-control" role="tablist">
+        <button class="seg active" data-query-mode="now" type="button">现在出发</button>
+        <button class="seg" data-query-mode="manual" type="button">稍后出发</button>
+      </div>
+      <div class="manual-wrap is-hidden" id="manualField">
+        <input class="input" id="queryDateTime" type="datetime-local">
+      </div>
+      <button class="btn-primary" id="querySubmit" type="button">查询</button>
+    </section>
+
+    <section class="card" id="resultPanel">
+      <div class="card-head">
+        <h2>查询结果</h2>
+        <span class="pill" id="dayLabel">--</span>
+      </div>
+      <p class="meta" id="queryMeta">选择起终点后点击查询</p>
       <div id="resultList" class="result-list"></div>
     </section>
 
-    <section class="panel" id="timetablePanel">
-      <div class="panel-head">
-        <h2>全部时刻表</h2>
-        <span class="schedule-badge" id="ttDayLabel">--</span>
+    <section class="card card-collapse" id="timetableCard">
+      <button class="collapse-head" id="ttToggle" type="button" aria-expanded="false">
+        <span class="collapse-title">📖 班车表明细</span>
+        <span class="chevron" id="ttChevron">›</span>
+      </button>
+      <div class="collapse-body" id="timetableBody" hidden>
+        <div class="seg-control small" id="ttTabs" role="tablist">
+          <button class="seg active" data-profile="monThu" type="button">周一至四</button>
+          <button class="seg" data-profile="friday" type="button">周五</button>
+          <button class="seg" data-profile="saturday" type="button">周六</button>
+          <button class="seg" data-profile="sunday" type="button">周日</button>
+        </div>
+        <p class="meta" id="ttHint"></p>
+        <div id="timetableList" class="tt-list"></div>
       </div>
-      <p class="query-meta">按当前日期所属运行表展示全部线路 · 点击班次查看到达各站时间</p>
-      <div id="timetableList" class="timetable-list"></div>
     </section>
 
-    <section class="panel" id="mapPanel">
-      <div class="panel-head">
+    <section class="card" id="mapPanel">
+      <div class="card-head">
         <h2>线路地图</h2>
-        <span class="schedule-badge">WGS-84 → GCJ-02</span>
+        <span class="pill">已校准坐标</span>
       </div>
-      <div id="map" class="map-container"></div>
-      <p class="query-meta">绿点=已地理编码站点 · 黄点=校区内近似位置 · 底图来自高德栅格瓦片（GCJ-02 纠偏）</p>
+      <div id="map" class="map"></div>
+      <p class="meta">🟢 已定位站点 · 🟡 校区内近似位置 · 点击时刻表卡片可在地图上高亮线路</p>
     </section>
 
     <footer class="footer">
-      <p>NudtBus13 · 整合版班车查询 · 数据快照 2026-08-27 · 原始数据版权归 nudtbus.online / bus2.qiutao20.online / 学校官方时刻表</p>
-      <p><a href="https://github.com/Jensen-Yao/NudtBus13" target="_blank" rel="noopener">GitHub 仓库</a> · 假期及寒暑假停运安排以学校最新通知为准</p>
+      <p>班车助手 · 数据快照 2026-08-27 · 假期停运安排以学校通知为准</p>
+      <p><a href="https://github.com/Jensen-Yao/NudtBus13" target="_blank" rel="noopener">GitHub</a></p>
     </footer>
   </main>
 

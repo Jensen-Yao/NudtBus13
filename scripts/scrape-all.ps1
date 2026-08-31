@@ -1,17 +1,17 @@
-# NudtBus13 数据抓取脚本（全部经由 Docker 自托管 Firecrawl）
-# 用法: pwsh scripts/scrape-all.ps1   （需先启动 Firecrawl: docker compose up -d）
+# 班车助手数据抓取脚本（全部经由 Docker 自托管 Firecrawl）
+# 数据源 URL 读取 scripts/sources.local.json（不入仓）
 $ErrorActionPreference = "Continue"
-$FC = "http://localhost:3002"
 $Root = Split-Path -Parent $PSScriptRoot
+$CfgPath = Join-Path $PSScriptRoot "sources.local.json"
 
-$targets = @(
-  @{ dir = "nudtbus"; name = "nudtbus-page";  url = "https://nudtbus.online" },
-  @{ dir = "nudtbus"; name = "nudtbus-appjs"; url = "https://nudtbus.online/app.js" },
-  @{ dir = "bus2";    name = "bus2-page";     url = "https://bus2.qiutao20.online" },
-  @{ dir = "bus2";    name = "bus2-appjs";    url = "https://bus2.qiutao20.online/app.js?v=20260725-v8-dev3" }
-)
+if (-not (Test-Path $CfgPath)) {
+  Write-Host "缺少 scripts/sources.local.json，请参照 README 创建（含 firecrawl 地址与抓取目标）"
+  exit 1
+}
+$cfg = Get-Content $CfgPath -Raw -Encoding UTF8 | ConvertFrom-Json
+$FC = $cfg.firecrawl
 
-foreach ($t in $targets) {
+foreach ($t in $cfg.targets) {
   Write-Host "==> scraping $($t.url)"
   $body = @{ url = $t.url; formats = @("markdown") } | ConvertTo-Json -Depth 5
   try {
@@ -25,4 +25,4 @@ foreach ($t in $targets) {
   } catch { Write-Host "    ERR: $($_.Exception.Message)" }
   Start-Sleep 2
 }
-Write-Host "==> done. 复跑: node scripts/build-data.js && node scripts/geocode.js"
+Write-Host "==> done. 后续: node scripts/build-data.js && node scripts/geocode.js"
