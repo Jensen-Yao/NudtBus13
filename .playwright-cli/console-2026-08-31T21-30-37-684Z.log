@@ -1,8 +1,0 @@
-[ 1343636ms] [ERROR] TypeError: Cannot read properties of undefined (reading 'includes')
-    at collectCandidates (http://localhost:8899/app.js:182:16)
-    at doQuery (http://localhost:8899/app.js:410:16)
-    at main (http://localhost:8899/app.js:599:3) @ http://localhost:8899/app.js:604
-[ 4495165ms] [ERROR] TypeError: Cannot read properties of undefined (reading 'includes')
-    at collectCandidates (http://localhost:8899/app.js:182:16)
-    at doQuery (http://localhost:8899/app.js:410:16)
-    at main (http://localhost:8899/app.js:601:3) @ http://localhost:8899/app.js:606
