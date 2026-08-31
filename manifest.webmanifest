@@ -1,12 +1,14 @@
 {
   "name": "班车助手",
   "short_name": "班车助手",
-  "description": "一号院·三号院·家属区班车整合查询",
+  "description": "校区通勤与院内通勤双向规划",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f5f5f7",
-  "theme_color": "#f5f5f7",
+  "background_color": "#eef3fb",
+  "theme_color": "#eef3fb",
   "icons": [
-    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+    { "src": "./assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./assets/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ]
 }
