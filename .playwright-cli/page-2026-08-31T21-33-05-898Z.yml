@@ -1,0 +1,292 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]: 班车助手
+      - generic [ref=e6]: 05:33
+    - tablist "服务模式" [ref=e7]:
+      - tab "🚌 校区通勤" [ref=e9] [cursor=pointer]
+      - tab "🏫 院内通勤" [active] [ref=e10] [cursor=pointer]
+  - main [ref=e11]:
+    - generic [ref=e12]:
+      - button "从哪出发 宿舍（研究生宿舍）" [ref=e154] [cursor=pointer]:
+        - generic [ref=e14]: 从哪出发
+        - generic [ref=e15]: 宿舍（研究生宿舍）
+      - button "⇅" [ref=e17] [cursor=pointer]
+      - button "去哪上班 三号院（系统楼）" [ref=e18] [cursor=pointer]:
+        - generic [ref=e19]: 去哪上班
+        - generic [ref=e20]: 三号院（系统楼）
+      - generic [ref=e21]:
+        - button "现在出发" [ref=e23] [cursor=pointer]
+        - button "稍后出发" [ref=e24] [cursor=pointer]
+      - button "规划班次" [ref=e25] [cursor=pointer]
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - heading "规划结果" [level=2] [ref=e28]
+        - generic [ref=e29]: 周一至周四
+      - paragraph [ref=e30]: 院内通勤 · 2026-09-01 05:33 · 宿舍（研究生宿舍） → 三号院（系统楼）
+      - generic [ref=e31]:
+        - generic [ref=e155]:
+          - paragraph [ref=e156]:
+            - text: 环线1路
+            - generic [ref=e157]: 网站B
+          - paragraph [ref=e158]: 07:30
+          - paragraph [ref=e159]: 还有 1 小时 57 分 · 07:30 发车
+          - paragraph [ref=e160]: 到达 三号院（系统楼） 约 07:37
+        - paragraph [ref=e161]: 后面几班
+        - generic [ref=e162]:
+          - generic [ref=e163]:
+            - generic [ref=e164]: 环线1路
+            - generic [ref=e165]: 07:40
+          - generic [ref=e166]:
+            - generic [ref=e167]: 环线
+            - generic [ref=e168]: 到达 三号院（系统楼） 07:47
+            - generic [ref=e169]: 网站B
+        - generic [ref=e170]:
+          - generic [ref=e171]:
+            - generic [ref=e172]: 环线1路
+            - generic [ref=e173]: 07:50
+          - generic [ref=e174]:
+            - generic [ref=e175]: 环线
+            - generic [ref=e176]: 到达 三号院（系统楼） 07:57
+            - generic [ref=e177]: 网站B
+        - generic [ref=e178]:
+          - generic [ref=e179]:
+            - generic [ref=e180]: 环线1路
+            - generic [ref=e181]: 08:00
+          - generic [ref=e182]:
+            - generic [ref=e183]: 环线
+            - generic [ref=e184]: 到达 三号院（系统楼） 08:07
+            - generic [ref=e185]: 网站B
+        - generic [ref=e186]:
+          - generic [ref=e187]:
+            - generic [ref=e188]: 环线1路
+            - generic [ref=e189]: 08:10
+          - generic [ref=e190]:
+            - generic [ref=e191]: 环线
+            - generic [ref=e192]: 到达 三号院（系统楼） 08:17
+            - generic [ref=e193]: 网站B
+        - generic [ref=e194]:
+          - generic [ref=e195]:
+            - generic [ref=e196]: 环线1路
+            - generic [ref=e197]: 08:20
+          - generic [ref=e198]:
+            - generic [ref=e199]: 环线
+            - generic [ref=e200]: 到达 三号院（系统楼） 08:27
+            - generic [ref=e201]: 网站B
+        - generic [ref=e202]:
+          - generic [ref=e203]:
+            - generic [ref=e204]: 环线1路
+            - generic [ref=e205]: 08:30
+          - generic [ref=e206]:
+            - generic [ref=e207]: 环线
+            - generic [ref=e208]: 到达 三号院（系统楼） 08:37
+            - generic [ref=e209]: 网站B
+        - generic [ref=e210]:
+          - generic [ref=e211]:
+            - generic [ref=e212]: 环线1路
+            - generic [ref=e213]: 08:40
+          - generic [ref=e214]:
+            - generic [ref=e215]: 环线
+            - generic [ref=e216]: 到达 三号院（系统楼） 08:47
+            - generic [ref=e217]: 网站B
+        - generic [ref=e218]:
+          - generic [ref=e219]:
+            - generic [ref=e220]: 环线1路
+            - generic [ref=e221]: 08:50
+          - generic [ref=e222]:
+            - generic [ref=e223]: 环线
+            - generic [ref=e224]: 到达 三号院（系统楼） 08:57
+            - generic [ref=e225]: 网站B
+    - generic [ref=e101]:
+      - button "📖 班车表明细 ›" [ref=e102] [cursor=pointer]:
+        - generic [ref=e103]: 📖 班车表明细
+        - generic [ref=e104]: ›
+      - generic:
+        - generic:
+          - tablist [ref=e105]:
+            - button "周一至四" [ref=e107] [cursor=pointer]
+            - button "周五" [ref=e108] [cursor=pointer]
+            - button "周六" [ref=e109] [cursor=pointer]
+            - button "周日" [ref=e110] [cursor=pointer]
+          - paragraph [ref=e226]: 今日为周一至周四运行表 · 显示周一至周四运行表 · 院内通勤
+          - generic [ref=e111]:
+            - generic [ref=e227] [cursor=pointer]:
+              - generic [ref=e228]:
+                - generic [ref=e229]: 环线1路
+                - generic [ref=e230]: 环线
+              - generic [ref=e231]: 宿舍（研究生宿舍） → 东门 +1分 → 军体 +3分 → 激光所 +5分 → 北门 +6分 → 三号院（系统楼） +7分 → 高超北侧 +8分 → 理学院 +8分 → 二食堂 +11分
+              - generic [ref=e232]:
+                - generic [ref=e233]: 07:30
+                - generic [ref=e234]: 07:40
+                - generic [ref=e235]: 07:50
+                - generic [ref=e236]: 08:00
+                - generic [ref=e237]: 08:10
+                - generic [ref=e238]: 08:20
+                - generic [ref=e239]: 08:30
+                - generic [ref=e240]: 08:40
+                - generic [ref=e241]: 08:50
+                - generic [ref=e242]: 09:00
+                - generic [ref=e243]: 09:12
+                - generic [ref=e244]: 09:24
+                - generic [ref=e245]: 09:36
+                - generic [ref=e246]: 09:48
+                - generic [ref=e247]: 10:00
+                - generic [ref=e248]: 10:15
+                - generic [ref=e249]: 10:30
+                - generic [ref=e250]: 10:45
+                - generic [ref=e251]: 11:00
+                - generic [ref=e252]: 11:15
+                - generic [ref=e253]: 11:30
+                - generic [ref=e254]: 11:40
+                - generic [ref=e255]: 11:50
+                - generic [ref=e256]: 12:10
+                - generic [ref=e257]: 12:25
+                - generic [ref=e258]: 12:40
+                - generic [ref=e259]: 14:00
+                - generic [ref=e260]: 14:12
+                - generic [ref=e261]: 14:24
+                - generic [ref=e262]: 14:36
+                - generic [ref=e263]: 14:48
+                - generic [ref=e264]: 15:00
+                - generic [ref=e265]: 15:20
+                - generic [ref=e266]: 15:40
+                - generic [ref=e267]: 16:00
+                - generic [ref=e268]: 16:15
+                - generic [ref=e269]: 16:30
+                - generic [ref=e270]: 16:45
+                - generic [ref=e271]: 17:00
+                - generic [ref=e272]: 17:15
+                - generic [ref=e273]: 17:30
+                - generic [ref=e274]: 17:45
+                - generic [ref=e275]: 18:00
+                - generic [ref=e276]: 18:15
+                - generic [ref=e277]: 18:30
+                - generic [ref=e278]: 18:45
+                - generic [ref=e279]: 19:00
+                - generic [ref=e280]: 19:15
+                - generic [ref=e281]: 19:30
+                - generic [ref=e282]: 19:45
+                - generic [ref=e283]: 20:00
+                - generic [ref=e284]: 20:15
+                - generic [ref=e285]: 20:30
+                - generic [ref=e286]: 20:45
+                - generic [ref=e287]: 21:00
+                - generic [ref=e288]: 21:15
+                - generic [ref=e289]: 21:30
+                - generic [ref=e290]: 21:45
+                - generic [ref=e291]: 22:00
+                - generic [ref=e292]: 22:15
+                - generic [ref=e293]: 22:30
+            - generic [ref=e294] [cursor=pointer]:
+              - generic [ref=e295]:
+                - generic [ref=e296]: 就餐专线v2
+                - generic [ref=e297]: 就餐
+              - generic [ref=e298]: 三号院（系统楼） → 理学院 +1分 → 二食堂 +5分
+              - generic [ref=e299]:
+                - generic [ref=e300]: 11:30
+                - generic [ref=e301]: 11:50
+                - generic [ref=e302]: 12:10
+                - generic [ref=e303]: 12:30
+                - generic [ref=e304]: 16:30
+                - generic [ref=e305]: 16:50
+                - generic [ref=e306]: 17:10
+                - generic [ref=e307]: 17:30
+                - generic [ref=e308]: 17:50
+            - generic [ref=e309] [cursor=pointer]:
+              - generic [ref=e310]:
+                - generic [ref=e311]: 环线3路（观光车）
+                - generic [ref=e312]: 观光
+              - generic [ref=e313]: 三号院（系统楼） → 理学院 +1分 → 二食堂 +4分 → 宿舍（研究生宿舍） +7分 → 军体 +12分 → 激光所 +13分 → 高超南侧 +15分
+              - generic [ref=e314]:
+                - generic [ref=e315]: 07:35
+                - generic [ref=e316]: 07:45
+                - generic [ref=e317]: 07:55
+                - generic [ref=e318]: 08:05
+                - generic [ref=e319]: 08:15
+                - generic [ref=e320]: 08:25
+                - generic [ref=e321]: 08:35
+                - generic [ref=e322]: 08:45
+                - generic [ref=e323]: 08:55
+                - generic [ref=e324]: 09:05
+                - generic [ref=e325]: 09:20
+                - generic [ref=e326]: 09:35
+                - generic [ref=e327]: 09:50
+                - generic [ref=e328]: 10:10
+                - generic [ref=e329]: 10:30
+                - generic [ref=e330]: 10:45
+                - generic [ref=e331]: 10:50
+                - generic [ref=e332]: 11:00
+                - generic [ref=e333]: 11:20
+                - generic [ref=e334]: 11:35
+                - generic [ref=e335]: 11:45
+                - generic [ref=e336]: 12:05
+                - generic [ref=e337]: 12:20
+                - generic [ref=e338]: 12:30
+                - generic [ref=e339]: 14:10
+                - generic [ref=e340]: 14:25
+                - generic [ref=e341]: 14:40
+                - generic [ref=e342]: 15:00
+                - generic [ref=e343]: 15:10
+                - generic [ref=e344]: 15:25
+                - generic [ref=e345]: 15:45
+                - generic [ref=e346]: 16:00
+                - generic [ref=e347]: 16:20
+                - generic [ref=e348]: 16:35
+                - generic [ref=e349]: 16:50
+                - generic [ref=e350]: 17:00
+                - generic [ref=e351]: 17:10
+                - generic [ref=e352]: 17:25
+                - generic [ref=e353]: 17:40
+                - generic [ref=e354]: 17:55
+                - generic [ref=e355]: 18:20
+                - generic [ref=e356]: 18:50
+                - generic [ref=e357]: 19:20
+                - generic [ref=e358]: 19:50
+                - generic [ref=e359]: 20:20
+                - generic [ref=e360]: 20:50
+                - generic [ref=e361]: 21:20
+                - generic [ref=e362]: 21:50
+              - generic [ref=e363]: 工作日运行表
+    - generic [ref=e113]:
+      - generic [ref=e114]:
+        - heading "线路地图" [level=2] [ref=e115]
+        - generic [ref=e116]: 坐标已校准
+      - generic [ref=e117]:
+        - generic:
+          - generic:
+            - img:
+              - generic:
+                - generic [ref=e118] [cursor=pointer]
+                - generic [ref=e119] [cursor=pointer]
+                - generic [ref=e120] [cursor=pointer]
+                - generic [ref=e121] [cursor=pointer]
+                - generic [ref=e122] [cursor=pointer]
+                - generic [ref=e123] [cursor=pointer]
+                - generic [ref=e124] [cursor=pointer]
+                - generic [ref=e125] [cursor=pointer]
+                - generic [ref=e126] [cursor=pointer]
+                - generic [ref=e127] [cursor=pointer]
+                - generic [ref=e128] [cursor=pointer]
+                - generic [ref=e129] [cursor=pointer]
+                - generic [ref=e130] [cursor=pointer]
+                - generic [ref=e131] [cursor=pointer]
+                - generic [ref=e132] [cursor=pointer]
+        - generic:
+          - generic [ref=e133]:
+            - button "Zoom in" [ref=e134] [cursor=pointer]: +
+            - button "Zoom out" [ref=e135] [cursor=pointer]: −
+          - generic [ref=e136]:
+            - link "Leaflet" [ref=e137] [cursor=pointer]:
+              - /url: https://leafletjs.com
+            - text: "| 高德栅格瓦片"
+      - paragraph [ref=e142]: 🟢 已定位站点 · 🟡 校区内近似位置 · 点击明细中的线路卡片可在地图高亮
+    - generic [ref=e143]:
+      - paragraph [ref=e144]: 班车助手 · NudtBus13 · 数据快照 2026-08-27 · 假期停运安排以学校通知为准
+      - paragraph [ref=e145]:
+        - link "GitHub" [ref=e146] [cursor=pointer]:
+          - /url: https://github.com/Jensen-Yao/NudtBus13
+  - dialog "选择站点" [ref=e147]:
+    - generic [ref=e149]:
+      - heading "从哪出发" [level=3] [ref=e150]
+      - button "完成" [ref=e151] [cursor=pointer]
+    - searchbox "搜索站点" [ref=e152]

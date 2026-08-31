@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-31T20:41:28.640Z",
+    "generatedAt": "2026-08-31T21:52:38.678Z",
     "snapshotNote": "班车时刻随学期调整，以学校最新通知为准",
     "sources": {
       "siteA": {
@@ -73,6 +73,25 @@
       "id": "three",
       "label": "三号院（系统楼）"
     }
+  },
+  "areas": {
+    "one": "campus-one",
+    "three": "campus-three",
+    "dorm": "campus-three",
+    "eastGate": "campus-three",
+    "northGate": "campus-three",
+    "militaryCenter": "campus-three",
+    "laserInstitute": "campus-three",
+    "gaochaoNorth": "campus-three",
+    "gaochaoSouth": "campus-three",
+    "scienceCollege": "campus-three",
+    "secondCanteen": "campus-three",
+    "kjy": "family-zone",
+    "kjySouthGate": "family-zone",
+    "jingyuanWest": "family-zone",
+    "jingyuanEast": "family-zone",
+    "fourth": "campus-four",
+    "family4": "campus-four"
   },
   "lines": {
     "siteA": [
@@ -367,8 +386,8 @@
       "everyday": [
         {
           "line": "环线1路",
-          "origin": "宿舍",
-          "dest": "系统楼",
+          "origin": "dorm",
+          "dest": "college",
           "departures": [
             "07:30",
             "07:40",
@@ -442,8 +461,8 @@
         },
         {
           "line": "就餐专线v2",
-          "origin": "系统楼",
-          "dest": "二食堂",
+          "origin": "college",
+          "dest": "secondCanteen",
           "departures": [
             "11:30",
             "11:50",
@@ -466,8 +485,8 @@
       "monThu": [
         {
           "line": "线路2",
-          "origin": "科大佳园",
-          "dest": "系统楼",
+          "origin": "kjy",
+          "dest": "college",
           "departures": [
             "07:05",
             "07:20",
@@ -482,8 +501,8 @@
         },
         {
           "line": "线路2",
-          "origin": "系统楼",
-          "dest": "科大佳园",
+          "origin": "college",
+          "dest": "kjy",
           "departures": [
             "12:05",
             "17:35",
@@ -498,8 +517,8 @@
         },
         {
           "line": "线路5",
-          "origin": "科大景园东门",
-          "dest": "系统楼",
+          "origin": "jingyuanEast",
+          "dest": "college",
           "departures": [
             "07:20"
           ],
@@ -512,8 +531,8 @@
         },
         {
           "line": "线路5",
-          "origin": "系统楼",
-          "dest": "科大景园东门",
+          "origin": "college",
+          "dest": "jingyuanEast",
           "departures": [
             "17:30"
           ],
@@ -526,8 +545,8 @@
         },
         {
           "line": "线路7",
-          "origin": "四号院家属区",
-          "dest": "系统楼",
+          "origin": "family4",
+          "dest": "college",
           "departures": [
             "07:00"
           ],
@@ -540,8 +559,8 @@
         },
         {
           "line": "线路7",
-          "origin": "系统楼",
-          "dest": "四号院家属区",
+          "origin": "college",
+          "dest": "family4",
           "departures": [
             "17:10"
           ],
@@ -554,8 +573,8 @@
         },
         {
           "line": "线路8",
-          "origin": "一号院",
-          "dest": "系统楼",
+          "origin": "one",
+          "dest": "college",
           "departures": [
             "07:10",
             "07:20",
@@ -579,8 +598,8 @@
         },
         {
           "line": "线路8",
-          "origin": "系统楼",
-          "dest": "一号院",
+          "origin": "college",
+          "dest": "one",
           "departures": [
             "07:50",
             "09:45",
@@ -611,8 +630,8 @@
       "friday": [
         {
           "line": "线路2",
-          "origin": "科大佳园",
-          "dest": "系统楼",
+          "origin": "kjy",
+          "dest": "college",
           "departures": [
             "07:05",
             "07:20",
@@ -627,8 +646,8 @@
         },
         {
           "line": "线路2",
-          "origin": "系统楼",
-          "dest": "科大佳园",
+          "origin": "college",
+          "dest": "kjy",
           "departures": [
             "12:05",
             "17:35",
@@ -643,8 +662,8 @@
         },
         {
           "line": "线路5",
-          "origin": "科大景园东门",
-          "dest": "系统楼",
+          "origin": "jingyuanEast",
+          "dest": "college",
           "departures": [
             "07:20"
           ],
@@ -657,8 +676,8 @@
         },
         {
           "line": "线路5",
-          "origin": "系统楼",
-          "dest": "科大景园东门",
+          "origin": "college",
+          "dest": "jingyuanEast",
           "departures": [
             "17:30"
           ],
@@ -671,8 +690,8 @@
         },
         {
           "line": "线路7",
-          "origin": "四号院家属区",
-          "dest": "系统楼",
+          "origin": "family4",
+          "dest": "college",
           "departures": [
             "07:00"
           ],
@@ -685,8 +704,8 @@
         },
         {
           "line": "线路7",
-          "origin": "系统楼",
-          "dest": "四号院家属区",
+          "origin": "college",
+          "dest": "family4",
           "departures": [
             "17:10"
           ],
@@ -699,8 +718,8 @@
         },
         {
           "line": "线路8",
-          "origin": "一号院",
-          "dest": "系统楼",
+          "origin": "one",
+          "dest": "college",
           "departures": [
             "07:10",
             "07:20",
@@ -724,8 +743,8 @@
         },
         {
           "line": "线路8",
-          "origin": "系统楼",
-          "dest": "一号院",
+          "origin": "college",
+          "dest": "one",
           "departures": [
             "07:50",
             "09:45",
@@ -755,8 +774,8 @@
       "saturday": [
         {
           "line": "线路2",
-          "origin": "科大佳园",
-          "dest": "系统楼",
+          "origin": "kjy",
+          "dest": "college",
           "departures": [
             "07:23",
             "13:55"
@@ -770,8 +789,8 @@
         },
         {
           "line": "线路8",
-          "origin": "一号院",
-          "dest": "系统楼",
+          "origin": "one",
+          "dest": "college",
           "departures": [
             "07:20",
             "09:30",
@@ -789,8 +808,8 @@
         },
         {
           "line": "线路8",
-          "origin": "系统楼",
-          "dest": "一号院",
+          "origin": "college",
+          "dest": "one",
           "departures": [
             "07:50",
             "10:00",
@@ -813,8 +832,8 @@
       "sunday": [
         {
           "line": "线路8",
-          "origin": "一号院",
-          "dest": "系统楼",
+          "origin": "one",
+          "dest": "college",
           "departures": [
             "07:20",
             "09:30",
@@ -829,8 +848,8 @@
         },
         {
           "line": "线路8",
-          "origin": "系统楼",
-          "dest": "一号院",
+          "origin": "college",
+          "dest": "one",
           "departures": [
             "12:35",
             "17:30",
@@ -848,8 +867,8 @@
     "sightseeing": [
       {
         "line": "环线3路(观光车)",
-        "origin": "宿舍",
-        "dest": "系统楼",
+        "origin": "dorm",
+        "dest": "college",
         "dayType": "weekend",
         "departures": [
           "08:15",
@@ -872,8 +891,8 @@
       },
       {
         "line": "环线3路(观光车)",
-        "origin": "系统楼",
-        "dest": "宿舍",
+        "origin": "college",
+        "dest": "dorm",
         "dayType": "weekend",
         "departures": [
           "11:25",
@@ -896,8 +915,8 @@
       },
       {
         "line": "环线3路(观光车)",
-        "origin": "宿舍",
-        "dest": "系统楼",
+        "origin": "dorm",
+        "dest": "college",
         "dayType": "weekday",
         "departures": [
           "07:35",
@@ -956,8 +975,8 @@
       },
       {
         "line": "环线3路(观光车)",
-        "origin": "系统楼",
-        "dest": "宿舍",
+        "origin": "college",
+        "dest": "dorm",
         "dayType": "weekday",
         "departures": [
           "10:45",
@@ -1636,6 +1655,9 @@
             "siteA"
           ]
         }
+      ],
+      "tags": [
+        "campus-commute"
       ]
     },
     {
@@ -1863,6 +1885,9 @@
             "siteA"
           ]
         }
+      ],
+      "tags": [
+        "campus-commute"
       ]
     },
     {
@@ -1998,6 +2023,9 @@
             "siteA"
           ]
         }
+      ],
+      "tags": [
+        "campus-commute"
       ]
     },
     {
@@ -2165,6 +2193,9 @@
             "siteA"
           ]
         }
+      ],
+      "tags": [
+        "campus-commute"
       ]
     },
     {
@@ -2246,6 +2277,9 @@
             "siteA"
           ]
         }
+      ],
+      "tags": [
+        "campus-commute"
       ]
     },
     {
@@ -2350,6 +2384,9 @@
             "siteA"
           ]
         }
+      ],
+      "tags": [
+        "campus-commute"
       ]
     },
     {
@@ -2404,6 +2441,9 @@
             "siteA"
           ]
         }
+      ],
+      "tags": [
+        "campus-commute"
       ]
     },
     {
@@ -2454,6 +2494,9 @@
             "siteA"
           ]
         }
+      ],
+      "tags": [
+        "campus-commute"
       ]
     },
     {
@@ -2516,6 +2559,9 @@
             "siteA"
           ]
         }
+      ],
+      "tags": [
+        "campus-commute"
       ]
     },
     {
@@ -2578,6 +2624,9 @@
             "siteA"
           ]
         }
+      ],
+      "tags": [
+        "campus-commute"
       ]
     },
     {
@@ -2629,6 +2678,9 @@
             "official-2025-05-19"
           ]
         }
+      ],
+      "tags": [
+        "campus-commute"
       ]
     },
     {
@@ -2694,6 +2746,9 @@
             "official-2025-05-19"
           ]
         }
+      ],
+      "tags": [
+        "campus-commute"
       ]
     },
     {
@@ -2743,6 +2798,9 @@
             "siteA"
           ]
         }
+      ],
+      "tags": [
+        "campus-commute"
       ]
     },
     {
@@ -2779,6 +2837,9 @@
             "siteA"
           ]
         }
+      ],
+      "tags": [
+        "campus-commute"
       ]
     },
     {
@@ -2815,6 +2876,9 @@
             "siteA"
           ]
         }
+      ],
+      "tags": [
+        "campus-commute"
       ]
     },
     {
@@ -2851,14 +2915,17 @@
             "siteA"
           ]
         }
+      ],
+      "tags": [
+        "campus-commute"
       ]
     },
     {
-      "id": "b2-环线1路-宿舍",
+      "id": "b2-环线1路-dorm",
       "line": "环线1路",
       "kind": "loop",
-      "from": "宿舍",
-      "to": "系统楼",
+      "from": "dorm",
+      "to": "three",
       "orderedStops": [
         {
           "stop": "dorm",
@@ -3817,14 +3884,18 @@
             "siteB"
           ]
         }
+      ],
+      "tags": [
+        "three-life",
+        "intra"
       ]
     },
     {
-      "id": "b2-就餐专线v2-系统楼",
+      "id": "b2-就餐专线v2-college",
       "line": "就餐专线v2",
       "kind": "dining",
-      "from": "系统楼",
-      "to": "二食堂",
+      "from": "three",
+      "to": "secondCanteen",
       "orderedStops": [
         {
           "stop": "three",
@@ -3979,6 +4050,10 @@
             "siteB"
           ]
         }
+      ],
+      "tags": [
+        "three-life",
+        "intra"
       ]
     },
     {
@@ -4106,6 +4181,9 @@
             "official-2026-03-09"
           ]
         }
+      ],
+      "tags": [
+        "one-life"
       ]
     },
     {
@@ -4272,6 +4350,9 @@
             "official-2026-03-09"
           ]
         }
+      ],
+      "tags": [
+        "one-life"
       ]
     },
     {
@@ -4308,6 +4389,9 @@
             "official-2026-03-09"
           ]
         }
+      ],
+      "tags": [
+        "four-life"
       ]
     },
     {
@@ -4344,6 +4428,9 @@
             "official-2026-03-09"
           ]
         }
+      ],
+      "tags": [
+        "four-life"
       ]
     },
     {
@@ -4393,6 +4480,9 @@
             "official-2026-03-09"
           ]
         }
+      ],
+      "tags": [
+        "one-life"
       ]
     },
     {
@@ -4442,6 +4532,9 @@
             "official-2026-03-09"
           ]
         }
+      ],
+      "tags": [
+        "one-life"
       ]
     },
     {
@@ -4478,6 +4571,9 @@
             "official-2026-03-09"
           ]
         }
+      ],
+      "tags": [
+        "one-life"
       ]
     },
     {
@@ -4514,6 +4610,9 @@
             "official-2026-03-09"
           ]
         }
+      ],
+      "tags": [
+        "one-life"
       ]
     },
     {
@@ -4523,6 +4622,10 @@
       "from": "kjy",
       "to": "three",
       "orderedStops": [
+        {
+          "stop": "kjy",
+          "m": 0
+        },
         {
           "stop": "dorm",
           "m": 20
@@ -4581,45 +4684,6 @@
           ]
         },
         {
-          "depart": "12:05",
-          "days": [
-            "mon",
-            "tue",
-            "wed",
-            "thu",
-            "fri"
-          ],
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
-          "depart": "17:35",
-          "days": [
-            "mon",
-            "tue",
-            "wed",
-            "thu",
-            "fri"
-          ],
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
-          "depart": "21:35",
-          "days": [
-            "mon",
-            "tue",
-            "wed",
-            "thu",
-            "fri"
-          ],
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
           "depart": "07:23",
           "days": [
             "sat"
@@ -4638,6 +4702,77 @@
             "siteB"
           ]
         }
+      ],
+      "tags": [
+        "three-life"
+      ]
+    },
+    {
+      "id": "b2-线路2|ret",
+      "line": "线路2",
+      "kind": "family",
+      "from": "three",
+      "to": "kjy",
+      "orderedStops": [
+        {
+          "stop": "three",
+          "m": 0
+        },
+        {
+          "stop": "kjy",
+          "m": 23
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "家属区/校区接驳线",
+      "extraNote": "上车点不在宿舍楼下，需步行至对应站点",
+      "destEtaMin": 23,
+      "trips": [
+        {
+          "depart": "12:05",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "siteB",
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "17:35",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "siteB",
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "21:35",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "siteB"
+          ]
+        }
+      ],
+      "tags": [
+        "three-life"
       ]
     },
     {
@@ -4647,6 +4782,10 @@
       "from": "jingyuanEast",
       "to": "three",
       "orderedStops": [
+        {
+          "stop": "jingyuanEast",
+          "m": 0
+        },
         {
           "stop": "dorm",
           "m": 15
@@ -4675,7 +4814,34 @@
             "siteB",
             "official-2026-03-09"
           ]
+        }
+      ],
+      "tags": [
+        "three-life"
+      ]
+    },
+    {
+      "id": "b2-线路5|ret",
+      "line": "线路5",
+      "kind": "family",
+      "from": "three",
+      "to": "jingyuanEast",
+      "orderedStops": [
+        {
+          "stop": "three",
+          "m": 0
         },
+        {
+          "stop": "jingyuanEast",
+          "m": 18
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "家属区/校区接驳线",
+      "extraNote": "上车点不在宿舍楼下，需步行至对应站点",
+      "destEtaMin": 18,
+      "trips": [
         {
           "depart": "17:30",
           "days": [
@@ -4686,9 +4852,13 @@
             "fri"
           ],
           "sources": [
-            "siteB"
+            "siteB",
+            "official-2026-03-09"
           ]
         }
+      ],
+      "tags": [
+        "three-life"
       ]
     },
     {
@@ -4698,6 +4868,10 @@
       "from": "family4",
       "to": "three",
       "orderedStops": [
+        {
+          "stop": "family4",
+          "m": 0
+        },
         {
           "stop": "dorm",
           "m": 40
@@ -4727,19 +4901,6 @@
           ]
         },
         {
-          "depart": "17:10",
-          "days": [
-            "mon",
-            "tue",
-            "wed",
-            "thu",
-            "fri"
-          ],
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
           "depart": "07:05",
           "days": [
             "mon",
@@ -4752,6 +4913,50 @@
             "official-2026-03-09"
           ]
         }
+      ],
+      "tags": [
+        "three-life"
+      ]
+    },
+    {
+      "id": "b2-线路7|ret",
+      "line": "线路7",
+      "kind": "family",
+      "from": "three",
+      "to": "family4",
+      "orderedStops": [
+        {
+          "stop": "three",
+          "m": 0
+        },
+        {
+          "stop": "family4",
+          "m": 43
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "家属区/校区接驳线",
+      "extraNote": "上车点不在宿舍楼下，需步行至对应站点",
+      "destEtaMin": 43,
+      "trips": [
+        {
+          "depart": "17:10",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "siteB",
+            "official-2026-03-09"
+          ]
+        }
+      ],
+      "tags": [
+        "three-life"
       ]
     },
     {
@@ -4761,6 +4966,10 @@
       "from": "one",
       "to": "three",
       "orderedStops": [
+        {
+          "stop": "one",
+          "m": 0
+        },
         {
           "stop": "dorm",
           "m": 25
@@ -4917,8 +5126,7 @@
             "tue",
             "wed",
             "thu",
-            "fri",
-            "sat"
+            "fri"
           ],
           "sources": [
             "siteB",
@@ -4953,7 +5161,34 @@
             "siteB",
             "official-2026-03-09"
           ]
+        }
+      ],
+      "tags": [
+        "campus-commute"
+      ]
+    },
+    {
+      "id": "b2-线路8|ret",
+      "line": "线路8（8号线）",
+      "kind": "intercampus",
+      "from": "three",
+      "to": "one",
+      "orderedStops": [
+        {
+          "stop": "three",
+          "m": 0
         },
+        {
+          "stop": "one",
+          "m": 35
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "与官方线路8/8号线同一班线",
+      "extraNote": "上车点不在宿舍楼下，需步行至对应站点",
+      "destEtaMin": 35,
+      "trips": [
         {
           "depart": "07:50",
           "days": [
@@ -4965,7 +5200,8 @@
             "sat"
           ],
           "sources": [
-            "siteB"
+            "siteB",
+            "official-2026-03-09"
           ]
         },
         {
@@ -4978,7 +5214,8 @@
             "fri"
           ],
           "sources": [
-            "siteB"
+            "siteB",
+            "official-2026-03-09"
           ]
         },
         {
@@ -4992,7 +5229,8 @@
             "sat"
           ],
           "sources": [
-            "siteB"
+            "siteB",
+            "official-2026-03-09"
           ]
         },
         {
@@ -5006,7 +5244,8 @@
             "sat"
           ],
           "sources": [
-            "siteB"
+            "siteB",
+            "official-2026-03-09"
           ]
         },
         {
@@ -5021,7 +5260,8 @@
             "sun"
           ],
           "sources": [
-            "siteB"
+            "siteB",
+            "official-2026-03-09"
           ]
         },
         {
@@ -5038,6 +5278,21 @@
           ]
         },
         {
+          "depart": "16:25",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat"
+          ],
+          "sources": [
+            "siteB",
+            "official-2026-03-09"
+          ]
+        },
+        {
           "depart": "17:05",
           "days": [
             "mon",
@@ -5047,7 +5302,8 @@
             "fri"
           ],
           "sources": [
-            "siteB"
+            "siteB",
+            "official-2026-03-09"
           ]
         },
         {
@@ -5075,7 +5331,8 @@
             "fri"
           ],
           "sources": [
-            "siteB"
+            "siteB",
+            "official-2026-03-09"
           ]
         },
         {
@@ -5088,7 +5345,8 @@
             "fri"
           ],
           "sources": [
-            "siteB"
+            "siteB",
+            "official-2026-03-09"
           ]
         },
         {
@@ -5102,6 +5360,20 @@
             "sat"
           ],
           "sources": [
+            "siteB",
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "21:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
             "siteB"
           ]
         },
@@ -5111,10 +5383,12 @@
             "mon",
             "tue",
             "wed",
-            "thu"
+            "thu",
+            "fri"
           ],
           "sources": [
-            "siteB"
+            "siteB",
+            "official-2026-03-09"
           ]
         },
         {
@@ -5128,7 +5402,8 @@
             "sat"
           ],
           "sources": [
-            "siteB"
+            "siteB",
+            "official-2026-03-09"
           ]
         },
         {
@@ -5156,45 +5431,49 @@
             "sun"
           ],
           "sources": [
-            "siteB"
+            "siteB",
+            "official-2026-03-09"
           ]
         }
+      ],
+      "tags": [
+        "campus-commute"
       ]
     },
     {
-      "id": "b2-loop3-宿舍-weekend",
+      "id": "b2-loop3-dorm-weekend",
       "line": "环线3路（观光车）",
       "kind": "sightseeing",
-      "from": "宿舍",
-      "to": "系统楼",
+      "from": "dorm",
+      "to": "college",
       "orderedStops": [
         {
-          "stop": "three",
+          "stop": "dorm",
           "m": 0
         },
         {
-          "stop": "scienceCollege",
-          "m": 1
-        },
-        {
-          "stop": "secondCanteen",
-          "m": 4
-        },
-        {
-          "stop": "dorm",
-          "m": 7
-        },
-        {
           "stop": "militaryCenter",
-          "m": 12
+          "m": 3
         },
         {
           "stop": "laserInstitute",
-          "m": 13
+          "m": 4
+        },
+        {
+          "stop": "three",
+          "m": 5
         },
         {
           "stop": "gaochaoSouth",
-          "m": 15
+          "m": 6
+        },
+        {
+          "stop": "scienceCollege",
+          "m": 7
+        },
+        {
+          "stop": "secondCanteen",
+          "m": 10
         }
       ],
       "circular": true,
@@ -5293,14 +5572,18 @@
             "siteB"
           ]
         }
+      ],
+      "tags": [
+        "three-life",
+        "intra"
       ]
     },
     {
-      "id": "b2-loop3-系统楼-weekend",
+      "id": "b2-loop3-college-weekend",
       "line": "环线3路（观光车）",
       "kind": "sightseeing",
-      "from": "系统楼",
-      "to": "宿舍",
+      "from": "college",
+      "to": "dorm",
       "orderedStops": [
         {
           "stop": "three",
@@ -5427,42 +5710,46 @@
             "siteB"
           ]
         }
+      ],
+      "tags": [
+        "three-life",
+        "intra"
       ]
     },
     {
-      "id": "b2-loop3-宿舍-weekday",
+      "id": "b2-loop3-dorm-weekday",
       "line": "环线3路（观光车）",
       "kind": "sightseeing",
-      "from": "宿舍",
-      "to": "系统楼",
+      "from": "dorm",
+      "to": "college",
       "orderedStops": [
         {
-          "stop": "three",
+          "stop": "dorm",
           "m": 0
         },
         {
-          "stop": "scienceCollege",
-          "m": 1
-        },
-        {
-          "stop": "secondCanteen",
-          "m": 4
-        },
-        {
-          "stop": "dorm",
-          "m": 7
-        },
-        {
           "stop": "militaryCenter",
-          "m": 12
+          "m": 3
         },
         {
           "stop": "laserInstitute",
-          "m": 13
+          "m": 4
+        },
+        {
+          "stop": "three",
+          "m": 5
         },
         {
           "stop": "gaochaoSouth",
-          "m": 15
+          "m": 6
+        },
+        {
+          "stop": "scienceCollege",
+          "m": 7
+        },
+        {
+          "stop": "secondCanteen",
+          "m": 10
         }
       ],
       "circular": true,
@@ -6056,14 +6343,18 @@
             "siteB"
           ]
         }
+      ],
+      "tags": [
+        "three-life",
+        "intra"
       ]
     },
     {
-      "id": "b2-loop3-系统楼-weekday",
+      "id": "b2-loop3-college-weekday",
       "line": "环线3路（观光车）",
       "kind": "sightseeing",
-      "from": "系统楼",
-      "to": "宿舍",
+      "from": "college",
+      "to": "dorm",
       "orderedStops": [
         {
           "stop": "three",
@@ -6139,6 +6430,10 @@
             "siteB"
           ]
         }
+      ],
+      "tags": [
+        "three-life",
+        "intra"
       ]
     }
   ]

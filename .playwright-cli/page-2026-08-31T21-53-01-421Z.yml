@@ -1,0 +1,82 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - generic [ref=f1e4]: 班车助手
+      - generic [ref=f1e6]: 05:53
+    - tablist "服务模式" [ref=f1e7]:
+      - tab "🚌 校区通勤" [ref=f1e9] [cursor=pointer]
+      - tab "🏫 院内通勤" [ref=f1e10] [cursor=pointer]
+  - main [ref=f1e11]:
+    - generic [ref=f1e12]:
+      - button "从哪出发 一号院" [ref=f1e13] [cursor=pointer]:
+        - generic [ref=f1e14]: 从哪出发
+        - generic [ref=f1e15]: 一号院
+      - button "⇅" [ref=f1e17] [cursor=pointer]
+      - button "去哪上班 三号院（系统楼）" [ref=f1e18] [cursor=pointer]:
+        - generic [ref=f1e19]: 去哪上班
+        - generic [ref=f1e20]: 三号院（系统楼）
+      - generic [ref=f1e21]:
+        - button "现在出发" [ref=f1e23] [cursor=pointer]
+        - button "稍后出发" [ref=f1e24] [cursor=pointer]
+      - button "规划班次" [ref=f1e25] [cursor=pointer]
+    - generic [ref=f1e26]:
+      - generic [ref=f1e27]:
+        - heading "规划结果" [level=2] [ref=f1e28]
+        - generic [ref=f1e29]: "--"
+      - paragraph [ref=f1e30]: 选择起终点后规划班次
+      - generic [ref=f1e31]: "数据加载失败: Cannot read properties of undefined (reading 'includes')"
+    - generic [ref=f1e33]:
+      - button "📖 班车表明细 ›" [ref=f1e34] [cursor=pointer]:
+        - generic [ref=f1e35]: 📖 班车表明细
+        - generic [ref=f1e36]: ›
+      - generic:
+        - generic:
+          - tablist [ref=f1e37]:
+            - button "周一至四" [ref=f1e39] [cursor=pointer]
+            - button "周五" [ref=f1e40] [cursor=pointer]
+            - button "周六" [ref=f1e41] [cursor=pointer]
+            - button "周日" [ref=f1e42] [cursor=pointer]
+          - paragraph
+    - generic [ref=f1e45]:
+      - generic [ref=f1e46]:
+        - heading "线路地图" [level=2] [ref=f1e47]
+        - generic [ref=f1e48]: 坐标已校准
+      - generic [ref=f1e49]:
+        - generic:
+          - generic:
+            - img:
+              - generic:
+                - generic [ref=f1e50] [cursor=pointer]
+                - generic [ref=f1e51] [cursor=pointer]
+                - generic [ref=f1e52] [cursor=pointer]
+                - generic [ref=f1e53] [cursor=pointer]
+                - generic [ref=f1e54] [cursor=pointer]
+                - generic [ref=f1e55] [cursor=pointer]
+                - generic [ref=f1e56] [cursor=pointer]
+                - generic [ref=f1e57] [cursor=pointer]
+                - generic [ref=f1e58] [cursor=pointer]
+                - generic [ref=f1e59] [cursor=pointer]
+                - generic [ref=f1e60] [cursor=pointer]
+                - generic [ref=f1e61] [cursor=pointer]
+                - generic [ref=f1e62] [cursor=pointer]
+                - generic [ref=f1e63] [cursor=pointer]
+                - generic [ref=f1e64] [cursor=pointer]
+        - generic:
+          - generic [ref=f1e65]:
+            - button "Zoom in" [ref=f1e66] [cursor=pointer]: +
+            - button "Zoom out" [ref=f1e67] [cursor=pointer]: −
+          - generic [ref=f1e68]:
+            - link "Leaflet" [ref=f1e69] [cursor=pointer]:
+              - /url: https://leafletjs.com
+            - text: "| 高德栅格瓦片"
+      - paragraph [ref=f1e74]: 🟢 已定位站点 · 🟡 校区内近似位置 · 点击明细中的线路卡片可在地图高亮
+    - generic [ref=f1e75]:
+      - paragraph [ref=f1e76]: 班车助手 · NudtBus13 · 数据快照 2026-08-27 · 假期停运安排以学校通知为准
+      - paragraph [ref=f1e77]:
+        - link "GitHub" [ref=f1e78] [cursor=pointer]:
+          - /url: https://github.com/Jensen-Yao/NudtBus13
+  - dialog "选择站点" [ref=f1e79]:
+    - generic [ref=f1e81]:
+      - heading "从哪出发" [level=3] [ref=f1e82]
+      - button "完成" [ref=f1e83] [cursor=pointer]
+    - searchbox "搜索站点" [ref=f1e84]

@@ -21,25 +21,85 @@ const PROFILE_DAYS = {
 };
 const PROFILE_LABELS = { monThu: "周一至周四运行表", friday: "周五运行表", saturday: "周六运行表", sunday: "周日运行表" };
 
+// 院区模型（数据侧 schedule.json.areas 为权威；此处仅缓存）
+let AREAS = {};
+function areaOf(stop) { return AREAS[stop] || "unknown"; }
+
+// 模式定义（标签驱动，自动扩展）：
+//   campus-commute = 教学区之间（一号院↔三号院）=> 校区通勤
+//   three-life / one-life / four-life / commute-other => 院内通勤（各院区生活圈，新增自动纳入）
 const MODES = {
   campus: {
     label: "校区通勤",
-    kinds: ["intercampus", "college", "family"],
-    groups: [
-      { title: "校区间站点", stops: ["one", "three", "kjy", "kjySouthGate", "jingyuanWest", "jingyuanEast", "fourth", "family4"] },
-      { title: "沿途经停（步行可达）", stops: ["dorm"] },
-    ],
+    test: (svc) => (svc.tags || []).includes("campus-commute"),
     defaultFrom: "one", defaultTo: "three",
   },
   inner: {
     label: "院内通勤",
-    kinds: ["loop", "dining", "sightseeing"],
-    groups: [
-      { title: "三号院内站点", stops: ["dorm", "three", "eastGate", "northGate", "militaryCenter", "laserInstitute", "gaochaoNorth", "gaochaoSouth", "scienceCollege", "secondCanteen"] },
-    ],
+    test: (svc) => !(svc.tags || []).includes("campus-commute"),
     defaultFrom: "dorm", defaultTo: "three",
   },
 };
+const LIFE_TAG_TITLES = { "three-life": "三号院生活圈", "one-life": "一号院生活圈", "four-life": "四号院生活圈", "commute-other": "其他通勤" };
+
+// 站点池由该模式下的服务数据派生 —— 新增服务/站点自动出现，具备扩展性
+function deriveStops(m) {
+  const cfg = MODES[m];
+  const set = new Set();
+  for (const svc of DATA.services) {
+    if (!cfg.test(svc)) continue;
+    for (const s of svc.orderedStops) set.add(s.stop);
+  }
+  const order = m === "campus"
+    ? ["one", "three", "kjy", "kjySouthGate", "jingyuanWest", "jingyuanEast", "fourth", "family4", "dorm"]
+    : ["dorm", "three", "eastGate", "northGate", "militaryCenter", "laserInstitute", "gaochaoNorth", "gaochaoSouth", "scienceCollege", "secondCanteen", "one", "kjy"];
+  const known = [...set].sort((a, b) => {
+    const ia = order.indexOf(a), ib = order.indexOf(b);
+    return (ia < 0 ? 999 : ia) - (ib < 0 ? 999 : ib);
+  });
+  const extra = [...set].filter((s) => !order.includes(s)); // 未来新增站点自动归入
+  return { all: [...known, ...extra], extras: extra, cfg };
+}
+
+function stopGroups(m) {
+  const { all } = deriveStops(m);
+  if (m === "campus") {
+    // 校区通勤：按院区分组
+    const titleOf = (s) => {
+      const a = areaOf(s);
+      if (a === "campus-one") return "一号院";
+      if (a === "campus-three") return "三号院";
+      if (a === "campus-four") return "四号院";
+      if (a === "family-zone") return "家属区";
+      return "其他站点";
+    };
+    const groups = []; const seen = new Set();
+    for (const title of [...new Set(all.map(titleOf))]) {
+      const stops = all.filter((s) => titleOf(s) === title && !seen.has(s));
+      stops.forEach((s) => seen.add(s));
+      if (stops.length) groups.push({ title, stops });
+    }
+    return groups;
+  }
+  // 院内通勤：按生活圈分组（基于打标数据自动扩展）
+  const groups = []; const seen = new Set();
+  for (const svc of DATA.services) {
+    if (!MODES.inner.test(svc)) continue;
+    for (const tag of (svc.tags || [])) {
+      const title = LIFE_TAG_TITLES[tag];
+      if (!title) continue;
+      if (!groups.find((g) => g.title === title)) groups.push({ title, stops: [] });
+      const g = groups.find((x) => x.title === title);
+      for (const s of svc.orderedStops) {
+        if (!seen.has(s.stop)) { seen.add(s.stop); g.stops.push(s.stop); }
+      }
+    }
+  }
+  // 全局排序（preferredOrder 思路）：按 deriveStops 顺序重排各组内站点
+  const order = deriveStops("inner").all;
+  for (const g of groups) g.stops.sort((a, b) => order.indexOf(a) - order.indexOf(b));
+  return groups.filter((g) => g.stops.length);
+}
 
 let DATA = null, POI = null, map = null, markerLayer = null, lineLayer = null;
 let queryMode = "now";
@@ -115,11 +175,10 @@ function canonLine(line) {
 }
 
 function collectCandidates(from, to, ctx, whenMin) {
-  const kinds = MODES[mode].kinds;
   const out = [];
   const seen = new Map();
   for (const svc of DATA.services) {
-    if (!kinds.includes(svc.kind)) continue;
+    if (!MODES[mode].test(svc)) continue;
     const ordered = svc.orderedStops;
     const fi = ordered.findIndex((s) => s.stop === from);
     const ti = ordered.findIndex((s) => s.stop === to);
@@ -172,6 +231,10 @@ function renderPicks() {
 function setMode(next) {
   if (mode === next) return;
   mode = next;
+  const pool = new Set(deriveStops(mode).all);
+  for (const k of ["from", "to"]) {
+    if (!pool.has(picks[mode][k])) picks[mode][k] = k === "from" ? MODES[mode].defaultFrom : MODES[mode].defaultTo;
+  }
   document.querySelector(".mode-seg").dataset.active = mode;
   document.querySelectorAll(".mode-btn").forEach((b) => b.classList.toggle("active", b.dataset.mode === mode));
   renderPicks();
@@ -201,7 +264,7 @@ function pushRecent(stop) {
 
 function openSheet(target) {
   sheetTarget = target;
-  $("sheetTitle").textContent = target === "from" ? "从哪出发" : "去哪上班";
+  $("sheetTitle").textContent = target === "from" ? "选择上车点" : "选择下车站点";
   $("sheetSearch").value = "";
   renderSheetList("");
   renderRecent();
@@ -228,13 +291,13 @@ function renderSheetList(filter) {
   const current = picks[mode][sheetTarget];
   const f = (filter || "").trim().toLowerCase();
   let html = "";
-  for (const group of MODES[mode].groups) {
+  for (const group of stopGroups(mode)) {
     const stops = group.stops.filter((s) => !f || label(s).toLowerCase().includes(f) || s.includes(f));
     if (!stops.length) continue;
     html += `<p class="stop-group-title">${esc(group.title)}</p>`;
     html += stops.map((s) => `
       <button class="stop-item ${s === current ? "selected" : ""}" data-stop="${s}" type="button">
-        <span><span class="stop-name">${esc(label(s))}</span><br><span class="stop-sub">${esc(s)}</span></span>
+        <span class="stop-name">${esc(label(s))}</span>
         ${s === current ? '<span class="stop-check">✓</span>' : ""}
       </button>`).join("");
   }
@@ -354,7 +417,6 @@ function renderTimetable(profile) {
   const box = $("timetableList");
   const hint = $("ttHint");
   const ctx = dayContext(new Date());
-  const kinds = MODES[mode].kinds;
   if (ctx.suspended) {
     hint.textContent = "";
     box.innerHTML = `<div class="empty">⛔ 假期停运中（${DATA.extras.holidayNotice.start} ~ ${DATA.extras.holidayNotice.endExclusive}）。</div>`;
@@ -365,7 +427,7 @@ function renderTimetable(profile) {
     : `今日为${PROFILE_LABELS[ctx.profile]} · 显示${PROFILE_LABELS[profile]} · ${MODES[mode].label}`;
   const groups = {};
   for (const svc of DATA.services) {
-    if (!kinds.includes(svc.kind)) continue;
+    if (!MODES[mode].test(svc)) continue;
     const times = svc.trips.filter((t) => tripRunsOnProfile(t, profile)).map((t) => t.depart).sort();
     if (!times.length) continue;
     const routeStr = svc.orderedStops.map((s) => label(s.stop) + (s.m ? ` +${s.m}分` : "")).join(" → ");
@@ -429,10 +491,12 @@ function tickClock() {
 
 async function main() {
   loadRecent();
+  const VER = "13.1"; // 数据版本：更新数据后递增以击穿缓存
   [DATA, POI] = await Promise.all([
-    fetch("./data/merged/schedule.json").then((r) => r.json()),
-    fetch("./data/merged/poi.json").then((r) => r.json()),
+    fetch(`./data/merged/schedule.json?v=${VER}`).then((r) => r.json()),
+    fetch(`./data/merged/poi.json?v=${VER}`).then((r) => r.json()),
   ]);
+  AREAS = DATA.areas || {};
   tickClock(); setInterval(tickClock, 1000);
   initMap();
 
@@ -482,9 +546,15 @@ async function main() {
   manualWrap.innerHTML = `
     <span class="seg-thumb" id="qThumb"></span>
     <button class="seg active" data-query-mode="now" type="button">现在出发</button>
-    <button class="seg" data-query-mode="manual" type="button">稍后出发</button>
-    <input class="input" id="queryDateTime" type="datetime-local" style="margin:8px 0 0" hidden>`;
+    <button class="seg" data-query-mode="manual" type="button">稍后出发</button>`;
   plannerCard.insertBefore(manualWrap, $("querySubmit"));
+  const dtInput = document.createElement("input");
+  dtInput.className = "input";
+  dtInput.type = "datetime-local";
+  dtInput.id = "queryDateTime";
+  dtInput.hidden = true;
+  dtInput.style.marginBottom = "12px";
+  plannerCard.insertBefore(dtInput, $("querySubmit"));
   document.querySelectorAll("[data-query-mode]").forEach((b) => {
     b.addEventListener("click", () => {
       document.querySelectorAll("[data-query-mode]").forEach((x) => x.classList.remove("active"));

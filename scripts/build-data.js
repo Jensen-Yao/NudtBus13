@@ -128,6 +128,15 @@ function parseBus2() {
     out.stops[m[1]] = { id: m[2], label: m[3] };
   }
 
+  // bus2 createService 使用中文站点名 —— 统一映射到英文 stop id
+  const B2_STOP_ALIAS = {
+    "宿舍": "dorm", "系统楼": "college", "科大佳园": "kjy", "科大景园东门": "jingyuanEast",
+    "科大景园西门": "jingyuanWest", "四号院家属区": "family4", "一号院": "one", "三号院": "three",
+    "东门": "eastGate", "北门": "northGate", "军体": "militaryCenter", "激光所": "laserInstitute",
+    "高超北侧": "gaochaoNorth", "高超南侧": "gaochaoSouth", "理学院": "scienceCollege", "二食堂": "secondCanteen",
+  };
+  const aliasStop = (s) => B2_STOP_ALIAS[s] || s;
+
   // main schedules
   const schedBlock = extractBetween(md, "const SCHEDULES = {", "\nconst elements");
   for (const dayKey of ["everyday", "monThu", "friday", "saturday", "sunday"]) {
@@ -137,7 +146,8 @@ function parseBus2() {
     for (const c of dayM[1].split("createService(").slice(1)) {
       const headM = c.match(/"([^"]+)",\s*"([^"]+)",\s*"([^"]+)"/);
       if (!headM) continue;
-      const [, line, origin, dest] = headM;
+      const [, line, originRaw, destRaw] = headM;
+      const origin = aliasStop(originRaw), dest = aliasStop(destRaw);
       const times = parseTimes(c);
       let offsets = {};
       const offM = c.match(/\{([\s\S]*)\}\)/);
@@ -159,7 +169,8 @@ function parseBus2() {
     for (const c of block.split("createService(").slice(1)) {
       const headM = c.match(/"([^"]+)",\s*"([^"]+)",\s*"([^"]+)"/);
       if (!headM) continue;
-      const [, line, origin, dest] = headM;
+      const [, line, originRaw, destRaw] = headM;
+      const origin = aliasStop(originRaw), dest = aliasStop(destRaw);
       const times = parseTimes(c);
       let offsets = {};
       const offM = c.match(/\{([\s\S]*)\}\)/);
@@ -273,10 +284,10 @@ function normalize(nudt, bus2, official) {
 
   // -- bus2 线路2/5/7/8 (inter-campus) --
   const B2LINES = {
-    "线路2": { from: "kjy", destEta: 23, viaOut: [{ stop: "dorm", m: 20 }, { stop: "three", m: 23 }] },
-    "线路5": { from: "jingyuanEast", destEta: 18, viaOut: [{ stop: "dorm", m: 15 }, { stop: "three", m: 18 }] },
-    "线路7": { from: "family4", destEta: 43, viaOut: [{ stop: "dorm", m: 40 }, { stop: "three", m: 43 }] },
-    "线路8": { from: "one", destEta: 35, viaOut: [{ stop: "dorm", m: 25 }, { stop: "three", m: 35 }] },
+    "线路2": { from: "kjy", destEta: 23, viaOut: [{ stop: "kjy", m: 0 }, { stop: "dorm", m: 20 }, { stop: "three", m: 23 }] },
+    "线路5": { from: "jingyuanEast", destEta: 18, viaOut: [{ stop: "jingyuanEast", m: 0 }, { stop: "dorm", m: 15 }, { stop: "three", m: 18 }] },
+    "线路7": { from: "family4", destEta: 43, viaOut: [{ stop: "family4", m: 0 }, { stop: "dorm", m: 40 }, { stop: "three", m: 43 }] },
+    "线路8": { from: "one", destEta: 35, viaOut: [{ stop: "one", m: 0 }, { stop: "dorm", m: 25 }, { stop: "three", m: 35 }] },
   };
   const mergedB2 = {};
   for (const dayKey of ["monThu", "friday", "saturday", "sunday"]) {
@@ -391,6 +402,26 @@ function main() {
       },
     },
     stops: { ...bus2.stops, one: { id: "one", label: "一号院" }, three: { id: "three", label: "三号院（系统楼）" } },
+    // 院区模型：站点 -> 所属院区。新增院区/站点时在此登记即可自动参与模式判定。
+    areas: {
+      one: "campus-one",
+      three: "campus-three",
+      dorm: "campus-three",
+      eastGate: "campus-three",
+      northGate: "campus-three",
+      militaryCenter: "campus-three",
+      laserInstitute: "campus-three",
+      gaochaoNorth: "campus-three",
+      gaochaoSouth: "campus-three",
+      scienceCollege: "campus-three",
+      secondCanteen: "campus-three",
+      kjy: "family-zone",
+      kjySouthGate: "family-zone",
+      jingyuanWest: "family-zone",
+      jingyuanEast: "family-zone",
+      fourth: "campus-four",
+      family4: "campus-four",
+    },
     lines: { siteA: nudt.lines, siteB: bus2.schedules, sightseeing: bus2.sightseeing, officialCampus: official },
     extras: {
       holidayNotice: nudt.holidayNotice,
@@ -409,6 +440,24 @@ function main() {
 
   // normalize into unified services model for the website
   merged.services = normalize(nudt, bus2, official);
+
+  // 自动打标（模式判定依据，可扩展）：
+  //   campus-commute = 教学区之间（一号院↔三号院主干）
+  //   three-life / one-life / four-life = 对应院区生活圈通勤与园区微循环
+  //   新增线路只需在 areas 登记站点院区，标签自动推导
+  for (const svc of merged.services) {
+    const areaSet = new Set(svc.orderedStops.map((s) => merged.areas[s.stop]).filter(Boolean));
+    let tag = "commute-other";
+    if (areaSet.has("campus-one") && areaSet.has("campus-three")) tag = "campus-commute";
+    else if (areaSet.has("campus-three")) tag = "three-life";
+    else if (areaSet.has("campus-one")) tag = "one-life";
+    else if (areaSet.has("campus-four")) tag = "four-life";
+    svc.tags = [tag];
+    if (svc.kind === "loop" || svc.kind === "dining" || svc.kind === "sightseeing") svc.tags.push("intra");
+  }
+  const tagCount = {};
+  for (const s of merged.services) for (const t of s.tags) tagCount[t] = (tagCount[t] || 0) + 1;
+  console.log("  tags:", JSON.stringify(tagCount));
 
   fs.mkdirSync(OUT, { recursive: true });
   fs.writeFileSync(path.join(OUT, "schedule.json"), JSON.stringify(merged, null, 2));
