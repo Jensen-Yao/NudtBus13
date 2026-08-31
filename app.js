@@ -193,14 +193,10 @@ function collectCandidates(from, to, ctx, whenMin) {
       if (toMinutes(fromTime) < whenMin - 1) continue;
       const toTime = ordered[ti].m != null ? addMin(trip.depart, ordered[ti].m) : null;
       const key = `${canonLine(svc.line)}|${from}|${to}|${fromTime}`;
-      if (seen.has(key)) {
-        const ex = seen.get(key);
-        trip.sources.forEach((s) => { if (!ex.sources.includes(s)) ex.sources.push(s); });
-        continue;
-      }
+      if (seen.has(key)) continue;
       const row = {
         _key: key, line: svc.line, canon: canonLine(svc.line), kind: svc.kind,
-        fromTime, toTime, sources: [...trip.sources], express: svc.express,
+        fromTime, toTime, express: svc.express,
         extraNote: svc.extraNote, walk: svc.extraNote && svc.extraNote.includes("步行"),
       };
       seen.set(key, row);
@@ -212,12 +208,7 @@ function collectCandidates(from, to, ctx, whenMin) {
 }
 
 // ---------- badges ----------
-function sourceBadge(s) {
-  if (s.includes("official")) return '<span class="src-badge src-official">官方表</span>';
-  if (s.includes("siteA")) return '<span class="src-badge src-web">网站A</span>';
-  if (s.includes("siteB")) return '<span class="src-badge src-web">网站B</span>';
-  return "";
-}
+
 
 // ---------- planner UI ----------
 function renderPicks() {
@@ -314,11 +305,38 @@ function pickStop(stop) {
 }
 
 // ---------- results ----------
-function sourceBadge(s) {
-  if (s.includes("official")) return '<span class="src-badge src-official">官方表</span>';
-  if (s.includes("siteA")) return '<span class="src-badge src-web">网站A</span>';
-  if (s.includes("siteB")) return '<span class="src-badge src-web">网站B</span>';
+// 拥挤提示（借鉴园区查询工具的 CROWD_RULES：按上车站+发车时刻给出拥挤等级）
+function crowdBadge(from, fromTime, kind) {
+  if (kind !== "loop") return "";
+  const rules = DATA.extras.crowdRules;
+  if (!rules || !rules[from]) return "";
+  for (const level of ["high", "mild"]) {
+    if ((rules[from][level] || []).includes(fromTime)) {
+      const txt = level === "high" ? "高峰拥挤" : "轻度拥挤";
+      return `<span class="crowd-badge crowd-${level}">👥 ${txt}</span>`;
+    }
+  }
   return "";
+}
+
+// 我准备坐这班（借鉴主站需求收集：本地记录当天所选班次）
+function rideKey(day, from, to, line, fromTime) {
+  return `${isoDate(new Date())}|${day}|${mode}|${from}|${to}|${line}|${fromTime}`;
+}
+function getRidePick() {
+  try { return localStorage.getItem("bushelper-ride") || ""; } catch { return ""; }
+}
+function rideBtnHTML(key) {
+  const picked = getRidePick() === key;
+  return `<button class="ride-btn ${picked ? "picked" : ""}" data-ride="${esc(key)}" type="button">${picked ? "✓ 已选这班" : "我准备坐这班"}</button>`;
+}
+function bindRideButtons() {
+  [...document.querySelectorAll(".ride-btn")].forEach((b) => {
+    b.addEventListener("click", () => {
+      try { localStorage.setItem("bushelper-ride", b.dataset.ride); } catch {}
+      [...document.querySelectorAll(".ride-btn")].forEach((x) => { x.classList.toggle("picked", x === b); x.textContent = x === b ? "✓ 已选这班" : "我准备坐这班"; });
+    });
+  });
 }
 
 let currentTo = null;
@@ -332,7 +350,7 @@ function renderResults(list, ctx, from, to, whenMin) {
     return;
   }
   if (ctx.isHoliday) {
-    box.innerHTML = `<div class="empty">节假日常规班车停开，仅观光车运行。</div>` + list.map(renderCard).join("");
+    box.innerHTML = `<div class="empty">节假日常规班车停开，仅观光车运行。</div>` + list.map((r, i) => renderCard(r, i, ctx, from, to)).join("");
     return;
   }
   if (!list.length) {
@@ -349,28 +367,33 @@ function renderResults(list, ctx, from, to, whenMin) {
   const waitMin = Math.max(0, toMinutes(next.fromTime) - whenMin);
   nextBusInfo = { hhmm: next.fromTime };
   let html = `<div class="next-card">
-    <p class="next-line">${esc(next.line)}${next.express ? '<span class="express-label">（快车）</span>' : ""} ${next.sources.map(sourceBadge).join("")}</p>
+    <p class="next-line">${esc(next.line)}${next.express ? '<span class="express-label">（快车）</span>' : ""}</p>
     <p class="next-time" id="nextTime">${next.fromTime}</p>
     <p class="next-wait" id="nextWait"></p>
     ${next.toTime ? `<p class="next-wait">到达 ${esc(label(to))} 约 ${next.toTime}</p>` : ""}
     ${next.extraNote ? `<p class="note-line">${esc(next.extraNote)}</p>` : ""}
+    ${rideBtnHTML(rideKey(ctx.day, from, to, next.line, next.fromTime))}
+    ${crowdBadge(from, next.fromTime, next.kind)}
   </div>`;
   if (list.length > 1) {
     html += `<p class="sub-head">后面几班</p>`;
-    html += list.slice(1, 9).map((r, i) => renderCard(r, i)).join("");
+    html += list.slice(1, 9).map((r, i) => renderCard(r, i, ctx, from, to)).join("");
   }
   box.innerHTML = html;
+  bindRideButtons();
   updateCountdown();
 }
 
-function renderCard(r, i) {
+function renderCard(r, i, ctx, from, to) {
+  const key = rideKey(ctx.day, from, to, r.line, r.fromTime);
   return `<div class="trip-card" style="--td:${(i || 0) * 0.05}s">
     <div class="trip-top"><span class="trip-line">${esc(r.line)}${r.express ? '<span class="express-label">（快车）</span>' : ""}</span>
     <span class="trip-time">${r.fromTime}</span></div>
     <div class="trip-meta">${r.kind && KIND_BADGE[r.kind] ? `<span class="kind-badge">${KIND_BADGE[r.kind]}</span>` : ""}
-    ${r.toTime ? `<span>到达 ${esc(label(currentTo))} ${r.toTime}</span>` : ""}
-    ${r.sources.map(sourceBadge).join("")}</div>
+    ${r.toTime ? `<span>到达 ${esc(label(to))} ${r.toTime}</span>` : ""}
+    ${crowdBadge(from, r.fromTime, r.kind)}</div>
     ${r.walk ? `<div class="walk-note">🚶 ${esc(DATA.extras.dormWalkNotice || "上车点需步行前往")}</div>` : ""}
+    ${rideBtnHTML(key)}
   </div>`;
 }
 

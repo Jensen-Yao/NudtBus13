@@ -295,3 +295,15 @@ body {
 /* 查询模式两键分段：滑块 50% */
 #qThumb { width: calc(50% - 2.5px); }
 .input[type="datetime-local"] { color-scheme: light; }
+/* ride-choice + crowd badges */
+.ride-btn {
+  margin-top: 8px; border: 1px solid rgba(62, 115, 196, 0.35);
+  background: rgba(62, 115, 196, 0.07); color: var(--accent);
+  font-size: 12.5px; font-weight: 600; font-family: inherit;
+  border-radius: 980px; padding: 7px 14px; cursor: pointer;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.ride-btn.picked { background: var(--accent); color: #fff; border-color: var(--accent); }
+.crowd-badge { border-radius: 980px; padding: 2px 9px; font-size: 11px; font-weight: 600; }
+.crowd-mild { background: rgba(255, 149, 0, 0.13); color: #9a6200; }
+.crowd-high { background: rgba(255, 59, 48, 0.12); color: #c53030; }

@@ -1,28 +1,7 @@
 {
   "meta": {
-    "generatedAt": "2026-08-31T21:52:38.678Z",
-    "snapshotNote": "班车时刻随学期调整，以学校最新通知为准",
-    "sources": {
-      "siteA": {
-        "version": "v29-holiday-notice",
-        "method": "Firecrawl self-hosted /v2/scrape"
-      },
-      "siteB": {
-        "version": "v20260725-v8-dev3",
-        "method": "Firecrawl self-hosted /v2/scrape"
-      },
-      "officialCampus": {
-        "effective": "2026-03-09",
-        "method": "image transcription (redacted)"
-      },
-      "officialInstitute": {
-        "effective": "2025-05-19",
-        "method": "image transcription (PII redacted)"
-      },
-      "handSummary": {
-        "method": "image transcription, cross-check only"
-      }
-    }
+    "generatedAt": "2026-08-31T23:17:37.857Z",
+    "snapshotNote": "班车时刻随学期调整，以学校最新通知为准"
   },
   "stops": {
     "dorm": {
@@ -93,1316 +72,6 @@
     "fourth": "campus-four",
     "family4": "campus-four"
   },
-  "lines": {
-    "siteA": [
-      {
-        "line": "8号线",
-        "dayProfile": "monThu",
-        "origin": "one",
-        "dest": "three",
-        "departures": [
-          "07:10",
-          "07:20",
-          "07:30",
-          "09:20",
-          "09:30",
-          "11:25",
-          "13:50",
-          "14:00",
-          "15:30",
-          "16:25",
-          "18:55",
-          "21:00"
-        ],
-        "note": "主楼旁发车",
-        "sources": [
-          "siteA"
-        ]
-      },
-      {
-        "line": "8号线",
-        "dayProfile": "monThu",
-        "origin": "three",
-        "dest": "one",
-        "departures": [
-          "07:50",
-          "09:45",
-          "10:00",
-          "12:00",
-          "12:35",
-          "13:45",
-          "16:25",
-          "17:05",
-          "17:30",
-          "17:40",
-          "17:55",
-          "18:25",
-          "21:00",
-          "21:30",
-          "21:35",
-          "21:55",
-          "22:15"
-        ],
-        "note": "系统楼东侧发车",
-        "sources": [
-          "siteA"
-        ]
-      },
-      {
-        "line": "8号线",
-        "dayProfile": "friday",
-        "origin": "one",
-        "dest": "three",
-        "departures": [
-          "07:10",
-          "07:20",
-          "07:30",
-          "09:20",
-          "09:30",
-          "11:25",
-          "13:50",
-          "14:00",
-          "15:30",
-          "16:25",
-          "18:55",
-          "21:00"
-        ],
-        "note": "主楼旁发车",
-        "sources": [
-          "siteA"
-        ]
-      },
-      {
-        "line": "8号线",
-        "dayProfile": "friday",
-        "origin": "three",
-        "dest": "one",
-        "departures": [
-          "07:50",
-          "09:45",
-          "10:00",
-          "12:00",
-          "12:35",
-          "13:45",
-          "16:25",
-          "17:05",
-          "17:30",
-          "17:40",
-          "17:55",
-          "18:25",
-          "21:00",
-          "21:35",
-          "21:55",
-          "22:15"
-        ],
-        "note": "系统楼东侧发车",
-        "sources": [
-          "siteA"
-        ]
-      },
-      {
-        "line": "8号线",
-        "dayProfile": "saturday",
-        "origin": "one",
-        "dest": "three",
-        "departures": [
-          "07:20",
-          "09:30",
-          "11:25",
-          "13:50",
-          "15:30",
-          "18:55"
-        ],
-        "note": "主楼旁发车",
-        "sources": [
-          "siteA"
-        ]
-      },
-      {
-        "line": "8号线",
-        "dayProfile": "saturday",
-        "origin": "three",
-        "dest": "one",
-        "departures": [
-          "07:50",
-          "10:00",
-          "12:00",
-          "12:35",
-          "16:25",
-          "17:30",
-          "18:25",
-          "21:35",
-          "22:15"
-        ],
-        "note": "系统楼东侧发车",
-        "sources": [
-          "siteA"
-        ]
-      },
-      {
-        "line": "8号线",
-        "dayProfile": "sunday",
-        "origin": "one",
-        "dest": "three",
-        "departures": [
-          "07:20",
-          "09:30",
-          "13:50"
-        ],
-        "note": "主楼旁发车",
-        "sources": [
-          "siteA"
-        ]
-      },
-      {
-        "line": "8号线",
-        "dayProfile": "sunday",
-        "origin": "three",
-        "dest": "one",
-        "departures": [
-          "12:35",
-          "17:30",
-          "22:15"
-        ],
-        "note": "系统楼东侧发车",
-        "sources": [
-          "siteA"
-        ]
-      },
-      {
-        "line": "气海班车",
-        "dayProfile": "weekday",
-        "origin": "three",
-        "dest": "one",
-        "departures": [
-          "07:30",
-          "18:00",
-          "20:30"
-        ],
-        "note": "气海学院楼北侧发车",
-        "sources": [
-          "siteA"
-        ]
-      },
-      {
-        "line": "气海班车",
-        "dayProfile": "weekday",
-        "origin": "one",
-        "dest": "three",
-        "departures": [
-          "08:30",
-          "18:50",
-          "21:10"
-        ],
-        "note": "气海学院楼前发车",
-        "sources": [
-          "siteA"
-        ]
-      },
-      {
-        "line": "系统班车",
-        "dayProfile": "weekday",
-        "origin": "one",
-        "dest": "three",
-        "departures": [
-          "07:25",
-          "14:00"
-        ],
-        "note": "老系统楼前发车",
-        "sources": [
-          "siteA"
-        ]
-      },
-      {
-        "line": "系统班车",
-        "dayProfile": "weekday",
-        "origin": "three",
-        "dest": "one",
-        "departures": [
-          "12:05",
-          "17:50",
-          "21:00"
-        ],
-        "note": "系统楼东侧发车",
-        "sources": [
-          "siteA"
-        ]
-      },
-      {
-        "line": "理学院班车",
-        "dayProfile": "weekday",
-        "origin": "one",
-        "dest": "three",
-        "departures": [
-          "07:15",
-          "20:55"
-        ],
-        "note": "主楼旁发车",
-        "sources": [
-          "siteA"
-        ]
-      },
-      {
-        "line": "理学院班车",
-        "dayProfile": "weekday",
-        "origin": "three",
-        "dest": "one",
-        "departures": [
-          "20:20"
-        ],
-        "note": "理学院南侧发车",
-        "sources": [
-          "siteA"
-        ]
-      },
-      {
-        "line": "空天班车",
-        "dayProfile": "weekday",
-        "origin": "one",
-        "dest": "three",
-        "departures": [
-          "07:25"
-        ],
-        "note": "空天楼前发车",
-        "sources": [
-          "siteA"
-        ]
-      },
-      {
-        "line": "空天班车",
-        "dayProfile": "weekday",
-        "origin": "three",
-        "dest": "one",
-        "departures": [
-          "09:50"
-        ],
-        "note": "高超楼前发车",
-        "sources": [
-          "siteA"
-        ]
-      }
-    ],
-    "siteB": {
-      "everyday": [
-        {
-          "line": "环线1路",
-          "origin": "dorm",
-          "dest": "college",
-          "departures": [
-            "07:30",
-            "07:40",
-            "07:50",
-            "08:00",
-            "08:10",
-            "08:20",
-            "08:30",
-            "08:40",
-            "08:50",
-            "09:00",
-            "09:12",
-            "09:24",
-            "09:36",
-            "09:48",
-            "10:00",
-            "10:15",
-            "10:30",
-            "10:45",
-            "11:00",
-            "11:15",
-            "11:30",
-            "11:40",
-            "11:50",
-            "12:10",
-            "12:25",
-            "12:40",
-            "14:00",
-            "14:12",
-            "14:24",
-            "14:36",
-            "14:48",
-            "15:00",
-            "15:20",
-            "15:40",
-            "16:00",
-            "16:15",
-            "16:30",
-            "16:45",
-            "17:00",
-            "17:15",
-            "17:30",
-            "17:45",
-            "18:00",
-            "18:15",
-            "18:30",
-            "18:45",
-            "19:00",
-            "19:15",
-            "19:30",
-            "19:45",
-            "20:00",
-            "20:15",
-            "20:30",
-            "20:45",
-            "21:00",
-            "21:15",
-            "21:30",
-            "21:45",
-            "22:00",
-            "22:15",
-            "22:30"
-          ],
-          "offsets": {
-            "dorm": 0,
-            "college": 7
-          },
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
-          "line": "就餐专线v2",
-          "origin": "college",
-          "dest": "secondCanteen",
-          "departures": [
-            "11:30",
-            "11:50",
-            "12:10",
-            "12:30",
-            "16:30",
-            "16:50",
-            "17:10",
-            "17:30",
-            "17:50"
-          ],
-          "offsets": {
-            "college": 0
-          },
-          "sources": [
-            "siteB"
-          ]
-        }
-      ],
-      "monThu": [
-        {
-          "line": "线路2",
-          "origin": "kjy",
-          "dest": "college",
-          "departures": [
-            "07:05",
-            "07:20",
-            "14:00"
-          ],
-          "offsets": {
-            "dorm": 20
-          },
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
-          "line": "线路2",
-          "origin": "college",
-          "dest": "kjy",
-          "departures": [
-            "12:05",
-            "17:35",
-            "21:35"
-          ],
-          "offsets": {
-            "college": 0
-          },
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
-          "line": "线路5",
-          "origin": "jingyuanEast",
-          "dest": "college",
-          "departures": [
-            "07:20"
-          ],
-          "offsets": {
-            "dorm": 15
-          },
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
-          "line": "线路5",
-          "origin": "college",
-          "dest": "jingyuanEast",
-          "departures": [
-            "17:30"
-          ],
-          "offsets": {
-            "college": 0
-          },
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
-          "line": "线路7",
-          "origin": "family4",
-          "dest": "college",
-          "departures": [
-            "07:00"
-          ],
-          "offsets": {
-            "dorm": 40
-          },
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
-          "line": "线路7",
-          "origin": "college",
-          "dest": "family4",
-          "departures": [
-            "17:10"
-          ],
-          "offsets": {
-            "college": 0
-          },
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
-          "line": "线路8",
-          "origin": "one",
-          "dest": "college",
-          "departures": [
-            "07:10",
-            "07:20",
-            "07:30",
-            "09:20",
-            "09:30",
-            "11:25",
-            "13:50",
-            "14:00",
-            "15:30",
-            "16:25",
-            "18:55",
-            "21:00"
-          ],
-          "offsets": {
-            "dorm": 25
-          },
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
-          "line": "线路8",
-          "origin": "college",
-          "dest": "one",
-          "departures": [
-            "07:50",
-            "09:45",
-            "10:00",
-            "12:00",
-            "12:35",
-            "13:45",
-            "16:25",
-            "17:05",
-            "17:30",
-            "17:40",
-            "17:55",
-            "18:25",
-            "21:00",
-            "21:30",
-            "21:35",
-            "21:55",
-            "22:15"
-          ],
-          "offsets": {
-            "college": 0
-          },
-          "sources": [
-            "siteB"
-          ]
-        }
-      ],
-      "friday": [
-        {
-          "line": "线路2",
-          "origin": "kjy",
-          "dest": "college",
-          "departures": [
-            "07:05",
-            "07:20",
-            "14:00"
-          ],
-          "offsets": {
-            "dorm": 20
-          },
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
-          "line": "线路2",
-          "origin": "college",
-          "dest": "kjy",
-          "departures": [
-            "12:05",
-            "17:35",
-            "21:35"
-          ],
-          "offsets": {
-            "college": 0
-          },
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
-          "line": "线路5",
-          "origin": "jingyuanEast",
-          "dest": "college",
-          "departures": [
-            "07:20"
-          ],
-          "offsets": {
-            "dorm": 15
-          },
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
-          "line": "线路5",
-          "origin": "college",
-          "dest": "jingyuanEast",
-          "departures": [
-            "17:30"
-          ],
-          "offsets": {
-            "college": 0
-          },
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
-          "line": "线路7",
-          "origin": "family4",
-          "dest": "college",
-          "departures": [
-            "07:00"
-          ],
-          "offsets": {
-            "dorm": 40
-          },
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
-          "line": "线路7",
-          "origin": "college",
-          "dest": "family4",
-          "departures": [
-            "17:10"
-          ],
-          "offsets": {
-            "college": 0
-          },
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
-          "line": "线路8",
-          "origin": "one",
-          "dest": "college",
-          "departures": [
-            "07:10",
-            "07:20",
-            "07:30",
-            "09:20",
-            "09:30",
-            "11:25",
-            "13:50",
-            "14:00",
-            "15:30",
-            "16:25",
-            "18:55",
-            "21:00"
-          ],
-          "offsets": {
-            "dorm": 25
-          },
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
-          "line": "线路8",
-          "origin": "college",
-          "dest": "one",
-          "departures": [
-            "07:50",
-            "09:45",
-            "10:00",
-            "12:00",
-            "12:35",
-            "13:45",
-            "16:25",
-            "17:05",
-            "17:30",
-            "17:40",
-            "17:55",
-            "18:25",
-            "21:00",
-            "21:35",
-            "21:55",
-            "22:15"
-          ],
-          "offsets": {
-            "college": 0
-          },
-          "sources": [
-            "siteB"
-          ]
-        }
-      ],
-      "saturday": [
-        {
-          "line": "线路2",
-          "origin": "kjy",
-          "dest": "college",
-          "departures": [
-            "07:23",
-            "13:55"
-          ],
-          "offsets": {
-            "dorm": 20
-          },
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
-          "line": "线路8",
-          "origin": "one",
-          "dest": "college",
-          "departures": [
-            "07:20",
-            "09:30",
-            "11:25",
-            "13:50",
-            "15:30",
-            "18:55"
-          ],
-          "offsets": {
-            "dorm": 25
-          },
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
-          "line": "线路8",
-          "origin": "college",
-          "dest": "one",
-          "departures": [
-            "07:50",
-            "10:00",
-            "12:00",
-            "12:35",
-            "16:25",
-            "17:30",
-            "18:25",
-            "21:35",
-            "22:15"
-          ],
-          "offsets": {
-            "college": 0
-          },
-          "sources": [
-            "siteB"
-          ]
-        }
-      ],
-      "sunday": [
-        {
-          "line": "线路8",
-          "origin": "one",
-          "dest": "college",
-          "departures": [
-            "07:20",
-            "09:30",
-            "13:50"
-          ],
-          "offsets": {
-            "dorm": 25
-          },
-          "sources": [
-            "siteB"
-          ]
-        },
-        {
-          "line": "线路8",
-          "origin": "college",
-          "dest": "one",
-          "departures": [
-            "12:35",
-            "17:30",
-            "22:15"
-          ],
-          "offsets": {
-            "college": 0
-          },
-          "sources": [
-            "siteB"
-          ]
-        }
-      ]
-    },
-    "sightseeing": [
-      {
-        "line": "环线3路(观光车)",
-        "origin": "dorm",
-        "dest": "college",
-        "dayType": "weekend",
-        "departures": [
-          "08:15",
-          "08:40",
-          "09:05",
-          "09:30",
-          "09:55",
-          "10:20",
-          "14:20",
-          "14:45",
-          "15:10"
-        ],
-        "offsets": {
-          "dorm": 0,
-          "college": 5
-        },
-        "sources": [
-          "siteB"
-        ]
-      },
-      {
-        "line": "环线3路(观光车)",
-        "origin": "college",
-        "dest": "dorm",
-        "dayType": "weekend",
-        "departures": [
-          "11:25",
-          "11:55",
-          "12:25",
-          "16:50",
-          "17:20",
-          "17:50",
-          "21:00",
-          "21:25",
-          "21:50"
-        ],
-        "offsets": {
-          "college": 0,
-          "dorm": 7
-        },
-        "sources": [
-          "siteB"
-        ]
-      },
-      {
-        "line": "环线3路(观光车)",
-        "origin": "dorm",
-        "dest": "college",
-        "dayType": "weekday",
-        "departures": [
-          "07:35",
-          "07:45",
-          "07:55",
-          "08:05",
-          "08:15",
-          "08:25",
-          "08:35",
-          "08:45",
-          "08:55",
-          "09:05",
-          "09:20",
-          "09:35",
-          "09:50",
-          "10:10",
-          "10:30",
-          "11:00",
-          "11:20",
-          "11:35",
-          "11:45",
-          "12:05",
-          "12:20",
-          "12:30",
-          "14:10",
-          "14:25",
-          "14:40",
-          "15:00",
-          "15:10",
-          "15:25",
-          "15:45",
-          "16:00",
-          "16:20",
-          "16:35",
-          "17:00",
-          "17:10",
-          "17:25",
-          "17:40",
-          "17:55",
-          "18:20",
-          "18:50",
-          "19:20",
-          "19:50",
-          "20:20",
-          "20:50",
-          "21:20",
-          "21:50"
-        ],
-        "offsets": {
-          "dorm": 0,
-          "college": 5
-        },
-        "sources": [
-          "siteB"
-        ]
-      },
-      {
-        "line": "环线3路(观光车)",
-        "origin": "college",
-        "dest": "dorm",
-        "dayType": "weekday",
-        "departures": [
-          "10:45",
-          "10:50",
-          "16:50"
-        ],
-        "offsets": {
-          "college": 0,
-          "dorm": 7
-        },
-        "sources": [
-          "siteB"
-        ]
-      }
-    ],
-    "officialCampus": [
-      {
-        "line": "线路1",
-        "dir": "科大佳园→一号院",
-        "times": [
-          {
-            "time": "07:10",
-            "day": "monFri"
-          },
-          {
-            "time": "07:20",
-            "day": "monFri"
-          },
-          {
-            "time": "07:30",
-            "day": "monFri"
-          },
-          {
-            "time": "07:35",
-            "day": "monFri"
-          },
-          {
-            "time": "07:40",
-            "day": "monFri"
-          },
-          {
-            "time": "14:00",
-            "day": "monFri"
-          },
-          {
-            "time": "14:10",
-            "day": "monFri"
-          },
-          {
-            "time": "14:15",
-            "day": "monFri"
-          }
-        ],
-        "note": "早高峰 5 班",
-        "sources": [
-          "official-2026-03-09"
-        ]
-      },
-      {
-        "line": "线路1",
-        "dir": "一号院→科大佳园",
-        "times": [
-          {
-            "time": "12:00",
-            "day": "monFri"
-          },
-          {
-            "time": "12:15",
-            "day": "monFri"
-          },
-          {
-            "time": "12:30",
-            "day": "monFri"
-          },
-          {
-            "time": "17:30",
-            "day": "monFri"
-          },
-          {
-            "time": "17:40",
-            "day": "monFri"
-          },
-          {
-            "time": "17:45",
-            "day": "monFri"
-          },
-          {
-            "time": "18:05",
-            "day": "monFri"
-          },
-          {
-            "time": "18:30",
-            "day": "monFri"
-          },
-          {
-            "time": "20:30",
-            "day": "monFri"
-          },
-          {
-            "time": "22:00",
-            "day": "monFri"
-          },
-          {
-            "time": "22:30",
-            "day": "monFri"
-          }
-        ],
-        "note": "",
-        "sources": [
-          "official-2026-03-09"
-        ]
-      },
-      {
-        "line": "线路2",
-        "dir": "科大佳园→三号院",
-        "times": [
-          {
-            "time": "07:05",
-            "day": "monFri"
-          },
-          {
-            "time": "07:20",
-            "day": "monFri"
-          },
-          {
-            "time": "07:23",
-            "day": "saturday"
-          },
-          {
-            "time": "14:00",
-            "day": "monFri"
-          }
-        ],
-        "note": "07:23 仅周六开行",
-        "sources": [
-          "official-2026-03-09"
-        ]
-      },
-      {
-        "line": "线路2",
-        "dir": "三号院→科大佳园",
-        "times": [
-          {
-            "time": "12:05",
-            "day": "monFri"
-          },
-          {
-            "time": "17:35",
-            "day": "monFri"
-          }
-        ],
-        "note": "",
-        "sources": [
-          "official-2026-03-09"
-        ]
-      },
-      {
-        "line": "线路3",
-        "dir": "科大佳园→四号院",
-        "times": [
-          {
-            "time": "07:00",
-            "day": "monFri"
-          }
-        ],
-        "note": "前沿交叉科学学院军车",
-        "sources": [
-          "official-2026-03-09"
-        ]
-      },
-      {
-        "line": "线路3",
-        "dir": "四号院→科大佳园",
-        "times": [
-          {
-            "time": "17:10",
-            "day": "monFri"
-          }
-        ],
-        "note": "",
-        "sources": [
-          "official-2026-03-09"
-        ]
-      },
-      {
-        "line": "线路4",
-        "dir": "科大景园西门→一号院",
-        "times": [
-          {
-            "time": "07:20",
-            "day": "monFri"
-          },
-          {
-            "time": "14:10",
-            "day": "monFri"
-          }
-        ],
-        "note": "教练勤务普军车",
-        "sources": [
-          "official-2026-03-09"
-        ]
-      },
-      {
-        "line": "线路4",
-        "dir": "一号院→科大景园西门",
-        "times": [
-          {
-            "time": "12:00",
-            "day": "monFri"
-          },
-          {
-            "time": "17:30",
-            "day": "monFri"
-          }
-        ],
-        "note": "",
-        "sources": [
-          "official-2026-03-09"
-        ]
-      },
-      {
-        "line": "线路5",
-        "dir": "科大景园东门→三号院",
-        "times": [
-          {
-            "time": "07:20",
-            "day": "monFri"
-          }
-        ],
-        "note": "",
-        "sources": [
-          "official-2026-03-09"
-        ]
-      },
-      {
-        "line": "线路5",
-        "dir": "三号院→科大景园东门",
-        "times": [
-          {
-            "time": "17:30",
-            "day": "monFri"
-          }
-        ],
-        "note": "",
-        "sources": [
-          "official-2026-03-09"
-        ]
-      },
-      {
-        "line": "线路6",
-        "dir": "四号院家属区→一号院",
-        "times": [
-          {
-            "time": "07:20",
-            "day": "monFri"
-          }
-        ],
-        "note": "",
-        "sources": [
-          "official-2026-03-09"
-        ]
-      },
-      {
-        "line": "线路6",
-        "dir": "一号院→四号院家属区",
-        "times": [
-          {
-            "time": "17:30",
-            "day": "monFri"
-          }
-        ],
-        "note": "",
-        "sources": [
-          "official-2026-03-09"
-        ]
-      },
-      {
-        "line": "线路7",
-        "dir": "四号院家属区→三号院",
-        "times": [
-          {
-            "time": "07:05",
-            "day": "monFri"
-          }
-        ],
-        "note": "",
-        "sources": [
-          "official-2026-03-09"
-        ]
-      },
-      {
-        "line": "线路7",
-        "dir": "三号院→四号院家属区",
-        "times": [
-          {
-            "time": "17:10",
-            "day": "monFri"
-          }
-        ],
-        "note": "",
-        "sources": [
-          "official-2026-03-09"
-        ]
-      },
-      {
-        "line": "线路8",
-        "dir": "一号院→三号院",
-        "times": [
-          {
-            "time": "07:10",
-            "day": "monFri"
-          },
-          {
-            "time": "07:20",
-            "day": "sunday"
-          },
-          {
-            "time": "07:30",
-            "day": "monFri"
-          },
-          {
-            "time": "09:20",
-            "day": "monFri"
-          },
-          {
-            "time": "09:30",
-            "day": "sunday"
-          },
-          {
-            "time": "11:25",
-            "day": "monFri"
-          },
-          {
-            "time": "13:50",
-            "day": "saturday"
-          },
-          {
-            "time": "14:00",
-            "day": "monFri"
-          },
-          {
-            "time": "15:30",
-            "day": "saturday"
-          },
-          {
-            "time": "16:25",
-            "day": "monFri"
-          },
-          {
-            "time": "18:55",
-            "day": "saturday"
-          },
-          {
-            "time": "21:00",
-            "day": "monFri"
-          }
-        ],
-        "note": "",
-        "sources": [
-          "official-2026-03-09"
-        ]
-      },
-      {
-        "line": "线路8",
-        "dir": "三号院→一号院",
-        "times": [
-          {
-            "time": "07:50",
-            "day": "monFri"
-          },
-          {
-            "time": "09:45",
-            "day": "monFri"
-          },
-          {
-            "time": "10:00",
-            "day": "saturday"
-          },
-          {
-            "time": "12:00",
-            "day": "monFri"
-          },
-          {
-            "time": "12:35",
-            "day": "monFri"
-          },
-          {
-            "time": "16:25",
-            "day": "monFri"
-          },
-          {
-            "time": "17:05",
-            "day": "monFri"
-          },
-          {
-            "time": "17:40",
-            "day": "monFri"
-          },
-          {
-            "time": "17:55",
-            "day": "monFri"
-          },
-          {
-            "time": "18:25",
-            "day": "monFri"
-          },
-          {
-            "time": "21:30",
-            "day": "monFri"
-          },
-          {
-            "time": "21:35",
-            "day": "saturday"
-          },
-          {
-            "time": "22:15",
-            "day": "monFri"
-          }
-        ],
-        "note": "",
-        "sources": [
-          "official-2026-03-09"
-        ]
-      }
-    ]
-  },
   "extras": {
     "holidayNotice": {
       "start": "2026-08-03",
@@ -1447,11 +116,25 @@
     "crowdRules": {
       "dorm": {
         "mild": [
+          "08:10",
+          "08:20",
+          "14:12"
+        ],
+        "high": [
+          "08:30",
+          "08:40",
+          "08:50",
+          "14:24",
+          "14:36",
+          "14:48"
+        ]
+      },
+      "college": {
+        "mild": [
           "17:00"
         ],
         "high": []
-      },
-      "college": {}
+      }
     },
     "dormWalkNotice": "提醒：这班车的上车点不在宿舍楼下，从宿舍出发需要先步行到对应站点。",
     "collegeOffsetSpecialMinutes": 7,
@@ -1518,9 +201,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1530,9 +210,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1542,9 +219,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1554,9 +228,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1566,9 +237,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1578,9 +246,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1590,9 +255,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1602,9 +264,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1614,9 +273,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1626,9 +282,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1638,9 +291,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1650,9 +300,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         }
       ],
@@ -1688,9 +335,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1700,9 +344,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1712,9 +353,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1724,9 +362,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1736,9 +371,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1748,9 +380,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1760,9 +389,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1772,9 +398,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1784,9 +407,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1796,9 +416,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1808,9 +425,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1820,9 +434,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1832,9 +443,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1844,9 +452,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1856,9 +461,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1868,9 +470,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -1880,9 +479,6 @@
             "tue",
             "wed",
             "thu"
-          ],
-          "sources": [
-            "siteA"
           ]
         }
       ],
@@ -1919,108 +515,72 @@
           "depart": "07:10",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "07:20",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "07:30",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "09:20",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "09:30",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "11:25",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "13:50",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "14:00",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "15:30",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "16:25",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "18:55",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "21:00",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         }
       ],
@@ -2053,144 +613,96 @@
           "depart": "07:50",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "09:45",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "10:00",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "12:00",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "12:35",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "13:45",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "16:25",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "17:05",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "17:30",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "17:40",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "17:55",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "18:25",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "21:00",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "21:35",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "21:55",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "22:15",
           "days": [
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         }
       ],
@@ -2227,54 +739,36 @@
           "depart": "07:20",
           "days": [
             "sat"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "09:30",
           "days": [
             "sat"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "11:25",
           "days": [
             "sat"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "13:50",
           "days": [
             "sat"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "15:30",
           "days": [
             "sat"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "18:55",
           "days": [
             "sat"
-          ],
-          "sources": [
-            "siteA"
           ]
         }
       ],
@@ -2307,81 +801,54 @@
           "depart": "07:50",
           "days": [
             "sat"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "10:00",
           "days": [
             "sat"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "12:00",
           "days": [
             "sat"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "12:35",
           "days": [
             "sat"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "16:25",
           "days": [
             "sat"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "17:30",
           "days": [
             "sat"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "18:25",
           "days": [
             "sat"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "21:35",
           "days": [
             "sat"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "22:15",
           "days": [
             "sat"
-          ],
-          "sources": [
-            "siteA"
           ]
         }
       ],
@@ -2418,27 +885,18 @@
           "depart": "07:20",
           "days": [
             "sun"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "09:30",
           "days": [
             "sun"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "13:50",
           "days": [
             "sun"
-          ],
-          "sources": [
-            "siteA"
           ]
         }
       ],
@@ -2471,27 +929,18 @@
           "depart": "12:35",
           "days": [
             "sun"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "17:30",
           "days": [
             "sun"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
           "depart": "22:15",
           "days": [
             "sun"
-          ],
-          "sources": [
-            "siteA"
           ]
         }
       ],
@@ -2528,9 +977,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -2541,9 +987,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -2554,9 +997,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         }
       ],
@@ -2593,9 +1033,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -2606,9 +1043,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -2619,9 +1053,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         }
       ],
@@ -2658,10 +1089,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteA",
-            "official-2025-05-19"
           ]
         },
         {
@@ -2672,10 +1099,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteA",
-            "official-2025-05-19"
           ]
         }
       ],
@@ -2712,10 +1135,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteA",
-            "official-2025-05-19"
           ]
         },
         {
@@ -2726,10 +1145,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteA",
-            "official-2025-05-19"
           ]
         },
         {
@@ -2740,10 +1155,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteA",
-            "official-2025-05-19"
           ]
         }
       ],
@@ -2780,9 +1191,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         },
         {
@@ -2793,9 +1201,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         }
       ],
@@ -2832,9 +1237,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         }
       ],
@@ -2871,9 +1273,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         }
       ],
@@ -2910,9 +1309,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteA"
           ]
         }
       ],
@@ -2979,9 +1375,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -2994,9 +1387,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3009,9 +1399,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3024,9 +1411,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3039,9 +1423,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3054,9 +1435,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3069,9 +1447,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3084,9 +1459,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3099,9 +1471,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3114,9 +1483,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3129,9 +1495,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3144,9 +1507,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3159,9 +1519,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3174,9 +1531,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3189,9 +1543,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3204,9 +1555,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3219,9 +1567,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3234,9 +1579,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3249,9 +1591,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3264,9 +1603,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3279,9 +1615,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3294,9 +1627,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3309,9 +1639,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3324,9 +1651,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3339,9 +1663,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3354,9 +1675,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3369,9 +1687,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3384,9 +1699,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3399,9 +1711,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3414,9 +1723,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3429,9 +1735,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3444,9 +1747,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3459,9 +1759,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3474,9 +1771,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3489,9 +1783,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3504,9 +1795,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3519,9 +1807,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3534,9 +1819,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3549,9 +1831,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3564,9 +1843,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3579,9 +1855,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3594,9 +1867,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3609,9 +1879,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3624,9 +1891,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3639,9 +1903,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3654,9 +1915,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3669,9 +1927,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3684,9 +1939,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3699,9 +1951,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3714,9 +1963,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3729,9 +1975,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3744,9 +1987,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3759,9 +1999,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3774,9 +2011,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3789,9 +2023,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3804,9 +2035,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3819,9 +2047,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3834,9 +2059,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3849,9 +2071,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3864,9 +2083,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3879,9 +2095,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         }
       ],
@@ -3925,9 +2138,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3940,9 +2150,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3955,9 +2162,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3970,9 +2174,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -3985,9 +2186,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -4000,9 +2198,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -4015,9 +2210,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -4030,9 +2222,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -4045,9 +2234,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         }
       ],
@@ -4085,9 +2271,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         },
         {
@@ -4098,9 +2281,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         },
         {
@@ -4111,9 +2291,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         },
         {
@@ -4124,9 +2301,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         },
         {
@@ -4137,9 +2311,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         },
         {
@@ -4150,9 +2321,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         },
         {
@@ -4163,9 +2331,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         },
         {
@@ -4176,9 +2341,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         }
       ],
@@ -4215,9 +2377,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         },
         {
@@ -4228,9 +2387,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         },
         {
@@ -4241,9 +2397,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         },
         {
@@ -4254,9 +2407,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         },
         {
@@ -4267,9 +2417,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         },
         {
@@ -4280,9 +2427,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         },
         {
@@ -4293,9 +2437,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         },
         {
@@ -4306,9 +2447,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         },
         {
@@ -4319,9 +2457,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         },
         {
@@ -4332,9 +2467,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         },
         {
@@ -4345,9 +2477,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         }
       ],
@@ -4384,9 +2513,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         }
       ],
@@ -4423,9 +2549,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         }
       ],
@@ -4462,9 +2585,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         },
         {
@@ -4475,9 +2595,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         }
       ],
@@ -4514,9 +2631,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         },
         {
@@ -4527,9 +2641,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         }
       ],
@@ -4566,9 +2677,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         }
       ],
@@ -4605,9 +2713,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         }
       ],
@@ -4649,10 +2754,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -4663,10 +2764,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -4677,29 +2774,18 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
           "depart": "07:23",
           "days": [
             "sat"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
           "depart": "13:55",
           "days": [
             "sat"
-          ],
-          "sources": [
-            "siteB"
           ]
         }
       ],
@@ -4737,10 +2823,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -4751,10 +2833,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -4765,9 +2843,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         }
       ],
@@ -4809,10 +2884,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         }
       ],
@@ -4850,10 +2921,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         }
       ],
@@ -4895,9 +2962,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -4908,9 +2972,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "official-2026-03-09"
           ]
         }
       ],
@@ -4948,10 +3009,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         }
       ],
@@ -4993,10 +3050,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5009,10 +3062,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5023,10 +3072,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5037,10 +3082,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5053,10 +3094,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5068,10 +3105,6 @@
             "thu",
             "fri",
             "sat"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5084,10 +3117,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5098,10 +3127,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5113,10 +3138,6 @@
             "thu",
             "fri",
             "sat"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5127,10 +3148,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5142,10 +3159,6 @@
             "thu",
             "fri",
             "sat"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5156,10 +3169,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         }
       ],
@@ -5198,10 +3207,6 @@
             "thu",
             "fri",
             "sat"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5212,10 +3217,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5227,10 +3228,6 @@
             "thu",
             "fri",
             "sat"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5242,10 +3239,6 @@
             "thu",
             "fri",
             "sat"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5258,10 +3251,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5272,9 +3261,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5286,10 +3272,6 @@
             "thu",
             "fri",
             "sat"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5300,10 +3282,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5316,9 +3294,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5329,10 +3304,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5343,10 +3314,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5358,10 +3325,6 @@
             "thu",
             "fri",
             "sat"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5372,9 +3335,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5385,10 +3345,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5400,10 +3356,6 @@
             "thu",
             "fri",
             "sat"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         },
         {
@@ -5414,9 +3366,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5429,10 +3378,6 @@
             "fri",
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB",
-            "official-2026-03-09"
           ]
         }
       ],
@@ -5487,9 +3432,6 @@
           "days": [
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5497,9 +3439,6 @@
           "days": [
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5507,9 +3446,6 @@
           "days": [
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5517,9 +3453,6 @@
           "days": [
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5527,9 +3460,6 @@
           "days": [
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5537,9 +3467,6 @@
           "days": [
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5547,9 +3474,6 @@
           "days": [
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5557,9 +3481,6 @@
           "days": [
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5567,9 +3488,6 @@
           "days": [
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         }
       ],
@@ -5625,9 +3543,6 @@
           "days": [
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5635,9 +3550,6 @@
           "days": [
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5645,9 +3557,6 @@
           "days": [
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5655,9 +3564,6 @@
           "days": [
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5665,9 +3571,6 @@
           "days": [
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5675,9 +3578,6 @@
           "days": [
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5685,9 +3585,6 @@
           "days": [
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5695,9 +3592,6 @@
           "days": [
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5705,9 +3599,6 @@
           "days": [
             "sat",
             "sun"
-          ],
-          "sources": [
-            "siteB"
           ]
         }
       ],
@@ -5766,9 +3657,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5779,9 +3667,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5792,9 +3677,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5805,9 +3687,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5818,9 +3697,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5831,9 +3707,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5844,9 +3717,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5857,9 +3727,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5870,9 +3737,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5883,9 +3747,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5896,9 +3757,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5909,9 +3767,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5922,9 +3777,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5935,9 +3787,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5948,9 +3797,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5961,9 +3807,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5974,9 +3817,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -5987,9 +3827,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6000,9 +3837,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6013,9 +3847,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6026,9 +3857,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6039,9 +3867,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6052,9 +3877,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6065,9 +3887,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6078,9 +3897,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6091,9 +3907,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6104,9 +3917,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6117,9 +3927,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6130,9 +3937,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6143,9 +3947,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6156,9 +3957,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6169,9 +3967,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6182,9 +3977,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6195,9 +3987,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6208,9 +3997,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6221,9 +4007,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6234,9 +4017,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6247,9 +4027,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6260,9 +4037,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6273,9 +4047,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6286,9 +4057,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6299,9 +4067,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6312,9 +4077,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6325,9 +4087,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6338,9 +4097,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         }
       ],
@@ -6399,9 +4155,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6412,9 +4165,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         },
         {
@@ -6425,9 +4175,6 @@
             "wed",
             "thu",
             "fri"
-          ],
-          "sources": [
-            "siteB"
           ]
         }
       ],
