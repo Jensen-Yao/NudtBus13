@@ -31,7 +31,7 @@ function areaOf(stop) { return AREAS[stop] || "unknown"; }
 const MODES = {
   campus: {
     label: "校区通勤",
-    test: (svc) => (svc.tags || []).includes("campus-commute"),
+    test: () => true, // 全网全集：囊括所有站点与服务
     defaultFrom: "one", defaultTo: "three",
   },
   inner: {
@@ -50,6 +50,7 @@ function deriveStops(m) {
     if (!cfg.test(svc)) continue;
     for (const s of svc.orderedStops) set.add(s.stop);
   }
+  if (m === "campus") for (const s of Object.keys(STOP_LABELS)) set.add(s); // 全网模式兜底：全部已知站点
   const order = m === "campus"
     ? ["one", "three", "kjy", "kjySouthGate", "jingyuanWest", "jingyuanEast", "fourth", "family4", "dorm"]
     : ["dorm", "three", "eastGate", "northGate", "militaryCenter", "laserInstitute", "gaochaoNorth", "gaochaoSouth", "scienceCollege", "secondCanteen", "one", "kjy"];
