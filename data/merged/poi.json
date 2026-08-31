@@ -1,0 +1,96 @@
+{
+  "coordinateSystem": "WGS-84",
+  "note": "runtime converts to GCJ-02 for AMap raster tiles",
+  "poi": {
+    "one": {
+      "lat": 28.2290273,
+      "lng": 112.9949229,
+      "precision": "approx",
+      "display": "OSM 德雅路109号 国防科技大学"
+    },
+    "three": {
+      "lat": 28.2595826,
+      "lng": 113.0423792,
+      "precision": "approx",
+      "display": "OSM 万家丽北路 国防科技大学三号院"
+    },
+    "kjy": {
+      "lat": 28.2408,
+      "lng": 112.9959,
+      "precision": "approx",
+      "display": "OSM 双拥路 科大佳园北苑"
+    },
+    "kjySouthGate": {
+      "lat": 28.2595826,
+      "lng": 113.0423792,
+      "precision": "approx-campus-internal",
+      "display": "OSM 万家丽北路 国防科技大学三号院"
+    },
+    "jingyuanEast": {
+      "lat": 28.2432,
+      "lng": 113.0012,
+      "precision": "approx",
+      "display": "approx 科大景园一带"
+    },
+    "jingyuanWest": {
+      "lat": 28.2587826,
+      "lng": 113.0415792,
+      "precision": "approx-campus-internal",
+      "display": "OSM 万家丽北路 国防科技大学三号院"
+    },
+    "fourth": {
+      "lat": 28.1670497,
+      "lng": 112.9836019,
+      "precision": "approx",
+      "display": "OSM 芙蓉中路 前沿交叉学科学院"
+    },
+    "family4": {
+      "lat": 28.1675497,
+      "lng": 112.9841019,
+      "precision": "approx-campus-internal",
+      "display": "OSM 万家丽北路 国防科技大学三号院"
+    },
+    "eastGate": {
+      "lat": 28.2625826,
+      "lng": 113.0463792,
+      "precision": "approx-campus-internal",
+      "display": "OSM 万家丽北路 国防科技大学三号院"
+    },
+    "northGate": {
+      "lat": 28.2625826,
+      "lng": 113.0403792,
+      "precision": "approx-campus-internal",
+      "display": "OSM 万家丽北路 国防科技大学三号院"
+    },
+    "secondCanteen": {
+      "lat": 28.2565826,
+      "lng": 113.0433792,
+      "precision": "approx-campus-internal",
+      "display": "OSM 万家丽北路 国防科技大学三号院"
+    },
+    "scienceCollege": {
+      "lat": 28.257582600000003,
+      "lng": 113.0413792,
+      "precision": "approx-campus-internal",
+      "display": "OSM 万家丽北路 国防科技大学三号院"
+    },
+    "laserInstitute": {
+      "lat": 28.260582600000003,
+      "lng": 113.0423792,
+      "precision": "approx-campus-internal",
+      "display": "OSM 万家丽北路 国防科技大学三号院"
+    },
+    "militaryCenter": {
+      "lat": 28.2615826,
+      "lng": 113.0433792,
+      "precision": "approx-campus-internal",
+      "display": "OSM 万家丽北路 国防科技大学三号院"
+    },
+    "gaochao": {
+      "lat": 28.2585826,
+      "lng": 113.0413792,
+      "precision": "approx-campus-internal",
+      "display": "OSM 万家丽北路 国防科技大学三号院"
+    }
+  }
+}

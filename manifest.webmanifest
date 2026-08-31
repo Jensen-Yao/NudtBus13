@@ -1,0 +1,12 @@
+{
+  "name": "NudtBus13 班车整合查询",
+  "short_name": "NudtBus13",
+  "description": "一号院·三号院·家属区班车整合查询（双向），五源数据合并",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f2f5f3",
+  "theme_color": "#173f35",
+  "icons": [
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

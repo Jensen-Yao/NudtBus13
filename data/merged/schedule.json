@@ -1,0 +1,6147 @@
+{
+  "meta": {
+    "generatedAt": "2026-08-31T20:24:43.770Z",
+    "snapshotNote": "班车时刻随学期调整，以学校最新通知为准",
+    "sources": {
+      "nudtbus": {
+        "url": "https://nudtbus.online",
+        "version": "v29-holiday-notice",
+        "method": "Firecrawl self-hosted /v2/scrape"
+      },
+      "bus2": {
+        "url": "https://bus2.qiutao20.online",
+        "version": "v20260725-v8-dev3",
+        "method": "Firecrawl self-hosted /v2/scrape"
+      },
+      "officialCampus": {
+        "effective": "2026-03-09",
+        "method": "image transcription (redacted)"
+      },
+      "officialInstitute": {
+        "effective": "2025-05-19",
+        "method": "image transcription (PII redacted)"
+      },
+      "handSummary": {
+        "method": "image transcription, cross-check only"
+      }
+    }
+  },
+  "stops": {
+    "dorm": {
+      "id": "dorm",
+      "label": "宿舍"
+    },
+    "college": {
+      "id": "college",
+      "label": "系统楼"
+    },
+    "eastGate": {
+      "id": "eastGate",
+      "label": "东门"
+    },
+    "northGate": {
+      "id": "northGate",
+      "label": "北门"
+    },
+    "militaryCenter": {
+      "id": "militaryCenter",
+      "label": "军体"
+    },
+    "laserInstitute": {
+      "id": "laserInstitute",
+      "label": "激光所"
+    },
+    "gaochaoNorth": {
+      "id": "gaochaoNorth",
+      "label": "高超北侧"
+    },
+    "gaochaoSouth": {
+      "id": "gaochaoSouth",
+      "label": "高超南侧"
+    },
+    "scienceCollege": {
+      "id": "scienceCollege",
+      "label": "理学院"
+    },
+    "secondCanteen": {
+      "id": "secondCanteen",
+      "label": "二食堂（去往研究生宿舍）"
+    },
+    "one": {
+      "id": "one",
+      "label": "一号院"
+    },
+    "three": {
+      "id": "three",
+      "label": "三号院（系统楼）"
+    }
+  },
+  "lines": {
+    "nudtbus": [
+      {
+        "line": "8号线",
+        "dayProfile": "monThu",
+        "origin": "one",
+        "dest": "three",
+        "departures": [
+          "07:10",
+          "07:20",
+          "07:30",
+          "09:20",
+          "09:30",
+          "11:25",
+          "13:50",
+          "14:00",
+          "15:30",
+          "16:25",
+          "18:55",
+          "21:00"
+        ],
+        "note": "主楼旁发车",
+        "sources": [
+          "nudtbus-v29"
+        ]
+      },
+      {
+        "line": "8号线",
+        "dayProfile": "monThu",
+        "origin": "three",
+        "dest": "one",
+        "departures": [
+          "07:50",
+          "09:45",
+          "10:00",
+          "12:00",
+          "12:35",
+          "13:45",
+          "16:25",
+          "17:05",
+          "17:30",
+          "17:40",
+          "17:55",
+          "18:25",
+          "21:00",
+          "21:30",
+          "21:35",
+          "21:55",
+          "22:15"
+        ],
+        "note": "系统楼东侧发车",
+        "sources": [
+          "nudtbus-v29"
+        ]
+      },
+      {
+        "line": "8号线",
+        "dayProfile": "friday",
+        "origin": "one",
+        "dest": "three",
+        "departures": [
+          "07:10",
+          "07:20",
+          "07:30",
+          "09:20",
+          "09:30",
+          "11:25",
+          "13:50",
+          "14:00",
+          "15:30",
+          "16:25",
+          "18:55",
+          "21:00"
+        ],
+        "note": "主楼旁发车",
+        "sources": [
+          "nudtbus-v29"
+        ]
+      },
+      {
+        "line": "8号线",
+        "dayProfile": "friday",
+        "origin": "three",
+        "dest": "one",
+        "departures": [
+          "07:50",
+          "09:45",
+          "10:00",
+          "12:00",
+          "12:35",
+          "13:45",
+          "16:25",
+          "17:05",
+          "17:30",
+          "17:40",
+          "17:55",
+          "18:25",
+          "21:00",
+          "21:35",
+          "21:55",
+          "22:15"
+        ],
+        "note": "系统楼东侧发车",
+        "sources": [
+          "nudtbus-v29"
+        ]
+      },
+      {
+        "line": "8号线",
+        "dayProfile": "saturday",
+        "origin": "one",
+        "dest": "three",
+        "departures": [
+          "07:20",
+          "09:30",
+          "11:25",
+          "13:50",
+          "15:30",
+          "18:55"
+        ],
+        "note": "主楼旁发车",
+        "sources": [
+          "nudtbus-v29"
+        ]
+      },
+      {
+        "line": "8号线",
+        "dayProfile": "saturday",
+        "origin": "three",
+        "dest": "one",
+        "departures": [
+          "07:50",
+          "10:00",
+          "12:00",
+          "12:35",
+          "16:25",
+          "17:30",
+          "18:25",
+          "21:35",
+          "22:15"
+        ],
+        "note": "系统楼东侧发车",
+        "sources": [
+          "nudtbus-v29"
+        ]
+      },
+      {
+        "line": "8号线",
+        "dayProfile": "sunday",
+        "origin": "one",
+        "dest": "three",
+        "departures": [
+          "07:20",
+          "09:30",
+          "13:50"
+        ],
+        "note": "主楼旁发车",
+        "sources": [
+          "nudtbus-v29"
+        ]
+      },
+      {
+        "line": "8号线",
+        "dayProfile": "sunday",
+        "origin": "three",
+        "dest": "one",
+        "departures": [
+          "12:35",
+          "17:30",
+          "22:15"
+        ],
+        "note": "系统楼东侧发车",
+        "sources": [
+          "nudtbus-v29"
+        ]
+      },
+      {
+        "line": "气海班车",
+        "dayProfile": "weekday",
+        "origin": "three",
+        "dest": "one",
+        "departures": [
+          "07:30",
+          "18:00",
+          "20:30"
+        ],
+        "note": "气海学院楼北侧发车",
+        "sources": [
+          "nudtbus-v29"
+        ]
+      },
+      {
+        "line": "气海班车",
+        "dayProfile": "weekday",
+        "origin": "one",
+        "dest": "three",
+        "departures": [
+          "08:30",
+          "18:50",
+          "21:10"
+        ],
+        "note": "气海学院楼前发车",
+        "sources": [
+          "nudtbus-v29"
+        ]
+      },
+      {
+        "line": "系统班车",
+        "dayProfile": "weekday",
+        "origin": "one",
+        "dest": "three",
+        "departures": [
+          "07:25",
+          "14:00"
+        ],
+        "note": "老系统楼前发车",
+        "sources": [
+          "nudtbus-v29"
+        ]
+      },
+      {
+        "line": "系统班车",
+        "dayProfile": "weekday",
+        "origin": "three",
+        "dest": "one",
+        "departures": [
+          "12:05",
+          "17:50",
+          "21:00"
+        ],
+        "note": "系统楼东侧发车",
+        "sources": [
+          "nudtbus-v29"
+        ]
+      },
+      {
+        "line": "理学院班车",
+        "dayProfile": "weekday",
+        "origin": "one",
+        "dest": "three",
+        "departures": [
+          "07:15",
+          "20:55"
+        ],
+        "note": "主楼旁发车",
+        "sources": [
+          "nudtbus-v29"
+        ]
+      },
+      {
+        "line": "理学院班车",
+        "dayProfile": "weekday",
+        "origin": "three",
+        "dest": "one",
+        "departures": [
+          "20:20"
+        ],
+        "note": "理学院南侧发车",
+        "sources": [
+          "nudtbus-v29"
+        ]
+      },
+      {
+        "line": "空天班车",
+        "dayProfile": "weekday",
+        "origin": "one",
+        "dest": "three",
+        "departures": [
+          "07:25"
+        ],
+        "note": "空天楼前发车",
+        "sources": [
+          "nudtbus-v29"
+        ]
+      },
+      {
+        "line": "空天班车",
+        "dayProfile": "weekday",
+        "origin": "three",
+        "dest": "one",
+        "departures": [
+          "09:50"
+        ],
+        "note": "高超楼前发车",
+        "sources": [
+          "nudtbus-v29"
+        ]
+      }
+    ],
+    "bus2Schedules": {
+      "everyday": [
+        {
+          "line": "环线1路",
+          "origin": "宿舍",
+          "dest": "系统楼",
+          "departures": [
+            "07:30",
+            "07:40",
+            "07:50",
+            "08:00",
+            "08:10",
+            "08:20",
+            "08:30",
+            "08:40",
+            "08:50",
+            "09:00",
+            "09:12",
+            "09:24",
+            "09:36",
+            "09:48",
+            "10:00",
+            "10:15",
+            "10:30",
+            "10:45",
+            "11:00",
+            "11:15",
+            "11:30",
+            "11:40",
+            "11:50",
+            "12:10",
+            "12:25",
+            "12:40",
+            "14:00",
+            "14:12",
+            "14:24",
+            "14:36",
+            "14:48",
+            "15:00",
+            "15:20",
+            "15:40",
+            "16:00",
+            "16:15",
+            "16:30",
+            "16:45",
+            "17:00",
+            "17:15",
+            "17:30",
+            "17:45",
+            "18:00",
+            "18:15",
+            "18:30",
+            "18:45",
+            "19:00",
+            "19:15",
+            "19:30",
+            "19:45",
+            "20:00",
+            "20:15",
+            "20:30",
+            "20:45",
+            "21:00",
+            "21:15",
+            "21:30",
+            "21:45",
+            "22:00",
+            "22:15",
+            "22:30"
+          ],
+          "offsets": {
+            "dorm": 0,
+            "college": 7
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "line": "就餐专线v2",
+          "origin": "系统楼",
+          "dest": "二食堂",
+          "departures": [
+            "11:30",
+            "11:50",
+            "12:10",
+            "12:30",
+            "16:30",
+            "16:50",
+            "17:10",
+            "17:30",
+            "17:50"
+          ],
+          "offsets": {
+            "college": 0
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        }
+      ],
+      "monThu": [
+        {
+          "line": "线路2",
+          "origin": "科大佳园",
+          "dest": "系统楼",
+          "departures": [
+            "07:05",
+            "07:20",
+            "14:00"
+          ],
+          "offsets": {
+            "dorm": 20
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "line": "线路2",
+          "origin": "系统楼",
+          "dest": "科大佳园",
+          "departures": [
+            "12:05",
+            "17:35",
+            "21:35"
+          ],
+          "offsets": {
+            "college": 0
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "line": "线路5",
+          "origin": "科大景园东门",
+          "dest": "系统楼",
+          "departures": [
+            "07:20"
+          ],
+          "offsets": {
+            "dorm": 15
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "line": "线路5",
+          "origin": "系统楼",
+          "dest": "科大景园东门",
+          "departures": [
+            "17:30"
+          ],
+          "offsets": {
+            "college": 0
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "line": "线路7",
+          "origin": "四号院家属区",
+          "dest": "系统楼",
+          "departures": [
+            "07:00"
+          ],
+          "offsets": {
+            "dorm": 40
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "line": "线路7",
+          "origin": "系统楼",
+          "dest": "四号院家属区",
+          "departures": [
+            "17:10"
+          ],
+          "offsets": {
+            "college": 0
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "line": "线路8",
+          "origin": "一号院",
+          "dest": "系统楼",
+          "departures": [
+            "07:10",
+            "07:20",
+            "07:30",
+            "09:20",
+            "09:30",
+            "11:25",
+            "13:50",
+            "14:00",
+            "15:30",
+            "16:25",
+            "18:55",
+            "21:00"
+          ],
+          "offsets": {
+            "dorm": 25
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "line": "线路8",
+          "origin": "系统楼",
+          "dest": "一号院",
+          "departures": [
+            "07:50",
+            "09:45",
+            "10:00",
+            "12:00",
+            "12:35",
+            "13:45",
+            "16:25",
+            "17:05",
+            "17:30",
+            "17:40",
+            "17:55",
+            "18:25",
+            "21:00",
+            "21:30",
+            "21:35",
+            "21:55",
+            "22:15"
+          ],
+          "offsets": {
+            "college": 0
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        }
+      ],
+      "friday": [
+        {
+          "line": "线路2",
+          "origin": "科大佳园",
+          "dest": "系统楼",
+          "departures": [
+            "07:05",
+            "07:20",
+            "14:00"
+          ],
+          "offsets": {
+            "dorm": 20
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "line": "线路2",
+          "origin": "系统楼",
+          "dest": "科大佳园",
+          "departures": [
+            "12:05",
+            "17:35",
+            "21:35"
+          ],
+          "offsets": {
+            "college": 0
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "line": "线路5",
+          "origin": "科大景园东门",
+          "dest": "系统楼",
+          "departures": [
+            "07:20"
+          ],
+          "offsets": {
+            "dorm": 15
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "line": "线路5",
+          "origin": "系统楼",
+          "dest": "科大景园东门",
+          "departures": [
+            "17:30"
+          ],
+          "offsets": {
+            "college": 0
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "line": "线路7",
+          "origin": "四号院家属区",
+          "dest": "系统楼",
+          "departures": [
+            "07:00"
+          ],
+          "offsets": {
+            "dorm": 40
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "line": "线路7",
+          "origin": "系统楼",
+          "dest": "四号院家属区",
+          "departures": [
+            "17:10"
+          ],
+          "offsets": {
+            "college": 0
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "line": "线路8",
+          "origin": "一号院",
+          "dest": "系统楼",
+          "departures": [
+            "07:10",
+            "07:20",
+            "07:30",
+            "09:20",
+            "09:30",
+            "11:25",
+            "13:50",
+            "14:00",
+            "15:30",
+            "16:25",
+            "18:55",
+            "21:00"
+          ],
+          "offsets": {
+            "dorm": 25
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "line": "线路8",
+          "origin": "系统楼",
+          "dest": "一号院",
+          "departures": [
+            "07:50",
+            "09:45",
+            "10:00",
+            "12:00",
+            "12:35",
+            "13:45",
+            "16:25",
+            "17:05",
+            "17:30",
+            "17:40",
+            "17:55",
+            "18:25",
+            "21:00",
+            "21:35",
+            "21:55",
+            "22:15"
+          ],
+          "offsets": {
+            "college": 0
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        }
+      ],
+      "saturday": [
+        {
+          "line": "线路2",
+          "origin": "科大佳园",
+          "dest": "系统楼",
+          "departures": [
+            "07:23",
+            "13:55"
+          ],
+          "offsets": {
+            "dorm": 20
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "line": "线路8",
+          "origin": "一号院",
+          "dest": "系统楼",
+          "departures": [
+            "07:20",
+            "09:30",
+            "11:25",
+            "13:50",
+            "15:30",
+            "18:55"
+          ],
+          "offsets": {
+            "dorm": 25
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "line": "线路8",
+          "origin": "系统楼",
+          "dest": "一号院",
+          "departures": [
+            "07:50",
+            "10:00",
+            "12:00",
+            "12:35",
+            "16:25",
+            "17:30",
+            "18:25",
+            "21:35",
+            "22:15"
+          ],
+          "offsets": {
+            "college": 0
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        }
+      ],
+      "sunday": [
+        {
+          "line": "线路8",
+          "origin": "一号院",
+          "dest": "系统楼",
+          "departures": [
+            "07:20",
+            "09:30",
+            "13:50"
+          ],
+          "offsets": {
+            "dorm": 25
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "line": "线路8",
+          "origin": "系统楼",
+          "dest": "一号院",
+          "departures": [
+            "12:35",
+            "17:30",
+            "22:15"
+          ],
+          "offsets": {
+            "college": 0
+          },
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        }
+      ]
+    },
+    "sightseeing": [
+      {
+        "line": "环线3路(观光车)",
+        "origin": "宿舍",
+        "dest": "系统楼",
+        "dayType": "weekend",
+        "departures": [
+          "08:15",
+          "08:40",
+          "09:05",
+          "09:30",
+          "09:55",
+          "10:20",
+          "14:20",
+          "14:45",
+          "15:10"
+        ],
+        "offsets": {
+          "dorm": 0,
+          "college": 5
+        },
+        "sources": [
+          "bus2-v8dev3"
+        ]
+      },
+      {
+        "line": "环线3路(观光车)",
+        "origin": "系统楼",
+        "dest": "宿舍",
+        "dayType": "weekend",
+        "departures": [
+          "11:25",
+          "11:55",
+          "12:25",
+          "16:50",
+          "17:20",
+          "17:50",
+          "21:00",
+          "21:25",
+          "21:50"
+        ],
+        "offsets": {
+          "college": 0,
+          "dorm": 7
+        },
+        "sources": [
+          "bus2-v8dev3"
+        ]
+      },
+      {
+        "line": "环线3路(观光车)",
+        "origin": "宿舍",
+        "dest": "系统楼",
+        "dayType": "weekday",
+        "departures": [
+          "07:35",
+          "07:45",
+          "07:55",
+          "08:05",
+          "08:15",
+          "08:25",
+          "08:35",
+          "08:45",
+          "08:55",
+          "09:05",
+          "09:20",
+          "09:35",
+          "09:50",
+          "10:10",
+          "10:30",
+          "11:00",
+          "11:20",
+          "11:35",
+          "11:45",
+          "12:05",
+          "12:20",
+          "12:30",
+          "14:10",
+          "14:25",
+          "14:40",
+          "15:00",
+          "15:10",
+          "15:25",
+          "15:45",
+          "16:00",
+          "16:20",
+          "16:35",
+          "17:00",
+          "17:10",
+          "17:25",
+          "17:40",
+          "17:55",
+          "18:20",
+          "18:50",
+          "19:20",
+          "19:50",
+          "20:20",
+          "20:50",
+          "21:20",
+          "21:50"
+        ],
+        "offsets": {
+          "dorm": 0,
+          "college": 5
+        },
+        "sources": [
+          "bus2-v8dev3"
+        ]
+      },
+      {
+        "line": "环线3路(观光车)",
+        "origin": "系统楼",
+        "dest": "宿舍",
+        "dayType": "weekday",
+        "departures": [
+          "10:45",
+          "10:50",
+          "16:50"
+        ],
+        "offsets": {
+          "college": 0,
+          "dorm": 7
+        },
+        "sources": [
+          "bus2-v8dev3"
+        ]
+      }
+    ],
+    "officialCampus": [
+      {
+        "line": "线路1",
+        "dir": "科大佳园→一号院",
+        "times": [
+          {
+            "time": "07:10",
+            "day": "monFri"
+          },
+          {
+            "time": "07:20",
+            "day": "monFri"
+          },
+          {
+            "time": "07:30",
+            "day": "monFri"
+          },
+          {
+            "time": "07:35",
+            "day": "monFri"
+          },
+          {
+            "time": "07:40",
+            "day": "monFri"
+          },
+          {
+            "time": "14:00",
+            "day": "monFri"
+          },
+          {
+            "time": "14:10",
+            "day": "monFri"
+          },
+          {
+            "time": "14:15",
+            "day": "monFri"
+          }
+        ],
+        "note": "早高峰 5 班",
+        "sources": [
+          "official-2026-03-09"
+        ]
+      },
+      {
+        "line": "线路1",
+        "dir": "一号院→科大佳园",
+        "times": [
+          {
+            "time": "12:00",
+            "day": "monFri"
+          },
+          {
+            "time": "12:15",
+            "day": "monFri"
+          },
+          {
+            "time": "12:30",
+            "day": "monFri"
+          },
+          {
+            "time": "17:30",
+            "day": "monFri"
+          },
+          {
+            "time": "17:40",
+            "day": "monFri"
+          },
+          {
+            "time": "17:45",
+            "day": "monFri"
+          },
+          {
+            "time": "18:05",
+            "day": "monFri"
+          },
+          {
+            "time": "18:30",
+            "day": "monFri"
+          },
+          {
+            "time": "20:30",
+            "day": "monFri"
+          },
+          {
+            "time": "22:00",
+            "day": "monFri"
+          },
+          {
+            "time": "22:30",
+            "day": "monFri"
+          }
+        ],
+        "note": "",
+        "sources": [
+          "official-2026-03-09"
+        ]
+      },
+      {
+        "line": "线路2",
+        "dir": "科大佳园→三号院",
+        "times": [
+          {
+            "time": "07:05",
+            "day": "monFri"
+          },
+          {
+            "time": "07:20",
+            "day": "monFri"
+          },
+          {
+            "time": "07:23",
+            "day": "saturday"
+          },
+          {
+            "time": "14:00",
+            "day": "monFri"
+          }
+        ],
+        "note": "07:23 仅周六开行",
+        "sources": [
+          "official-2026-03-09"
+        ]
+      },
+      {
+        "line": "线路2",
+        "dir": "三号院→科大佳园",
+        "times": [
+          {
+            "time": "12:05",
+            "day": "monFri"
+          },
+          {
+            "time": "17:35",
+            "day": "monFri"
+          }
+        ],
+        "note": "",
+        "sources": [
+          "official-2026-03-09"
+        ]
+      },
+      {
+        "line": "线路3",
+        "dir": "科大佳园→四号院",
+        "times": [
+          {
+            "time": "07:00",
+            "day": "monFri"
+          }
+        ],
+        "note": "前沿交叉科学学院军车",
+        "sources": [
+          "official-2026-03-09"
+        ]
+      },
+      {
+        "line": "线路3",
+        "dir": "四号院→科大佳园",
+        "times": [
+          {
+            "time": "17:10",
+            "day": "monFri"
+          }
+        ],
+        "note": "",
+        "sources": [
+          "official-2026-03-09"
+        ]
+      },
+      {
+        "line": "线路4",
+        "dir": "科大景园西门→一号院",
+        "times": [
+          {
+            "time": "07:20",
+            "day": "monFri"
+          },
+          {
+            "time": "14:10",
+            "day": "monFri"
+          }
+        ],
+        "note": "教练勤务普军车",
+        "sources": [
+          "official-2026-03-09"
+        ]
+      },
+      {
+        "line": "线路4",
+        "dir": "一号院→科大景园西门",
+        "times": [
+          {
+            "time": "12:00",
+            "day": "monFri"
+          },
+          {
+            "time": "17:30",
+            "day": "monFri"
+          }
+        ],
+        "note": "",
+        "sources": [
+          "official-2026-03-09"
+        ]
+      },
+      {
+        "line": "线路5",
+        "dir": "科大景园东门→三号院",
+        "times": [
+          {
+            "time": "07:20",
+            "day": "monFri"
+          }
+        ],
+        "note": "",
+        "sources": [
+          "official-2026-03-09"
+        ]
+      },
+      {
+        "line": "线路5",
+        "dir": "三号院→科大景园东门",
+        "times": [
+          {
+            "time": "17:30",
+            "day": "monFri"
+          }
+        ],
+        "note": "",
+        "sources": [
+          "official-2026-03-09"
+        ]
+      },
+      {
+        "line": "线路6",
+        "dir": "四号院家属区→一号院",
+        "times": [
+          {
+            "time": "07:20",
+            "day": "monFri"
+          }
+        ],
+        "note": "",
+        "sources": [
+          "official-2026-03-09"
+        ]
+      },
+      {
+        "line": "线路6",
+        "dir": "一号院→四号院家属区",
+        "times": [
+          {
+            "time": "17:30",
+            "day": "monFri"
+          }
+        ],
+        "note": "",
+        "sources": [
+          "official-2026-03-09"
+        ]
+      },
+      {
+        "line": "线路7",
+        "dir": "四号院家属区→三号院",
+        "times": [
+          {
+            "time": "07:05",
+            "day": "monFri"
+          }
+        ],
+        "note": "",
+        "sources": [
+          "official-2026-03-09"
+        ]
+      },
+      {
+        "line": "线路7",
+        "dir": "三号院→四号院家属区",
+        "times": [
+          {
+            "time": "17:10",
+            "day": "monFri"
+          }
+        ],
+        "note": "",
+        "sources": [
+          "official-2026-03-09"
+        ]
+      },
+      {
+        "line": "线路8",
+        "dir": "一号院→三号院",
+        "times": [
+          {
+            "time": "07:10",
+            "day": "monFri"
+          },
+          {
+            "time": "07:20",
+            "day": "sunday"
+          },
+          {
+            "time": "07:30",
+            "day": "monFri"
+          },
+          {
+            "time": "09:20",
+            "day": "monFri"
+          },
+          {
+            "time": "09:30",
+            "day": "sunday"
+          },
+          {
+            "time": "11:25",
+            "day": "monFri"
+          },
+          {
+            "time": "13:50",
+            "day": "saturday"
+          },
+          {
+            "time": "14:00",
+            "day": "monFri"
+          },
+          {
+            "time": "15:30",
+            "day": "saturday"
+          },
+          {
+            "time": "16:25",
+            "day": "monFri"
+          },
+          {
+            "time": "18:55",
+            "day": "saturday"
+          },
+          {
+            "time": "21:00",
+            "day": "monFri"
+          }
+        ],
+        "note": "",
+        "sources": [
+          "official-2026-03-09"
+        ]
+      },
+      {
+        "line": "线路8",
+        "dir": "三号院→一号院",
+        "times": [
+          {
+            "time": "07:50",
+            "day": "monFri"
+          },
+          {
+            "time": "09:45",
+            "day": "monFri"
+          },
+          {
+            "time": "10:00",
+            "day": "saturday"
+          },
+          {
+            "time": "12:00",
+            "day": "monFri"
+          },
+          {
+            "time": "12:35",
+            "day": "monFri"
+          },
+          {
+            "time": "16:25",
+            "day": "monFri"
+          },
+          {
+            "time": "17:05",
+            "day": "monFri"
+          },
+          {
+            "time": "17:40",
+            "day": "monFri"
+          },
+          {
+            "time": "17:55",
+            "day": "monFri"
+          },
+          {
+            "time": "18:25",
+            "day": "monFri"
+          },
+          {
+            "time": "21:30",
+            "day": "monFri"
+          },
+          {
+            "time": "21:35",
+            "day": "saturday"
+          },
+          {
+            "time": "22:15",
+            "day": "monFri"
+          }
+        ],
+        "note": "",
+        "sources": [
+          "official-2026-03-09"
+        ]
+      }
+    ]
+  },
+  "extras": {
+    "holidayNotice": {
+      "start": "2026-08-03",
+      "endExclusive": "2026-08-29",
+      "text": "假期期间班车停运，请勿按页面班次候车。具体安排请以学校最新通知为准。"
+    },
+    "holidays2026": [
+      "2026-01-01",
+      "2026-01-02",
+      "2026-01-03",
+      "2026-02-15",
+      "2026-02-16",
+      "2026-02-17",
+      "2026-02-18",
+      "2026-02-19",
+      "2026-02-20",
+      "2026-02-21",
+      "2026-02-22",
+      "2026-02-23",
+      "2026-04-04",
+      "2026-04-05",
+      "2026-04-06",
+      "2026-05-01",
+      "2026-05-02",
+      "2026-05-03",
+      "2026-05-04",
+      "2026-05-05",
+      "2026-06-19",
+      "2026-06-20",
+      "2026-06-21",
+      "2026-09-25",
+      "2026-09-26",
+      "2026-09-27",
+      "2026-10-01",
+      "2026-10-02",
+      "2026-10-03",
+      "2026-10-04",
+      "2026-10-05",
+      "2026-10-06",
+      "2026-10-07"
+    ],
+    "crowdRules": {
+      "dorm": {
+        "mild": [
+          "17:00"
+        ],
+        "high": []
+      },
+      "college": {}
+    },
+    "dormWalkNotice": "提醒：这班车的上车点不在宿舍楼下，从宿舍出发需要先步行到对应站点。",
+    "collegeOffsetSpecialMinutes": 7,
+    "offsets": {
+      "loopOne": {
+        "eastGate": 1,
+        "militaryCenter": 3,
+        "laserInstitute": 5,
+        "northGate": 6,
+        "gaochaoNorth": 8,
+        "scienceCollege": 8,
+        "secondCanteen": 11
+      },
+      "loopThreeFromDorm": {
+        "militaryCenter": 3,
+        "laserInstitute": 4,
+        "gaochaoSouth": 6,
+        "scienceCollege": 7,
+        "secondCanteen": 10
+      },
+      "loopThreeFromCollege": {
+        "scienceCollege": 1,
+        "secondCanteen": 4,
+        "militaryCenter": 12,
+        "laserInstitute": 13,
+        "gaochaoSouth": 15
+      },
+      "dining": {
+        "scienceCollege": 1,
+        "secondCanteen": 5
+      }
+    }
+  },
+  "services": [
+    {
+      "id": "nb-l8-one-three",
+      "line": "8号线（线路8）",
+      "kind": "intercampus",
+      "from": "one",
+      "to": "three",
+      "orderedStops": [
+        {
+          "stop": "one",
+          "m": 0
+        },
+        {
+          "stop": "dorm",
+          "m": 25
+        },
+        {
+          "stop": "three",
+          "m": 35
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "主楼旁发车",
+      "extraNote": "全程约35分钟（院际专线口径）",
+      "trips": [
+        {
+          "depart": "07:10",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "07:20",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "07:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "09:20",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "09:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "11:25",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "13:50",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "14:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "15:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "16:25",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "18:55",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "21:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nb-l8-three-one",
+      "line": "8号线（线路8）",
+      "kind": "intercampus",
+      "from": "three",
+      "to": "one",
+      "orderedStops": [
+        {
+          "stop": "three",
+          "m": 0
+        },
+        {
+          "stop": "one",
+          "m": 35
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "系统楼东侧发车",
+      "extraNote": "全程约35分钟（院际专线口径）",
+      "trips": [
+        {
+          "depart": "07:50",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "09:45",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "10:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "12:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "12:35",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "13:45",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "16:25",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "17:05",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "17:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "17:40",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "17:55",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "18:25",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "21:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "21:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "21:35",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "21:55",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "22:15",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nb-l8-one-three",
+      "line": "8号线（线路8）",
+      "kind": "intercampus",
+      "from": "one",
+      "to": "three",
+      "orderedStops": [
+        {
+          "stop": "one",
+          "m": 0
+        },
+        {
+          "stop": "dorm",
+          "m": 25
+        },
+        {
+          "stop": "three",
+          "m": 35
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "主楼旁发车",
+      "extraNote": "全程约35分钟（院际专线口径）",
+      "trips": [
+        {
+          "depart": "07:10",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "07:20",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "07:30",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "09:20",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "09:30",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "11:25",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "13:50",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "14:00",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "15:30",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "16:25",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "18:55",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "21:00",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nb-l8-three-one",
+      "line": "8号线（线路8）",
+      "kind": "intercampus",
+      "from": "three",
+      "to": "one",
+      "orderedStops": [
+        {
+          "stop": "three",
+          "m": 0
+        },
+        {
+          "stop": "one",
+          "m": 35
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "系统楼东侧发车",
+      "extraNote": "全程约35分钟（院际专线口径）",
+      "trips": [
+        {
+          "depart": "07:50",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "09:45",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "10:00",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "12:00",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "12:35",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "13:45",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "16:25",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "17:05",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "17:30",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "17:40",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "17:55",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "18:25",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "21:00",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "21:35",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "21:55",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "22:15",
+          "days": [
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nb-l8-one-three",
+      "line": "8号线（线路8）",
+      "kind": "intercampus",
+      "from": "one",
+      "to": "three",
+      "orderedStops": [
+        {
+          "stop": "one",
+          "m": 0
+        },
+        {
+          "stop": "dorm",
+          "m": 25
+        },
+        {
+          "stop": "three",
+          "m": 35
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "主楼旁发车",
+      "extraNote": "全程约35分钟（院际专线口径）",
+      "trips": [
+        {
+          "depart": "07:20",
+          "days": [
+            "sat"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "09:30",
+          "days": [
+            "sat"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "11:25",
+          "days": [
+            "sat"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "13:50",
+          "days": [
+            "sat"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "15:30",
+          "days": [
+            "sat"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "18:55",
+          "days": [
+            "sat"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nb-l8-three-one",
+      "line": "8号线（线路8）",
+      "kind": "intercampus",
+      "from": "three",
+      "to": "one",
+      "orderedStops": [
+        {
+          "stop": "three",
+          "m": 0
+        },
+        {
+          "stop": "one",
+          "m": 35
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "系统楼东侧发车",
+      "extraNote": "全程约35分钟（院际专线口径）",
+      "trips": [
+        {
+          "depart": "07:50",
+          "days": [
+            "sat"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "10:00",
+          "days": [
+            "sat"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "12:00",
+          "days": [
+            "sat"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "12:35",
+          "days": [
+            "sat"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "16:25",
+          "days": [
+            "sat"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "17:30",
+          "days": [
+            "sat"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "18:25",
+          "days": [
+            "sat"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "21:35",
+          "days": [
+            "sat"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "22:15",
+          "days": [
+            "sat"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nb-l8-one-three",
+      "line": "8号线（线路8）",
+      "kind": "intercampus",
+      "from": "one",
+      "to": "three",
+      "orderedStops": [
+        {
+          "stop": "one",
+          "m": 0
+        },
+        {
+          "stop": "dorm",
+          "m": 25
+        },
+        {
+          "stop": "three",
+          "m": 35
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "主楼旁发车",
+      "extraNote": "全程约35分钟（院际专线口径）",
+      "trips": [
+        {
+          "depart": "07:20",
+          "days": [
+            "sun"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "09:30",
+          "days": [
+            "sun"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "13:50",
+          "days": [
+            "sun"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nb-l8-three-one",
+      "line": "8号线（线路8）",
+      "kind": "intercampus",
+      "from": "three",
+      "to": "one",
+      "orderedStops": [
+        {
+          "stop": "three",
+          "m": 0
+        },
+        {
+          "stop": "one",
+          "m": 35
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "系统楼东侧发车",
+      "extraNote": "全程约35分钟（院际专线口径）",
+      "trips": [
+        {
+          "depart": "12:35",
+          "days": [
+            "sun"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "17:30",
+          "days": [
+            "sun"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "22:15",
+          "days": [
+            "sun"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nb-weekday-three-one",
+      "line": "气海班车",
+      "kind": "college",
+      "from": "three",
+      "to": "one",
+      "orderedStops": [
+        {
+          "stop": "three",
+          "m": 0
+        },
+        {
+          "stop": "one",
+          "m": null
+        }
+      ],
+      "circular": false,
+      "express": true,
+      "note": "气海学院楼北侧发车",
+      "extraNote": "",
+      "trips": [
+        {
+          "depart": "07:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "18:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "20:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nb-weekday-one-three",
+      "line": "气海班车",
+      "kind": "college",
+      "from": "one",
+      "to": "three",
+      "orderedStops": [
+        {
+          "stop": "one",
+          "m": 0
+        },
+        {
+          "stop": "three",
+          "m": null
+        }
+      ],
+      "circular": false,
+      "express": true,
+      "note": "气海学院楼前发车",
+      "extraNote": "",
+      "trips": [
+        {
+          "depart": "08:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "18:50",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "21:10",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nb-weekday-one-three",
+      "line": "系统班车（院际专线）",
+      "kind": "college",
+      "from": "one",
+      "to": "three",
+      "orderedStops": [
+        {
+          "stop": "one",
+          "m": 0
+        },
+        {
+          "stop": "three",
+          "m": null
+        }
+      ],
+      "circular": false,
+      "express": true,
+      "note": "老系统楼前发车",
+      "extraNote": "院际专线：全程约35-40分钟；17:50/21:00 班次途经科大佳园南苑东门",
+      "trips": [
+        {
+          "depart": "07:25",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29",
+            "official-2025-05-19"
+          ]
+        },
+        {
+          "depart": "14:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29",
+            "official-2025-05-19"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nb-weekday-three-one",
+      "line": "系统班车（院际专线）",
+      "kind": "college",
+      "from": "three",
+      "to": "one",
+      "orderedStops": [
+        {
+          "stop": "three",
+          "m": 0
+        },
+        {
+          "stop": "one",
+          "m": null
+        }
+      ],
+      "circular": false,
+      "express": true,
+      "note": "系统楼东侧发车",
+      "extraNote": "院际专线：全程约35-40分钟；17:50/21:00 班次途经科大佳园南苑东门",
+      "trips": [
+        {
+          "depart": "12:05",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29",
+            "official-2025-05-19"
+          ]
+        },
+        {
+          "depart": "17:50",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29",
+            "official-2025-05-19"
+          ]
+        },
+        {
+          "depart": "21:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29",
+            "official-2025-05-19"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nb-weekday-one-three",
+      "line": "理学院班车",
+      "kind": "college",
+      "from": "one",
+      "to": "three",
+      "orderedStops": [
+        {
+          "stop": "one",
+          "m": 0
+        },
+        {
+          "stop": "three",
+          "m": null
+        }
+      ],
+      "circular": false,
+      "express": true,
+      "note": "主楼旁发车",
+      "extraNote": "",
+      "trips": [
+        {
+          "depart": "07:15",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        },
+        {
+          "depart": "20:55",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nb-weekday-three-one",
+      "line": "理学院班车",
+      "kind": "college",
+      "from": "three",
+      "to": "one",
+      "orderedStops": [
+        {
+          "stop": "three",
+          "m": 0
+        },
+        {
+          "stop": "one",
+          "m": null
+        }
+      ],
+      "circular": false,
+      "express": true,
+      "note": "理学院南侧发车",
+      "extraNote": "",
+      "trips": [
+        {
+          "depart": "20:20",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nb-weekday-one-three",
+      "line": "空天班车",
+      "kind": "college",
+      "from": "one",
+      "to": "three",
+      "orderedStops": [
+        {
+          "stop": "one",
+          "m": 0
+        },
+        {
+          "stop": "three",
+          "m": null
+        }
+      ],
+      "circular": false,
+      "express": true,
+      "note": "空天楼前发车",
+      "extraNote": "",
+      "trips": [
+        {
+          "depart": "07:25",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nb-weekday-three-one",
+      "line": "空天班车",
+      "kind": "college",
+      "from": "three",
+      "to": "one",
+      "orderedStops": [
+        {
+          "stop": "three",
+          "m": 0
+        },
+        {
+          "stop": "one",
+          "m": null
+        }
+      ],
+      "circular": false,
+      "express": true,
+      "note": "高超楼前发车",
+      "extraNote": "",
+      "trips": [
+        {
+          "depart": "09:50",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "nudtbus-v29"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-环线1路-宿舍",
+      "line": "环线1路",
+      "kind": "loop",
+      "from": "宿舍",
+      "to": "系统楼",
+      "orderedStops": [
+        {
+          "stop": "dorm",
+          "m": 0
+        },
+        {
+          "stop": "eastGate",
+          "m": 1
+        },
+        {
+          "stop": "militaryCenter",
+          "m": 3
+        },
+        {
+          "stop": "laserInstitute",
+          "m": 5
+        },
+        {
+          "stop": "northGate",
+          "m": 6
+        },
+        {
+          "stop": "three",
+          "m": 7
+        },
+        {
+          "stop": "gaochaoNorth",
+          "m": 8
+        },
+        {
+          "stop": "scienceCollege",
+          "m": 8
+        },
+        {
+          "stop": "secondCanteen",
+          "m": 11
+        }
+      ],
+      "circular": true,
+      "express": false,
+      "note": "环线：按顺序沿线停靠",
+      "extraNote": "",
+      "trips": [
+        {
+          "depart": "07:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "07:40",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "07:50",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "08:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "08:10",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "08:20",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "08:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "08:40",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "08:50",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "09:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "09:12",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "09:24",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "09:36",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "09:48",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "10:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "10:15",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "10:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "10:45",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "11:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "11:15",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "11:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "11:40",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "11:50",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "12:10",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "12:25",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "12:40",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "14:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "14:12",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "14:24",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "14:36",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "14:48",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "15:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "15:20",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "15:40",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "16:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "16:15",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "16:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "16:45",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "17:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "17:15",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "17:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "17:45",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "18:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "18:15",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "18:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "18:45",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "19:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "19:15",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "19:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "19:45",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "20:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "20:15",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "20:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "20:45",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "21:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "21:15",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "21:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "21:45",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "22:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "22:15",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "22:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-就餐专线v2-系统楼",
+      "line": "就餐专线v2",
+      "kind": "dining",
+      "from": "系统楼",
+      "to": "二食堂",
+      "orderedStops": [
+        {
+          "stop": "three",
+          "m": 0
+        },
+        {
+          "stop": "scienceCollege",
+          "m": 1
+        },
+        {
+          "stop": "secondCanteen",
+          "m": 5
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "就餐专线：系统楼→二食堂（研究生宿舍方向）",
+      "extraNote": "",
+      "trips": [
+        {
+          "depart": "11:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "11:50",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "12:10",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "12:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "16:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "16:50",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "17:10",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "17:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "17:50",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "off-线路1-kjy",
+      "line": "线路1（官方表）",
+      "kind": "family",
+      "from": "kjy",
+      "to": "one",
+      "orderedStops": [
+        {
+          "stop": "kjy",
+          "m": 0
+        },
+        {
+          "stop": "one",
+          "m": null
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "早高峰 5 班",
+      "extraNote": "仅见于官方时刻表（网站未收录）",
+      "trips": [
+        {
+          "depart": "07:10",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "07:20",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "07:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "07:35",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "07:40",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "14:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "14:10",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "14:15",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "off-线路1-one",
+      "line": "线路1（官方表）",
+      "kind": "family",
+      "from": "one",
+      "to": "kjy",
+      "orderedStops": [
+        {
+          "stop": "one",
+          "m": 0
+        },
+        {
+          "stop": "kjy",
+          "m": null
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "",
+      "extraNote": "仅见于官方时刻表（网站未收录）",
+      "trips": [
+        {
+          "depart": "12:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "12:15",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "12:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "17:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "17:40",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "17:45",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "18:05",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "18:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "20:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "22:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "22:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "off-线路3-kjy",
+      "line": "线路3（官方表）",
+      "kind": "family",
+      "from": "kjy",
+      "to": "fourth",
+      "orderedStops": [
+        {
+          "stop": "kjy",
+          "m": 0
+        },
+        {
+          "stop": "fourth",
+          "m": null
+        }
+      ],
+      "circular": false,
+      "express": true,
+      "note": "前沿交叉科学学院军车",
+      "extraNote": "仅见于官方时刻表（网站未收录）",
+      "trips": [
+        {
+          "depart": "07:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "off-线路3-fourth",
+      "line": "线路3（官方表）",
+      "kind": "family",
+      "from": "fourth",
+      "to": "kjy",
+      "orderedStops": [
+        {
+          "stop": "fourth",
+          "m": 0
+        },
+        {
+          "stop": "kjy",
+          "m": null
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "",
+      "extraNote": "仅见于官方时刻表（网站未收录）",
+      "trips": [
+        {
+          "depart": "17:10",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "off-线路4-jingyuanWest",
+      "line": "线路4（官方表）",
+      "kind": "family",
+      "from": "jingyuanWest",
+      "to": "one",
+      "orderedStops": [
+        {
+          "stop": "jingyuanWest",
+          "m": 0
+        },
+        {
+          "stop": "one",
+          "m": null
+        }
+      ],
+      "circular": false,
+      "express": true,
+      "note": "教练勤务普军车",
+      "extraNote": "仅见于官方时刻表（网站未收录）",
+      "trips": [
+        {
+          "depart": "07:20",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "14:10",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "off-线路4-one",
+      "line": "线路4（官方表）",
+      "kind": "family",
+      "from": "one",
+      "to": "jingyuanWest",
+      "orderedStops": [
+        {
+          "stop": "one",
+          "m": 0
+        },
+        {
+          "stop": "jingyuanWest",
+          "m": null
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "",
+      "extraNote": "仅见于官方时刻表（网站未收录）",
+      "trips": [
+        {
+          "depart": "12:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "17:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "off-线路6-family4",
+      "line": "线路6（官方表）",
+      "kind": "family",
+      "from": "family4",
+      "to": "one",
+      "orderedStops": [
+        {
+          "stop": "family4",
+          "m": 0
+        },
+        {
+          "stop": "one",
+          "m": null
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "",
+      "extraNote": "仅见于官方时刻表（网站未收录）",
+      "trips": [
+        {
+          "depart": "07:20",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "off-线路6-one",
+      "line": "线路6（官方表）",
+      "kind": "family",
+      "from": "one",
+      "to": "family4",
+      "orderedStops": [
+        {
+          "stop": "one",
+          "m": 0
+        },
+        {
+          "stop": "family4",
+          "m": null
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "",
+      "extraNote": "仅见于官方时刻表（网站未收录）",
+      "trips": [
+        {
+          "depart": "17:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-线路2|out",
+      "line": "线路2",
+      "kind": "family",
+      "from": "kjy",
+      "to": "three",
+      "orderedStops": [
+        {
+          "stop": "dorm",
+          "m": 20
+        },
+        {
+          "stop": "three",
+          "m": 23
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "家属区/校区接驳线",
+      "extraNote": "上车点不在宿舍楼下，需步行至对应站点",
+      "destEtaMin": 23,
+      "trips": [
+        {
+          "depart": "07:05",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3",
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "07:20",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3",
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "14:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3",
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "12:05",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "17:35",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "21:35",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "07:23",
+          "days": [
+            "sat"
+          ],
+          "sources": [
+            "bus2-v8dev3",
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "13:55",
+          "days": [
+            "sat"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-线路5|out",
+      "line": "线路5",
+      "kind": "family",
+      "from": "jingyuanEast",
+      "to": "three",
+      "orderedStops": [
+        {
+          "stop": "dorm",
+          "m": 15
+        },
+        {
+          "stop": "three",
+          "m": 18
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "家属区/校区接驳线",
+      "extraNote": "上车点不在宿舍楼下，需步行至对应站点",
+      "destEtaMin": 18,
+      "trips": [
+        {
+          "depart": "07:20",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3",
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "17:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-线路7|out",
+      "line": "线路7",
+      "kind": "family",
+      "from": "family4",
+      "to": "three",
+      "orderedStops": [
+        {
+          "stop": "dorm",
+          "m": 40
+        },
+        {
+          "stop": "three",
+          "m": 43
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "家属区/校区接驳线",
+      "extraNote": "上车点不在宿舍楼下，需步行至对应站点",
+      "destEtaMin": 43,
+      "trips": [
+        {
+          "depart": "07:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "17:10",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "07:05",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "official-2026-03-09"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-线路8|out",
+      "line": "线路8（8号线）",
+      "kind": "intercampus",
+      "from": "one",
+      "to": "three",
+      "orderedStops": [
+        {
+          "stop": "dorm",
+          "m": 25
+        },
+        {
+          "stop": "three",
+          "m": 35
+        }
+      ],
+      "circular": false,
+      "express": false,
+      "note": "与官方线路8/8号线同一班线",
+      "extraNote": "上车点不在宿舍楼下，需步行至对应站点",
+      "destEtaMin": 35,
+      "trips": [
+        {
+          "depart": "07:10",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3",
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "07:20",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3",
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "07:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3",
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "09:20",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3",
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "09:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3",
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "11:25",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat"
+          ],
+          "sources": [
+            "bus2-v8dev3",
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "13:50",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3",
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "14:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3",
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "15:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat"
+          ],
+          "sources": [
+            "bus2-v8dev3",
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "16:25",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat"
+          ],
+          "sources": [
+            "bus2-v8dev3",
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "18:55",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat"
+          ],
+          "sources": [
+            "bus2-v8dev3",
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "21:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3",
+            "official-2026-03-09"
+          ]
+        },
+        {
+          "depart": "07:50",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "09:45",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "10:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "12:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "12:35",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "13:45",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "17:05",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "17:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "17:40",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "17:55",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "18:25",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "21:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "21:35",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "21:55",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "22:15",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-loop3-宿舍-weekend",
+      "line": "环线3路（观光车）",
+      "kind": "sightseeing",
+      "from": "宿舍",
+      "to": "系统楼",
+      "orderedStops": [
+        {
+          "stop": "three",
+          "m": 0
+        },
+        {
+          "stop": "scienceCollege",
+          "m": 1
+        },
+        {
+          "stop": "secondCanteen",
+          "m": 4
+        },
+        {
+          "stop": "dorm",
+          "m": 7
+        },
+        {
+          "stop": "militaryCenter",
+          "m": 12
+        },
+        {
+          "stop": "laserInstitute",
+          "m": 13
+        },
+        {
+          "stop": "gaochaoSouth",
+          "m": 15
+        }
+      ],
+      "circular": true,
+      "express": false,
+      "note": "新增观光环线",
+      "extraNote": "周末/节假日运行表",
+      "holidayOk": true,
+      "trips": [
+        {
+          "depart": "08:15",
+          "days": [
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "08:40",
+          "days": [
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "09:05",
+          "days": [
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "09:30",
+          "days": [
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "09:55",
+          "days": [
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "10:20",
+          "days": [
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "14:20",
+          "days": [
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "14:45",
+          "days": [
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "15:10",
+          "days": [
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-loop3-系统楼-weekend",
+      "line": "环线3路（观光车）",
+      "kind": "sightseeing",
+      "from": "系统楼",
+      "to": "宿舍",
+      "orderedStops": [
+        {
+          "stop": "three",
+          "m": 0
+        },
+        {
+          "stop": "scienceCollege",
+          "m": 1
+        },
+        {
+          "stop": "secondCanteen",
+          "m": 4
+        },
+        {
+          "stop": "dorm",
+          "m": 7
+        },
+        {
+          "stop": "militaryCenter",
+          "m": 12
+        },
+        {
+          "stop": "laserInstitute",
+          "m": 13
+        },
+        {
+          "stop": "gaochaoSouth",
+          "m": 15
+        }
+      ],
+      "circular": true,
+      "express": false,
+      "note": "新增观光环线",
+      "extraNote": "周末/节假日运行表",
+      "holidayOk": true,
+      "trips": [
+        {
+          "depart": "11:25",
+          "days": [
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "11:55",
+          "days": [
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "12:25",
+          "days": [
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "16:50",
+          "days": [
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "17:20",
+          "days": [
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "17:50",
+          "days": [
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "21:00",
+          "days": [
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "21:25",
+          "days": [
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "21:50",
+          "days": [
+            "sat",
+            "sun"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-loop3-宿舍-weekday",
+      "line": "环线3路（观光车）",
+      "kind": "sightseeing",
+      "from": "宿舍",
+      "to": "系统楼",
+      "orderedStops": [
+        {
+          "stop": "three",
+          "m": 0
+        },
+        {
+          "stop": "scienceCollege",
+          "m": 1
+        },
+        {
+          "stop": "secondCanteen",
+          "m": 4
+        },
+        {
+          "stop": "dorm",
+          "m": 7
+        },
+        {
+          "stop": "militaryCenter",
+          "m": 12
+        },
+        {
+          "stop": "laserInstitute",
+          "m": 13
+        },
+        {
+          "stop": "gaochaoSouth",
+          "m": 15
+        }
+      ],
+      "circular": true,
+      "express": false,
+      "note": "新增观光环线",
+      "extraNote": "工作日运行表",
+      "holidayOk": false,
+      "trips": [
+        {
+          "depart": "07:35",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "07:45",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "07:55",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "08:05",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "08:15",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "08:25",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "08:35",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "08:45",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "08:55",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "09:05",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "09:20",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "09:35",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "09:50",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "10:10",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "10:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "11:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "11:20",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "11:35",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "11:45",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "12:05",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "12:20",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "12:30",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "14:10",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "14:25",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "14:40",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "15:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "15:10",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "15:25",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "15:45",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "16:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "16:20",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "16:35",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "17:00",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "17:10",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "17:25",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "17:40",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "17:55",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "18:20",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "18:50",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "19:20",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "19:50",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "20:20",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "20:50",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "21:20",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "21:50",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-loop3-系统楼-weekday",
+      "line": "环线3路（观光车）",
+      "kind": "sightseeing",
+      "from": "系统楼",
+      "to": "宿舍",
+      "orderedStops": [
+        {
+          "stop": "three",
+          "m": 0
+        },
+        {
+          "stop": "scienceCollege",
+          "m": 1
+        },
+        {
+          "stop": "secondCanteen",
+          "m": 4
+        },
+        {
+          "stop": "dorm",
+          "m": 7
+        },
+        {
+          "stop": "militaryCenter",
+          "m": 12
+        },
+        {
+          "stop": "laserInstitute",
+          "m": 13
+        },
+        {
+          "stop": "gaochaoSouth",
+          "m": 15
+        }
+      ],
+      "circular": true,
+      "express": false,
+      "note": "新增观光环线",
+      "extraNote": "工作日运行表",
+      "holidayOk": false,
+      "trips": [
+        {
+          "depart": "10:45",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "10:50",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        },
+        {
+          "depart": "16:50",
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "sources": [
+            "bus2-v8dev3"
+          ]
+        }
+      ]
+    }
+  ]
+}

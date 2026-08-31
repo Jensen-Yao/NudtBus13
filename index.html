@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173f35">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="NudtBus13">
+  <title>NudtBus13 · 班车整合查询</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <div class="hero-head">
+        <div>
+          <h1>NudtBus13</h1>
+          <p class="hero-copy">一号院 · 三号院 · 家属区 班车整合查询（双向）。数据来自 nudtbus.online / bus2 / 官方时刻表 / 院际专线表 / 真实地图五源合并。</p>
+        </div>
+        <div class="clock-card">
+          <div class="clock-time" id="currentTime">--:--</div>
+          <p class="clock-date" id="currentDate">--</p>
+        </div>
+      </div>
+
+      <div id="holidayBanner" class="holiday-banner" hidden>
+        ⚠️ <span id="holidayBannerText"></span>
+      </div>
+
+      <div class="query-bar">
+        <label class="field">
+          <span class="field-label">从哪上车</span>
+          <select id="fromStop" class="stop-select"></select>
+        </label>
+        <label class="field">
+          <span class="field-label">要去哪</span>
+          <select id="toStop" class="stop-select"></select>
+        </label>
+        <div class="field">
+          <span class="field-label">出发时间</span>
+          <div class="query-mode">
+            <button class="mode-button active" data-query-mode="now" type="button">现在出发</button>
+            <button class="mode-button" data-query-mode="manual" type="button">手动时间</button>
+          </div>
+        </div>
+        <label class="field manual-field is-hidden" id="manualField">
+          <span class="field-label">查询时间</span>
+          <input class="time-input" id="queryDateTime" type="datetime-local">
+        </label>
+        <button class="query-submit-button" id="querySubmit" type="button">查询</button>
+      </div>
+    </section>
+
+    <section class="panel" id="resultPanel">
+      <div class="panel-head">
+        <h2>查询结果</h2>
+        <span class="schedule-badge" id="dayLabel">--</span>
+      </div>
+      <p class="query-meta"><span id="queryMeta">选择起点终点后点击查询</span></p>
+      <div id="resultList" class="result-list"></div>
+    </section>
+
+    <section class="panel" id="timetablePanel">
+      <div class="panel-head">
+        <h2>全部时刻表</h2>
+        <span class="schedule-badge" id="ttDayLabel">--</span>
+      </div>
+      <p class="query-meta">按当前日期所属运行表展示全部线路 · 点击班次查看到达各站时间</p>
+      <div id="timetableList" class="timetable-list"></div>
+    </section>
+
+    <section class="panel" id="mapPanel">
+      <div class="panel-head">
+        <h2>线路地图</h2>
+        <span class="schedule-badge">WGS-84 → GCJ-02</span>
+      </div>
+      <div id="map" class="map-container"></div>
+      <p class="query-meta">绿点=已地理编码站点 · 黄点=校区内近似位置 · 底图来自高德栅格瓦片（GCJ-02 纠偏）</p>
+    </section>
+
+    <footer class="footer">
+      <p>NudtBus13 · 整合版班车查询 · 数据快照 2026-08-27 · 原始数据版权归 nudtbus.online / bus2.qiutao20.online / 学校官方时刻表</p>
+      <p><a href="https://github.com/Jensen-Yao/NudtBus13" target="_blank" rel="noopener">GitHub 仓库</a> · 假期及寒暑假停运安排以学校最新通知为准</p>
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
