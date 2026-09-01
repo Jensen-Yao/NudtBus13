@@ -400,6 +400,7 @@ function main() {
     // 院区模型：站点 -> 所属院区。新增院区/站点时在此登记即可自动参与模式判定。
     areas: {
       one: "campus-one",
+      northGateOne: "campus-one",
       three: "campus-three",
       dorm: "campus-three",
       eastGate: "campus-three",

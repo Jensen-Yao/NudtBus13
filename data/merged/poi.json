@@ -5,44 +5,49 @@
     "one": {
       "lat": 28.2290273,
       "lng": 112.9949229,
-      "precision": "approx",
-      "display": "OSM 德雅路109号 国防科技大学"
+      "display": "中国人民解放军国防科技大学 德雅路 东风路街道 长沙市",
+      "query": "中国人民解放军国防科技大学",
+      "precision": "geocoded"
     },
     "three": {
       "lat": 28.2595826,
       "lng": 113.0423792,
-      "precision": "approx",
-      "display": "OSM 万家丽北路 国防科技大学三号院"
+      "display": "国防科技大学三号院 万家丽北路 洪山街道 鸭子铺社区 洪雅社区",
+      "query": "国防科技大学三号院",
+      "precision": "geocoded"
     },
     "kjy": {
-      "lat": 28.2408,
-      "lng": 112.9959,
-      "precision": "approx",
-      "display": "OSM 双拥路 科大佳园北苑"
+      "lat": 28.2417196,
+      "lng": 112.9956649,
+      "display": "科大佳园北苑 双拥路 伍家岭街道 长沙市",
+      "query": "科大佳园",
+      "precision": "geocoded"
     },
     "kjySouthGate": {
-      "lat": 28.2595826,
-      "lng": 113.0423792,
-      "precision": "approx-campus-internal",
-      "display": "OSM 万家丽北路 国防科技大学三号院"
+      "lat": 28.2386165,
+      "lng": 112.9956336,
+      "display": "科大佳园南苑 伍家岭街道 开福区",
+      "query": "科大佳园南苑",
+      "precision": "geocoded"
     },
     "jingyuanEast": {
       "lat": 28.2432,
       "lng": 113.0012,
       "precision": "approx",
-      "display": "approx 科大景园一带"
+      "display": "approx 科大景园东门（双拥路东）"
     },
     "jingyuanWest": {
-      "lat": 28.2587826,
-      "lng": 113.0415792,
-      "precision": "approx-campus-internal",
-      "display": "OSM 万家丽北路 国防科技大学三号院"
+      "lat": 28.2431,
+      "lng": 112.9996,
+      "precision": "approx",
+      "display": "approx 科大景园西门（双拥路西）"
     },
     "fourth": {
       "lat": 28.1670497,
       "lng": 112.9836019,
-      "precision": "approx",
-      "display": "OSM 芙蓉中路 前沿交叉学科学院"
+      "display": "国防科技大学前沿交叉学科学院 芙蓉中路 金盆岭街道 长沙市",
+      "query": "国防科技大学前沿交叉学科学院",
+      "precision": "geocoded"
     },
     "family4": {
       "lat": 28.1675497,
@@ -61,6 +66,12 @@
       "lng": 113.0403792,
       "precision": "approx-campus-internal",
       "display": "OSM 万家丽北路 国防科技大学三号院"
+    },
+    "northGateOne": {
+      "lat": 28.2322,
+      "lng": 112.9936,
+      "precision": "approx",
+      "display": "approx 一号院北侧（德雅路一带）"
     },
     "secondCanteen": {
       "lat": 28.2565826,
@@ -86,11 +97,17 @@
       "precision": "approx-campus-internal",
       "display": "OSM 万家丽北路 国防科技大学三号院"
     },
-    "gaochao": {
-      "lat": 28.2585826,
-      "lng": 113.0413792,
-      "precision": "approx-campus-internal",
-      "display": "OSM 万家丽北路 国防科技大学三号院"
+    "gaochaoNorth": {
+      "lat": 28.2587,
+      "lng": 113.0408,
+      "precision": "approx",
+      "display": "approx 三号院高超楼北侧"
+    },
+    "gaochaoSouth": {
+      "lat": 28.2577,
+      "lng": 113.0404,
+      "precision": "approx",
+      "display": "approx 三号院高超楼南侧"
     }
   }
 }

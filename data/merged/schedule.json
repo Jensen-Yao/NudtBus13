@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-31T23:17:37.857Z",
+    "generatedAt": "2026-09-01T09:07:24.789Z",
     "snapshotNote": "班车时刻随学期调整，以学校最新通知为准"
   },
   "stops": {
@@ -55,6 +55,7 @@
   },
   "areas": {
     "one": "campus-one",
+    "northGateOne": "campus-one",
     "three": "campus-three",
     "dorm": "campus-three",
     "eastGate": "campus-three",

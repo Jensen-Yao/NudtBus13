@@ -24,11 +24,13 @@ const QUERIES = {
   family4: [{ q: "国防科技大学 四号院家属区", must: ["四号院|家属"] }],
   eastGate: [{ q: "国防科技大学三号院 东门", must: ["东门|国防"] }],
   northGate: [{ q: "国防科技大学三号院 北门", must: ["北门|国防"] }],
+  northGateOne: [{ q: "国防科技大学 北门", must: ["国防|北门"] }],
   secondCanteen: [{ q: "国防科技大学 二食堂", must: ["食堂|国防"] }],
   scienceCollege: [{ q: "国防科技大学理学院", must: ["理学院|国防"] }],
   laserInstitute: [{ q: "国防科技大学 激光所", must: ["激光|国防"] }],
   militaryCenter: [{ q: "国防科技大学 军体", must: ["军体|国防"] }],
-  gaochao: [{ q: "国防科技大学 高超", must: ["高超|国防"] }],
+  gaochaoNorth: [{ q: "国防科技大学 高超", must: ["高超|国防"] }],
+  gaochaoSouth: [{ q: "国防科技大学 高超", must: ["高超|国防"] }],
 };
 
 // Fallback anchors (from verified campus locations; sub-stops offset within campus)
@@ -36,8 +38,13 @@ const ANCHORS = {
   one: { lat: 28.2290273, lng: 112.9949229, src: "OSM 德雅路109号 国防科技大学" },
   three: { lat: 28.2595826, lng: 113.0423792, src: "OSM 万家丽北路 国防科技大学三号院" },
   kjy: { lat: 28.2408, lng: 112.9959, src: "OSM 双拥路 科大佳园北苑" },
+  kjySouthGate: { lat: 28.23862, lng: 112.99563, src: "Photon 科大佳园南苑（双拥路）" },
+  northGateOne: { lat: 28.2322, lng: 112.9936, src: "approx 一号院北侧（德雅路一带）" },
   fourth: { lat: 28.1670497, lng: 112.9836019, src: "OSM 芙蓉中路 前沿交叉学科学院" },
-  jingyuanEast: { lat: 28.2432, lng: 113.0012, src: "approx 科大景园一带" },
+  jingyuanEast: { lat: 28.2432, lng: 113.0012, src: "approx 科大景园东门（双拥路东）" },
+  jingyuanWest: { lat: 28.2431, lng: 112.9996, src: "approx 科大景园西门（双拥路西）" },
+  gaochaoNorth: { lat: 28.2587, lng: 113.0408, src: "approx 三号院高超楼北侧" },
+  gaochaoSouth: { lat: 28.2577, lng: 113.0404, src: "approx 三号院高超楼南侧" },
 };
 
 const UA = "NudtBus13-build/1.0 (github.com/Jensen-Yao/NudtBus13)";
@@ -86,7 +93,8 @@ async function main() {
         northGate: [0.003, -0.002],
         militaryCenter: [0.002, 0.001],
         laserInstitute: [0.001, 0.0],
-        gaochao: [-0.001, -0.001],
+        gaochaoNorth: [-0.0009, -0.0016],
+        gaochaoSouth: [-0.0019, -0.0020],
         scienceCollege: [-0.002, -0.001],
         secondCanteen: [-0.003, 0.001],
         dorm: [-0.001, -0.001],

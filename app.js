@@ -6,7 +6,7 @@
 
 const STOP_LABELS = {
   one: "一号院", three: "三号院（系统楼）", dorm: "宿舍（研究生宿舍）",
-  eastGate: "东门", northGate: "北门", militaryCenter: "军体", laserInstitute: "激光所",
+  eastGate: "东门", northGate: "北门", northGateOne: "一号院北门", militaryCenter: "军体", laserInstitute: "激光所",
   gaochaoNorth: "高超北侧", gaochaoSouth: "高超南侧", scienceCollege: "理学院",
   secondCanteen: "二食堂", kjy: "科大佳园", kjySouthGate: "科大佳园南苑东门",
   jingyuanEast: "科大景园东门", jingyuanWest: "科大景园西门", fourth: "四号院", family4: "四号院家属区",
@@ -54,11 +54,8 @@ function deriveStops(m) {
   const order = m === "campus"
     ? ["one", "three", "kjy", "kjySouthGate", "jingyuanWest", "jingyuanEast", "fourth", "family4", "dorm"]
     : ["dorm", "three", "eastGate", "northGate", "militaryCenter", "laserInstitute", "gaochaoNorth", "gaochaoSouth", "scienceCollege", "secondCanteen", "one", "kjy"];
-  const known = [...set].sort((a, b) => {
-    const ia = order.indexOf(a), ib = order.indexOf(b);
-    return (ia < 0 ? 999 : ia) - (ib < 0 ? 999 : ib);
-  });
-  const extra = [...set].filter((s) => !order.includes(s)); // 未来新增站点自动归入
+  const known = [...set].filter((s) => order.includes(s)).sort((a, b) => order.indexOf(a) - order.indexOf(b));
+  const extra = [...set].filter((s) => !order.includes(s)).sort(); // 未来新增站点自动归入
   return { all: [...known, ...extra], extras: extra, cfg };
 }
 
